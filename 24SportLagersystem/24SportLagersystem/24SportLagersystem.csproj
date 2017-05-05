@@ -97,7 +97,7 @@
     </Compile>
     <Compile Include="Common\RelayArgCommand.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
     </Compile>
@@ -151,8 +151,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converter\" />
     <Folder Include="Handler\" />
+    <Folder Include="Model\" />
     <Folder Include="PersistencyService\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
