@@ -8,7 +8,5 @@ namespace _24SportLagersystem.PersistencyService
 {
     class PersistencyService
     {
-
-
     }
 }
