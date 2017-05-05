@@ -47,7 +47,7 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <PasswordBox x:Name="passwordBox" Grid.Column="2"  Grid.Row="7" VerticalAlignment="Top" MaxLength="16" />
+            <PasswordBox x:Name="passwordBox" Grid.Column="2"  Grid.Row="7" VerticalAlignment="Top" MaxLength="16" PasswordChar="*"    />
 
         </Grid>
     </Grid>
