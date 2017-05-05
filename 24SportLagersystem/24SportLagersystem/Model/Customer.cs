@@ -8,11 +8,5 @@ namespace _24SportLagersystem.Model
 {
     class Customer
     {
-        public int CustomerId { get; set; }
-        public string Name { get; set; }
-        public int PhoneNr { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-
     }
 }
