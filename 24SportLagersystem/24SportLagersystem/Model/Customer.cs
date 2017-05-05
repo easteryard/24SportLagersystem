@@ -13,5 +13,6 @@ namespace _24SportLagersystem.Model
         public int PhoneNr { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
+
     }
 }
