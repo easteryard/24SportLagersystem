@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Eventmaker.Common
+namespace _24SportLagersystem.Common
 {
     class RelayArgCommand<T> : ICommand
     {
