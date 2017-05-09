@@ -103,6 +103,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderLine.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductLine.cs" />
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
     <Compile Include="PersistencyService\PersistencyService.cs" />

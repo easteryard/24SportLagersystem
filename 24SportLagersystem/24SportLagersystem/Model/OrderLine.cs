@@ -8,7 +8,7 @@ namespace _24SportLagersystem.Model
 {
     class OrderLine
     {
-        public int OrderLineNr { get; set; }
+        public int OrderLineNo { get; set; }
 
 
     }
