@@ -104,6 +104,7 @@
     <Compile Include="Model\OrderLine.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductPart.cs" />
+    <Compile Include="Model\Singleton24Sport.cs" />
     <Compile Include="PersistencyService\PersistencyService.cs" />
     <Compile Include="ViewModel\ViewModel24Sport.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
