@@ -102,6 +102,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductPart.cs" />
+    <Compile Include="PersistencyService\PersistencyService.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
     </Compile>
@@ -156,7 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Handler\" />
-    <Folder Include="PersistencyService\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
