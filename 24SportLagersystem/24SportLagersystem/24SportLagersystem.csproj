@@ -110,6 +110,12 @@
     <Compile Include="View\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Unnamed.xaml.cs">
+      <DependentUpon>Unnamed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Unnamed1.xaml.cs">
+      <DependentUpon>Unnamed1.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -145,6 +151,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Unnamed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Unnamed1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
