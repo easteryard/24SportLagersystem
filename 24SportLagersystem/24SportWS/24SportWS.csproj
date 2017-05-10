@@ -160,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="24SportDBContext.cs" />
@@ -204,15 +203,15 @@
     <Compile Include="Controllers\ProductPartsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderLine.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductLine.cs" />
-    <Compile Include="ProductPart.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderLine.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductLine.cs" />
+    <Compile Include="Models\ProductPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
