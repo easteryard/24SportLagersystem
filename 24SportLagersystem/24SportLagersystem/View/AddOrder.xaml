@@ -37,7 +37,7 @@
 
         </Grid.RowDefinitions>
 
-        <Button x:Name="Search" Content="Søg" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
+        <Button x:Name="Search" Content="Søg" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
                     <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Overview"/>
@@ -45,7 +45,7 @@
             </interactivity:Interaction.Behaviors>
         </Button>
 
-        <Button x:Name="Tilføj" Content="Tilføj Ordre" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
+        <Button x:Name="Tilføj" Content="Tilføj Ordre" IsEnabled="False" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
 
         <Button x:Name="Gem" Content="Gem" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
@@ -55,18 +55,57 @@
             </interactivity:Interaction.Behaviors>
         </Button>
 
-        <TextBlock x:Name="Varenr" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Varenavn" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Farve" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="Farve" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Str" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="Str." VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Antal" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Pris" Grid.Column="2" Grid.Row="9" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="VarenrTextbox" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="3" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" />
-        <TextBox x:Name="FarveTextbox" Grid.Column="3" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="StrTextbox" Grid.Column="3" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="3" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="3" Grid.Row="9" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock x:Name="Varenr" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Varenavn" Grid.Column="3" Grid.Row="5" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Farve" Grid.Column="3" Grid.Row="6" TextWrapping="Wrap" Text="Farve" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Str" Grid.Column="3" Grid.Row="7" TextWrapping="Wrap" Text="Str." VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Antal" Grid.Column="3" Grid.Row="8" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Pris" Grid.Column="3" Grid.Row="9" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="VarenrTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="VarenavnTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" />
+        <TextBox x:Name="FarveTextbox" Grid.Column="4" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="StrTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="4" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="4" Grid.Row="9" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Grid HorizontalAlignment="Left" Width="550" Margin="30,10,0,20" BorderBrush="White" BorderThickness="2" Grid.ColumnSpan="3" Grid.RowSpan="13">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="Search1" SelectedText="Search" TextAlignment="Center" TextWrapping="Wrap" Text="" Grid.Row="1" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+            <Button x:Name="Medaljer" Content="Medaljer" Grid.Row="3"  Width="183" />
+            <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" />
+            <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" />
+            <Button x:Name="button3" Content="Button" Grid.Row="6" Width="183" />
+            <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
+            <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
+            <Button x:Name="button6" Content="Button" Grid.Row="9" Width="183"/>
+            <Button x:Name="button7" Content="Button" Grid.Row="10" Width="183"/>
+            <Button x:Name="button8" Content="Button" Grid.Row="11" Width="183"/>
+
+        </Grid>
 
     </Grid>
+
+    
+    
+    
 </Page>
