@@ -82,9 +82,9 @@
             </Grid.RowDefinitions>
 
             <TextBox x:Name="Search" SelectedText="Search" TextAlignment="Center" TextWrapping="Wrap" Text="" Grid.Row="1" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-            <Button x:Name="button" Content="Button" Grid.Row="3"  Width="183" />
-            <Button x:Name="button1" Content="Button" Grid.Row="4" Width="183" />
-            <Button x:Name="button2" Content="Button" Grid.Row="5" Width="183" />
+            <Button x:Name="Medaljer" Content="Medaljer" Grid.Row="3"  Width="183" />
+            <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" />
+            <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" />
             <Button x:Name="button3" Content="Button" Grid.Row="6" Width="183" />
             <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
             <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
