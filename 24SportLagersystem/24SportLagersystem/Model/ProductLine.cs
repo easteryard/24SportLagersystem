@@ -8,6 +8,8 @@ namespace _24SportLagersystem.Model
 {
     class ProductLine
     {
+        public int ProductLineId { get; set; }
+        public int Amount { get; set; }
 
     }
 }
