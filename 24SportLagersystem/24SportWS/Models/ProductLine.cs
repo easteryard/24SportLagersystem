@@ -22,5 +22,10 @@ namespace _24SportWS
         public virtual Product Product { get; set; }
 
         public virtual ProductPart ProductPart { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(ProductLine_Id)}: {ProductLine_Id}, {nameof(Product_Id)}: {Product_Id}, {nameof(ProductPart_Id)}: {ProductPart_Id}, {nameof(Amount)}: {Amount}, {nameof(Product)}: {Product}, {nameof(ProductPart)}: {ProductPart}";
+        }
     }
 }

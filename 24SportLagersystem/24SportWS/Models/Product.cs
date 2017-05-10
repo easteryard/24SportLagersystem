@@ -36,5 +36,10 @@ namespace _24SportWS
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductLine> ProductLines { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Product_Id)}: {Product_Id}, {nameof(Product_Name)}: {Product_Name}, {nameof(Price)}: {Price}, {nameof(Height)}: {Height}, {nameof(AmountMade)}: {AmountMade}, {nameof(AmountMakeable)}: {AmountMakeable}";
+        }
     }
 }

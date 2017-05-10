@@ -23,5 +23,10 @@ namespace _24SportWS
         public virtual Order Order { get; set; }
 
         public virtual Product Product { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(OrderLine_Id)}: {OrderLine_Id}, {nameof(Order_Id)}: {Order_Id}, {nameof(Product_Id)}: {Product_Id}, {nameof(Amount)}: {Amount}, {nameof(Date)}: {Date}, {nameof(Order)}: {Order}, {nameof(Product)}: {Product}";
+        }
     }
 }
