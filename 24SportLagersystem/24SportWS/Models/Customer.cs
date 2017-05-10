@@ -32,5 +32,10 @@ namespace _24SportWS
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Customer_Id)}: {Customer_Id}, {nameof(Name)}: {Name}, {nameof(Phone_No)}: {Phone_No}, {nameof(Address)}: {Address}, {nameof(Email)}: {Email}";
+        }
     }
 }
