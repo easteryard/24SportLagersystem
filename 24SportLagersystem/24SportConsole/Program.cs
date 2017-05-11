@@ -47,7 +47,7 @@ namespace _24SportConsole
             //    }
             //}
 
-            SaveEventsAsJsonAsync(new Customer("Karsten", 0, 12345678, "Vejen 1, 4000", "mail@mail.dk"));
+            //SaveEventsAsJsonAsync(new Customer("Karsten", 0, 12345678, "Vejen 1, 4000", "mail@mail.dk"));
         }
 
 
