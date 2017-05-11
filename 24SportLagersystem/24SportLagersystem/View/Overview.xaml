@@ -35,7 +35,7 @@
             <TextBlock x:Name="OverviewStkAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="StkAntal" Grid.Column="4"/>
 
             <ListView x:Name="ListviewVareNr" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" >
-                <StackPanel Height="50" Width="80"/>
+                <StackPanel Height="50" Width="80" />
             </ListView>
 
             <ListView x:Name="ListviewNeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White">
