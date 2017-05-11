@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _24SportLagersystem.Model;
 
-namespace _24SportLagersystem.PersistencyService
+namespace _24SportLagersystem.Persistency
 {
     class PersistencyService
     {
