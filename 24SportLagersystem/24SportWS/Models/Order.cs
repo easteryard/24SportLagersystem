@@ -20,6 +20,10 @@ namespace _24SportWS
 
         public int Customer_Id { get; set; }
 
+        public DateTime? OrderDate { get; set; }
+
+        public DateTime? DeliveryDate { get; set; }
+
         public virtual Customer Customer { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -27,7 +31,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(Order_Id)}: {Order_Id}, {nameof(Customer_Id)}: {Customer_Id}, {nameof(Customer)}: {Customer}";
+            return $"{nameof(Order_Id)}: {Order_Id}, {nameof(Customer_Id)}: {Customer_Id}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}, {nameof(Customer)}: {Customer}";
         }
     }
 }
