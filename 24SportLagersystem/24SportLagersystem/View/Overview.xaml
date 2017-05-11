@@ -34,15 +34,25 @@
             <TextBlock x:Name="OverviewPris"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Pris" Grid.Column="3"/>
             <TextBlock x:Name="OverviewStkAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="StkAntal" Grid.Column="4"/>
 
-            <ListView x:Name="ListviewVareNr" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" />
+            <ListView x:Name="ListviewVareNr" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" >
+                <StackPanel Height="50" Width="80" />
+            </ListView>
 
-            <ListView x:Name="ListviewNeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White"/>
+            <ListView x:Name="ListviewNeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White">
+                <StackPanel Height="50" Width="80"/>
+            </ListView>
 
-            <ListView x:Name="ListviewAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White"/>
+            <ListView x:Name="ListviewAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White">
+                <StackPanel Height="50" Width="80"/>
+            </ListView>
 
-            <ListView x:Name="ListviewPris" Grid.Row="1" Grid.RowSpan="4" Grid.Column="3" BorderThickness="1" BorderBrush="White"/>
+            <ListView x:Name="ListviewPris" Grid.Row="1" Grid.RowSpan="4" Grid.Column="3" BorderThickness="1" BorderBrush="White">
+                <StackPanel Height="50" Width="80"/>
+            </ListView>
 
-            <ListView x:Name="ListviewStkAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" BorderThickness="1" BorderBrush="White"/>
+            <ListView x:Name="ListviewStkAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" BorderThickness="1" BorderBrush="White">
+                <StackPanel Height="50" Width="80"/>
+            </ListView>
 
 
         </Grid>
