@@ -4,13 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _24SportLagersystem.PersistencyService;
+using _24SportLagersystem.Persistency;
 
 namespace _24SportLagersystem.Model
 {
     class Singleton24Sport
     {
-
+      //  public PersistencyService.PersistencyService PersistencyService { get; set; }
         private static Singleton24Sport _instance = new Singleton24Sport();
         public static Singleton24Sport Instance
         {
@@ -32,7 +32,7 @@ namespace _24SportLagersystem.Model
 
         public async void LoadProductsAsync()
         {
-            var products = await PersistencyService.PersistencyService.LoadProductFromJsonAsync();
+            var products = await PersistencyService.LoadProductFromJsonAsync();
             if (products != null)
                 foreach (var ev in products)
                 {
