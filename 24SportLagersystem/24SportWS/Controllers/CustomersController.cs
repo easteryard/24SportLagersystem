@@ -14,7 +14,7 @@ namespace _24SportWS.Controllers
 {
     public class CustomersController : ApiController
     {
-        private _24SportDBContext db = new _24SportDBContext();
+        private SportDBContext db = new SportDBContext();
 
         // GET: api/Customers
         public IQueryable<Customer> GetCustomers()
@@ -44,7 +44,7 @@ namespace _24SportWS.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != customer.Customer_Id)
+            if (id != customer.CustomerId)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace _24SportWS.Controllers
             db.Customers.Add(customer);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = customer.Customer_Id }, customer);
+            return CreatedAtRoute("DefaultApi", new { id = customer.CustomerId }, customer);
         }
 
         // DELETE: api/Customers/5
@@ -112,7 +112,7 @@ namespace _24SportWS.Controllers
 
         private bool CustomerExists(int id)
         {
-            return db.Customers.Count(e => e.Customer_Id == id) > 0;
+            return db.Customers.Count(e => e.CustomerId == id) > 0;
         }
     }
 }

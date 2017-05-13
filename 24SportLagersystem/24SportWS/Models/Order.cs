@@ -15,10 +15,9 @@ namespace _24SportWS
             OrderLines = new HashSet<OrderLine>();
         }
 
-        [Key]
-        public int Order_Id { get; set; }
+        public int OrderId { get; set; }
 
-        public int Customer_Id { get; set; }
+        public int CustomerId { get; set; }
 
         public DateTime? OrderDate { get; set; }
 
@@ -31,7 +30,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(Order_Id)}: {Order_Id}, {nameof(Customer_Id)}: {Customer_Id}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}, {nameof(Customer)}: {Customer}";
+            return $"{nameof(OrderId)}: {OrderId}, {nameof(CustomerId)}: {CustomerId}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}, {nameof(Customer)}: {Customer}";
         }
     }
 }

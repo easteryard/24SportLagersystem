@@ -9,12 +9,11 @@ namespace _24SportWS
     [Table("OrderLine")]
     public partial class OrderLine
     {
-        [Key]
-        public int OrderLine_Id { get; set; }
+        public int OrderLineId { get; set; }
 
-        public int Order_Id { get; set; }
+        public int OrderId { get; set; }
 
-        public int Product_Id { get; set; }
+        public int ProductId { get; set; }
 
         public int Amount { get; set; }
 
@@ -24,7 +23,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(OrderLine_Id)}: {OrderLine_Id}, {nameof(Order_Id)}: {Order_Id}, {nameof(Product_Id)}: {Product_Id}, {nameof(Amount)}: {Amount}, {nameof(Order)}: {Order}, {nameof(Product)}: {Product}";
+            return $"{nameof(OrderLineId)}: {OrderLineId}, {nameof(OrderId)}: {OrderId}, {nameof(ProductId)}: {ProductId}, {nameof(Amount)}: {Amount}, {nameof(Order)}: {Order}, {nameof(Product)}: {Product}";
         }
     }
 }

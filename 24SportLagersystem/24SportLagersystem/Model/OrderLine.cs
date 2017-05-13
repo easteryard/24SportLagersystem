@@ -8,8 +8,23 @@ namespace _24SportLagersystem.Model
 {
     class OrderLine
     {
-        public int OrderLineNo { get; set; }
+        public int OrderLineId { get; set; }
+        public int Amount { get; set; }
 
+        public OrderLine()
+        {
+            
+        }
 
+        public OrderLine(int orderLineId, int amount)
+        {
+            OrderLineId = orderLineId;
+            Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(OrderLineId)}: {OrderLineId}, {nameof(Amount)}: {Amount}";
+        }
     }
 }

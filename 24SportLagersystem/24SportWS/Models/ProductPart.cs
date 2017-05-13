@@ -15,9 +15,8 @@ namespace _24SportWS
             ProductLines = new HashSet<ProductLine>();
         }
 
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductPart_Id { get; set; }
+        public int ProductPartId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -25,20 +24,20 @@ namespace _24SportWS
 
         public int? Amount { get; set; }
 
-        public int PricePerPieceDkk { get; set; }
+        public double PricePerPieceDkk { get; set; }
 
-        public int PricePerPieceEur { get; set; }
+        public double PricePerPieceEur { get; set; }
 
-        public int? PriceTotalDkk { get; set; }
+        public double? PriceTotalDkk { get; set; }
 
-        public int? PriceTotalEur { get; set; }
+        public double? PriceTotalEur { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductLine> ProductLines { get; set; }
 
         public override string ToString()
         {
-            return $"{nameof(ProductPart_Id)}: {ProductPart_Id}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";
+            return $"{nameof(ProductPartId)}: {ProductPartId}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";
         }
     }
 }

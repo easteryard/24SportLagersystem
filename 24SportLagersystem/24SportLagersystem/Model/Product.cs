@@ -8,9 +8,8 @@ namespace _24SportLagersystem.Model
 {
     class Product
     {
-        public int ProductNo { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public string Content { get; set; }
         public double Price { get; set; }
         public double Height { get; set; }
         public int AmountMade { get; set; }
@@ -21,11 +20,10 @@ namespace _24SportLagersystem.Model
             
         }
 
-        public Product(int productNo, string productName, string content, double price, double height, int amountMade, int amountMakeable)
+        public Product(int productId, string productName, double price, double height, int amountMade, int amountMakeable)
         {
-            ProductNo = productNo;
+            ProductId = productId;
             ProductName = productName;
-            Content = content;
             Price = price;
             Height = height;
             AmountMade = amountMade;
@@ -34,7 +32,7 @@ namespace _24SportLagersystem.Model
 
         public override string ToString()
         {
-            return $"{nameof(ProductNo)}: {ProductNo}, {nameof(ProductName)}: {ProductName}, {nameof(Content)}: {Content}, {nameof(Price)}: {Price}, {nameof(Height)}: {Height}, {nameof(AmountMade)}: {AmountMade}, {nameof(AmountMakeable)}: {AmountMakeable}";
+            return $"{nameof(ProductId)}: {ProductId}, {nameof(ProductName)}: {ProductName}, {nameof(Price)}: {Price}, {nameof(Height)}: {Height}, {nameof(AmountMade)}: {AmountMade}, {nameof(AmountMakeable)}: {AmountMakeable}";
         }
     }
 }

@@ -11,5 +11,20 @@ namespace _24SportLagersystem.Model
         public int ProductLineId { get; set; }
         public int Amount { get; set; }
 
+        public ProductLine()
+        {
+            
+        }
+
+        public ProductLine(int productLineId, int amount)
+        {
+            ProductLineId = productLineId;
+            Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(ProductLineId)}: {ProductLineId}, {nameof(Amount)}: {Amount}";
+        }
     }
 }

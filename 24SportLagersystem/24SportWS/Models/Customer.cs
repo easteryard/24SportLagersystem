@@ -15,14 +15,13 @@ namespace _24SportWS
             Orders = new HashSet<Order>();
         }
 
-        [Key]
-        public int Customer_Id { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        public int? Phone_No { get; set; }
+        public int? PhoneNo { get; set; }
 
         [StringLength(50)]
         public string Address { get; set; }
@@ -35,7 +34,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(Customer_Id)}: {Customer_Id}, {nameof(Name)}: {Name}, {nameof(Phone_No)}: {Phone_No}, {nameof(Address)}: {Address}, {nameof(Email)}: {Email}";
+            return $"{nameof(CustomerId)}: {CustomerId}, {nameof(Name)}: {Name}, {nameof(PhoneNo)}: {PhoneNo}, {nameof(Address)}: {Address}, {nameof(Email)}: {Email}";
         }
     }
 }

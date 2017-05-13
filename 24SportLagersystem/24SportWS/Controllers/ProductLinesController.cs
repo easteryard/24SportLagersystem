@@ -14,7 +14,7 @@ namespace _24SportWS.Controllers
 {
     public class ProductLinesController : ApiController
     {
-        private _24SportDBContext db = new _24SportDBContext();
+        private SportDBContext db = new SportDBContext();
 
         // GET: api/ProductLines
         public IQueryable<ProductLine> GetProductLines()
@@ -44,7 +44,7 @@ namespace _24SportWS.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != productLine.ProductLine_Id)
+            if (id != productLine.ProductLineId)
             {
                 return BadRequest();
             }
@@ -87,7 +87,7 @@ namespace _24SportWS.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ProductLineExists(productLine.ProductLine_Id))
+                if (ProductLineExists(productLine.ProductLineId))
                 {
                     return Conflict();
                 }
@@ -97,7 +97,7 @@ namespace _24SportWS.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = productLine.ProductLine_Id }, productLine);
+            return CreatedAtRoute("DefaultApi", new { id = productLine.ProductLineId }, productLine);
         }
 
         // DELETE: api/ProductLines/5
@@ -127,7 +127,7 @@ namespace _24SportWS.Controllers
 
         private bool ProductLineExists(int id)
         {
-            return db.ProductLines.Count(e => e.ProductLine_Id == id) > 0;
+            return db.ProductLines.Count(e => e.ProductLineId == id) > 0;
         }
     }
 }

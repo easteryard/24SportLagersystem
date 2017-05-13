@@ -14,7 +14,7 @@ namespace _24SportWS.Controllers
 {
     public class ProductsController : ApiController
     {
-        private _24SportDBContext db = new _24SportDBContext();
+        private SportDBContext db = new SportDBContext();
 
         // GET: api/Products
         public IQueryable<Product> GetProducts()
@@ -44,7 +44,7 @@ namespace _24SportWS.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != product.Product_Id)
+            if (id != product.ProductId)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace _24SportWS.Controllers
             db.Products.Add(product);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = product.Product_Id }, product);
+            return CreatedAtRoute("DefaultApi", new { id = product.ProductId }, product);
         }
 
         // DELETE: api/Products/5
@@ -112,7 +112,7 @@ namespace _24SportWS.Controllers
 
         private bool ProductExists(int id)
         {
-            return db.Products.Count(e => e.Product_Id == id) > 0;
+            return db.Products.Count(e => e.ProductId == id) > 0;
         }
     }
 }

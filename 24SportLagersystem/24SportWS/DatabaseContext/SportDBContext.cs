@@ -5,9 +5,9 @@ namespace _24SportWS
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class _24SportDBContext : DbContext
+    public partial class SportDBContext : DbContext
     {
-        public _24SportDBContext()
+        public SportDBContext()
             : base("name=SportDBContext")
         {
             base.Configuration.ProxyCreationEnabled = false;
@@ -45,7 +45,7 @@ namespace _24SportWS
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Product>()
-                .Property(e => e.Product_Name)
+                .Property(e => e.ProductName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Product>()
