@@ -8,6 +8,7 @@ namespace _24SportLagersystem.Model
 {
     class ProductPart
     {
+        //her har vi vores properties
         public int ProductPartNo { get; set; }
         public string Description { get; set; }
         public int Amount { get; set; }
@@ -16,11 +17,13 @@ namespace _24SportLagersystem.Model
         public double PriceTotalDkk { get; set; }
         public double PriceTotalEur { get; set; }
 
+        //dette er vores default konstruktør
         public ProductPart()
         {
 
         }
 
+        //dette er vores konstruktør som initialisere vores properties
         public ProductPart(int productPartNo, string description, int amount, double pricePerPieceDkk, double pricePerPieceEur, double priceTotalDkk, double priceTotalEur)
         {
             ProductPartNo = productPartNo;
@@ -32,6 +35,7 @@ namespace _24SportLagersystem.Model
             PriceTotalEur = priceTotalEur;
         }
 
+        //dette er vores tostring som gør det muligt at udksrive vores properties
         public override string ToString()
         {
             return $"{nameof(ProductPartNo)}: {ProductPartNo}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";

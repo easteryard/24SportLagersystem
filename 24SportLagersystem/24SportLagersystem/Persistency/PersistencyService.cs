@@ -23,7 +23,7 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                try
+                try// i try delen er her vi forventer der kan ske en fejl. 
                 {
                     var responce = client.GetAsync("api/Products").Result;
                     if (responce.IsSuccessStatusCode)
@@ -33,7 +33,7 @@ namespace _24SportLagersystem.Persistency
                     }
                     return null;
                 }
-                catch (Exception)
+                catch (Exception)// i catch er her vi fanger den opstået fejl og giver en evt fejl meddelse/gemmer fejlen i en logfil
                 {
 
                     throw;
