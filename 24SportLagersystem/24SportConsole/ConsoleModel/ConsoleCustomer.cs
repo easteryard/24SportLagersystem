@@ -4,25 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24SportLagersystem.Model
+namespace _24SportConsole
 {
-    class Customer
+    class ConsoleCustomer
     {
-        //her har vi vores properties
         public int CustomerId { get; set; }
         public string Name { get; set; }
         public int PhoneNo { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
 
-        //dette er vores default konstruktør
-        public Customer()
+        public ConsoleCustomer()
         {
 
         }
 
-        //dette er vores konstruktør som initialisere vores properties
-        public Customer(int customerId, string name, int phoneNo, string address, string email)
+        public ConsoleCustomer(int customerId, string name, int phoneNo, string address, string email)
         {
             CustomerId = customerId;
             Name = name;
@@ -31,7 +28,6 @@ namespace _24SportLagersystem.Model
             Email = email;
         }
 
-        //dette er vores tostring som gør det muligt at udksrive vores properties
         public override string ToString()
         {
             return $"{nameof(CustomerId)}: {CustomerId}, {nameof(Name)}: {Name}, {nameof(PhoneNo)}: {PhoneNo}, {nameof(Address)}: {Address}, {nameof(Email)}: {Email}";

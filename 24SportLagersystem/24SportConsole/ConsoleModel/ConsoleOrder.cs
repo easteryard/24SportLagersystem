@@ -4,29 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24SportLagersystem.Model
+namespace _24SportConsole
 {
-    class Order
+    class ConsoleOrder
     {
-        public int OrderId { get; set; }
+        public int OrderNo { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
 
-        public Order()
+        public ConsoleOrder()
         {
 
         }
 
-        public Order(int orderId, DateTime orderDate, DateTime deliveryDate)
+        public ConsoleOrder(int orderNo, DateTime orderDate, DateTime deliveryDate)
         {
-            OrderId = orderId;
+            OrderNo = orderNo;
             OrderDate = orderDate;
             DeliveryDate = deliveryDate;
         }
 
         public override string ToString()
         {
-            return $"{nameof(OrderId)}: {OrderId}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
+            return $"{nameof(OrderNo)}: {OrderNo}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
         }
     }
 }

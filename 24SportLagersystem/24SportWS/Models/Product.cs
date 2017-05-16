@@ -16,12 +16,11 @@ namespace _24SportWS
             ProductLines = new HashSet<ProductLine>();
         }
 
-        [Key]
-        public int Product_Id { get; set; }
+        public int ProductId { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Product_Name { get; set; }
+        public string ProductName { get; set; }
 
         public double Price { get; set; }
 
@@ -39,7 +38,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(Product_Id)}: {Product_Id}, {nameof(Product_Name)}: {Product_Name}, {nameof(Price)}: {Price}, {nameof(Height)}: {Height}, {nameof(AmountMade)}: {AmountMade}, {nameof(AmountMakeable)}: {AmountMakeable}";
+            return $"{nameof(ProductId)}: {ProductId}, {nameof(ProductName)}: {ProductName}, {nameof(Price)}: {Price}, {nameof(Height)}: {Height}, {nameof(AmountMade)}: {AmountMade}, {nameof(AmountMakeable)}: {AmountMakeable}";
         }
     }
 }

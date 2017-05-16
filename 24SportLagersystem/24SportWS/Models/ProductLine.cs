@@ -9,13 +9,12 @@ namespace _24SportWS
     [Table("ProductLine")]
     public partial class ProductLine
     {
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductLine_Id { get; set; }
+        public int ProductLineId { get; set; }
 
-        public int Product_Id { get; set; }
+        public int ProductId { get; set; }
 
-        public int ProductPart_Id { get; set; }
+        public int ProductPartId { get; set; }
 
         public int Amount { get; set; }
 
@@ -25,7 +24,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(ProductLine_Id)}: {ProductLine_Id}, {nameof(Product_Id)}: {Product_Id}, {nameof(ProductPart_Id)}: {ProductPart_Id}, {nameof(Amount)}: {Amount}, {nameof(Product)}: {Product}, {nameof(ProductPart)}: {ProductPart}";
+            return $"{nameof(ProductLineId)}: {ProductLineId}, {nameof(ProductId)}: {ProductId}, {nameof(ProductPartId)}: {ProductPartId}, {nameof(Amount)}: {Amount}, {nameof(Product)}: {Product}, {nameof(ProductPart)}: {ProductPart}";
         }
     }
 }

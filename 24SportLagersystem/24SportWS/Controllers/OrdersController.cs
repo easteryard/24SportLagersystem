@@ -14,7 +14,7 @@ namespace _24SportWS.Controllers
 {
     public class OrdersController : ApiController
     {
-        private _24SportDBContext db = new _24SportDBContext();
+        private SportDBContext db = new SportDBContext();
 
         // GET: api/Orders
         public IQueryable<Order> GetOrders()
@@ -44,7 +44,7 @@ namespace _24SportWS.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != order.Order_Id)
+            if (id != order.OrderId)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace _24SportWS.Controllers
             db.Orders.Add(order);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = order.Order_Id }, order);
+            return CreatedAtRoute("DefaultApi", new { id = order.OrderId }, order);
         }
 
         // DELETE: api/Orders/5
@@ -112,7 +112,7 @@ namespace _24SportWS.Controllers
 
         private bool OrderExists(int id)
         {
-            return db.Orders.Count(e => e.Order_Id == id) > 0;
+            return db.Orders.Count(e => e.OrderId == id) > 0;
         }
     }
 }

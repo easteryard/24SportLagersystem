@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _24SportLagersystem.Model
+namespace _24SportConsole
 {
-    class Product
+    class ConsoleProduct
     {
-        //her har vi vores properties
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public double Price { get; set; }
@@ -16,14 +15,12 @@ namespace _24SportLagersystem.Model
         public int AmountMade { get; set; }
         public int AmountMakeable { get; set; }
 
-        //dette er vores default konstruktør
-        public Product()
+        public ConsoleProduct()
         {
-            
+
         }
 
-        //dette er vores konstruktør som initialisere vores properties
-        public Product(int productId, string productName, double price, double height, int amountMade, int amountMakeable)
+        public ConsoleProduct(int productId, string productName, double price, double height, int amountMade, int amountMakeable)
         {
             ProductId = productId;
             ProductName = productName;
@@ -33,7 +30,6 @@ namespace _24SportLagersystem.Model
             AmountMakeable = amountMakeable;
         }
 
-        //dette er vores tostring som gør det muligt at udksrive vores properties
         public override string ToString()
         {
             return $"{nameof(ProductId)}: {ProductId}, {nameof(ProductName)}: {ProductName}, {nameof(Price)}: {Price}, {nameof(Height)}: {Height}, {nameof(AmountMade)}: {AmountMade}, {nameof(AmountMakeable)}: {AmountMakeable}";

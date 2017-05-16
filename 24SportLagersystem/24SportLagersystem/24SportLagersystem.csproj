@@ -107,9 +107,13 @@
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\ViewModel24Sport.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CostumerTestView.xaml.cs">
+      <DependentUpon>CostumerTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -117,6 +121,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductTestView.xaml.cs">
+      <DependentUpon>ProductTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
@@ -153,11 +160,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CostumerTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Overview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
