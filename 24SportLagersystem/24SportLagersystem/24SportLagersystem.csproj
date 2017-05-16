@@ -107,6 +107,7 @@
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\ViewModel24Sport.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>

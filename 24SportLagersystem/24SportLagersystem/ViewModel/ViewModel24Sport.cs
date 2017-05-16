@@ -1,15 +1,282 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using _24SportLagersystem.Annotations;
+using _24SportLagersystem.Common;
 using _24SportLagersystem.Model;
+using _24SportLagersystem.Handler;
 
 namespace _24SportLagersystem.ViewModel
 {
-    class ViewModel24Sport
+    class ViewModel24Sport : INotifyPropertyChanged
     {
+
         public Singleton24Sport Singleton24Sport { get; set; }
 
+        public Handler.Handler24Sport Handler24Sport { get; set; }
+
+        #region RelayCommands
+        private ICommand _createCommand;
+        private ICommand _selectCommand;
+        private ICommand _deleteCommand;
+
+        public ICommand CreateCommand
+        {
+            get
+            {
+                if (_createCommand == null) _createCommand = new RelayCommand(Handler24Sport.CreateProduct);
+                return _createCommand; }
+
+            set { _createCommand = value; }
+        }
+
+        public ICommand SelectCommand
+        {
+            get { return _selectCommand; }
+            set { _selectCommand = value; }
+        }
+
+        public ICommand DeleteCommand
+        {
+            get { return _deleteCommand; }
+            set { _deleteCommand = value; }
+        }
+
+        #endregion
+
+
+        #region CustomerProps
+
+        private int _customerId;
+        private string _name;
+        private int _phoneNo;
+        private string _address;
+        private int _email;
+
+        public static Customer Customer { get; set; }
+
+
+        public int CustomerId
+        {
+            get { return _customerId; }
+            set { _customerId = value; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public int phoneNo
+        {
+            get { return _phoneNo; }
+            set { _phoneNo = value; }
+        }
+
+        public string Address
+        {
+            get { return _address; }
+            set { _address = value; }
+        }
+
+        public int Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+        #endregion
+
+        #region OrderProps
+        private int _orderNo;
+        private DateTime _deliveryDate;
+        private DateTime _orderDate;
+
+        public static Order Order { get; set; }
+
+        public int OrderNo
+        {
+            get { return _orderNo; }
+            set { _orderNo = value; }
+        }
+
+        public DateTime DeliveryDate
+        {
+            get { return _deliveryDate; }
+            set { _deliveryDate = value; }
+        }
+
+        public DateTime OrderDate
+        {
+            get { return _orderDate; }
+            set { _orderDate = value; }
+        }
+
+        #endregion
+
+        #region OrderLineProps
+        private int _orderLineId;
+        private int _amount;
+
+        public static OrderLine OrderLine { get; set; }
+
+
+        public int OrderLineId
+        {
+            get { return _orderLineId; }
+            set { _orderLineId = value; }
+        }
+
+        public int Amount
+        {
+            get { return _amount; }
+            set { _amount = value; }
+        }
+        #endregion
+
+        #region ProductProps
+        private int _productId;
+        private string _productName;
+        private double _price;
+        private double _height;
+        private int _amountMade;
+        private int _amountMakeable;
+
+        public static Product Product { get; set; }
+
+        public int ProductId
+        {
+            get { return _productId; }
+            set { _productId = value; }
+        }
+
+        public string ProductName
+        {
+            get { return _productName; }
+            set { _productName = value; }
+        }
+
+        public double Price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
+
+        public double Height
+        {
+            get { return _height; }
+            set { _height = value; }
+        }
+
+        public int AmountMade
+        {
+            get { return _amountMade; }
+            set { _amountMade = value; }
+        }
+
+        public int AmountMakeable
+        {
+            get { return _amountMakeable; }
+            set { _amountMakeable = value; }
+        }
+
+        #endregion
+
+        #region ProductLineProps
+        private int _productLineId;
+        private int _productLineAmount;
+
+        public static ProductLine ProductLine { get; set; }
+
+        public int ProductLineId
+        {
+            get { return _productLineId; }
+            set { _productLineId = value; }
+        }
+
+        public int ProductLineAmount
+        {
+            get { return _productLineAmount; }
+            set { _productLineAmount = value; }
+        }
+
+
+
+        #endregion
+
+        #region ProductPartProps
+        private int _productPartId;
+        private string _description;
+        private int _productPartAmount;
+        private double _pricePerDkk;
+        private double _pricePerEur;
+        private double _priceTotalDkk;
+        private double _priceTotalEur;
+
+
+        public static ProductPart ProductPart { get; set; }
+
+        public int ProductPartId
+        {
+            get { return _productPartId; }
+            set { _productPartId = value; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
+        }
+
+        public int ProductPartAmount
+        {
+            get { return _productPartAmount; }
+            set { _productPartAmount = value; }
+        }
+
+        public double PricePerDkk
+        {
+            get { return _pricePerDkk; }
+            set { _pricePerDkk = value; }
+        }
+
+        public double PricePerEur
+        {
+            get { return _pricePerEur; }
+            set { _pricePerEur = value; }
+        }
+
+        public double PriceTotalDkk
+        {
+            get { return _priceTotalDkk; }
+            set { _priceTotalDkk = value; }
+        }
+
+        public double PriceTotalEur
+        {
+            get { return _priceTotalEur; }
+            set { _priceTotalEur = value; }
+        }
+        #endregion
+
+        public ViewModel24Sport()
+        {
+            Handler24Sport = new Handler.Handler24Sport(this);
+            Singleton24Sport = Singleton24Sport.Instance;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

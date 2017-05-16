@@ -15,5 +15,18 @@ namespace _24SportLagersystem.Handler
         {
             ViewModel24Sport = viewModel24Sport;
         }
+
+        public void CreateProduct()
+        {
+            ViewModel24Sport.Singleton24Sport.AddProduct(ViewModel24Sport.ProductId, ViewModel24Sport.ProductName,
+                ViewModel24Sport.Price, ViewModel24Sport.Height, ViewModel24Sport.AmountMade,
+                ViewModel24Sport.AmountMakeable);
+        }
+
+        public void CreateProductPart()
+        {
+            ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId, ViewModel24Sport.Description, ViewModel24Sport.Amount, ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk, ViewModel24Sport.PriceTotalEur);
+        }
+
     }
 }
