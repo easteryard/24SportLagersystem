@@ -51,12 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleCustomer.cs" />
-    <Compile Include="ConsoleOrder.cs" />
-    <Compile Include="ConsoleOrderLine.cs" />
-    <Compile Include="ConsoleProduct.cs" />
-    <Compile Include="ConsoleProductLine.cs" />
-    <Compile Include="ConsoleProductPart.cs" />
+    <Compile Include="ConsoleModel\ConsoleCustomer.cs" />
+    <Compile Include="ConsoleModel\ConsoleOrder.cs" />
+    <Compile Include="ConsoleModel\ConsoleOrderLine.cs" />
+    <Compile Include="ConsoleModel\ConsoleProduct.cs" />
+    <Compile Include="ConsoleModel\ConsoleProductLine.cs" />
+    <Compile Include="ConsoleModel\ConsoleProductPart.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,9 +70,7 @@
       <Name>24SportWS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ConsoleModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
