@@ -10,30 +10,31 @@ namespace _24SportLagersystem.Model
 {
     class Singleton24Sport
     {
-      //  public PersistencyService.PersistencyService PersistencyService { get; set; }
+        //her laver vi et objekt af singleton 
         private static Singleton24Sport _instance = new Singleton24Sport();
+
+        //denne get metode tjekker om der er oprettet et singleton objekt og er der ikke dette, laver den et og kun et objekt.
         public static Singleton24Sport Instance
-        {
-
-
+        {   
             get { return _instance ?? (_instance = new Singleton24Sport()); }
-
         }
 
+        //her laver vi en masse observablecollection med datatypen Product,Customer,Order,OrderLine,ProductLine,ProductPart og giver dem efterfølgende et navn
         public ObservableCollection<Product> Products { get; set; }
         public ObservableCollection<Customer> Customers { get; set; }
         public ObservableCollection<Order> Orders { get; set; }
         public ObservableCollection<OrderLine> OrderLines { get; set; }
         public ObservableCollection<ProductLine> ProductLines { get; set; }
         public ObservableCollection<ProductPart> ProductParts { get; set; }
-
-
+        
+        //dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. i vores konstruktør bliver der lavet et nyt observablecollection objekt af product, og der der bliver også kaldt en load metode af vores products
         private Singleton24Sport()
         {
             Products = new ObservableCollection<Product>();
             LoadProductsAsync();
         }
 
+        
         public void AddProduct(Product newProduct)
         {
             Products.Add(newProduct);
@@ -52,6 +53,7 @@ namespace _24SportLagersystem.Model
             ProductPart myProductPart = new ProductPart(productPartId, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
             ProductParts.Add(myProductPart);
         }
+
         public async void LoadProductsAsync()
         {
             var products = await PersistencyService.LoadProductFromJsonAsync();
