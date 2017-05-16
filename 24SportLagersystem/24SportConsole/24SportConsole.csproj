@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleCustomer.cs" />
+    <Compile Include="ConsoleOrder.cs" />
+    <Compile Include="ConsoleOrderLine.cs" />
+    <Compile Include="ConsoleProduct.cs" />
+    <Compile Include="ConsoleProductLine.cs" />
+    <Compile Include="ConsoleProductPart.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +69,9 @@
       <Project>{8a24d9e4-2b1f-4f75-8418-2227e6d4caa9}</Project>
       <Name>24SportWS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ConsoleModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
