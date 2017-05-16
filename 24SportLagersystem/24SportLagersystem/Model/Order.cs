@@ -8,7 +8,7 @@ namespace _24SportLagersystem.Model
 {
     class Order
     {
-        public int OrderNo { get; set; }
+        public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
 
@@ -17,16 +17,16 @@ namespace _24SportLagersystem.Model
 
         }
 
-        public Order(int orderNo, DateTime orderDate, DateTime deliveryDate)
+        public Order(int orderId, DateTime orderDate, DateTime deliveryDate)
         {
-            OrderNo = orderNo;
+            OrderId = orderId;
             OrderDate = orderDate;
             DeliveryDate = deliveryDate;
         }
 
         public override string ToString()
         {
-            return $"{nameof(OrderNo)}: {OrderNo}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
+            return $"{nameof(OrderId)}: {OrderId}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
         }
     }
 }
