@@ -8,29 +8,25 @@ namespace _24SportLagersystem.Model
 {
     class Order
     {
-        //her har vi vores properties
-        public int OrderNo { get; set; }
+        public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
 
-        //dette er vores default konstruktør
         public Order()
         {
 
         }
 
-        //dette er vores konstruktør som initialisere vores properties
-        public Order(int orderNo, DateTime orderDate, DateTime deliveryDate)
+        public Order(int orderId, DateTime orderDate, DateTime deliveryDate)
         {
-            OrderNo = orderNo;
+            OrderId = orderId;
             OrderDate = orderDate;
             DeliveryDate = deliveryDate;
         }
 
-        //dette er vores tostring som gør det muligt at udksrive vores properties
         public override string ToString()
         {
-            return $"{nameof(OrderNo)}: {OrderNo}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
+            return $"{nameof(OrderId)}: {OrderId}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
         }
     }
 }
