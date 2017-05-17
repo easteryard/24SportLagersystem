@@ -83,9 +83,27 @@
 
             <TextBox x:Name="Search" SelectedText="Search" TextAlignment="Center" TextWrapping="Wrap" Text="" Grid.Row="1" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
             <Button x:Name="Medaljer" Content="Medaljer" Grid.Row="3"  Width="183" IsEnabled="False" />
-            <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" />
-            <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" />
-            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" />
+            <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewEmblemer"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewVimbler"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewPokaler"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
             <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
             <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
             <Button x:Name="button6" Content="Button" Grid.Row="9" Width="183"/>
