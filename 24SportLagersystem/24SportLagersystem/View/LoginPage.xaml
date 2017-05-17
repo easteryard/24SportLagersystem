@@ -48,6 +48,13 @@
                 </interactivity:Interaction.Behaviors>
             </Button>
             <PasswordBox x:Name="passwordBox" Grid.Column="2"  Grid.Row="7" VerticalAlignment="Top" MaxLength="16" PasswordChar="*"    />
+            <Button x:Name="TestKnap" Content="Hemmeligheder" Grid.Column="3" HorizontalAlignment="Left" Margin="54,11,0,0" Grid.Row="11" VerticalAlignment="Top" Width="132">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.TestView"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
 
         </Grid>
     </Grid>

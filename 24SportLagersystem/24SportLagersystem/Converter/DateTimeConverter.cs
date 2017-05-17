@@ -9,6 +9,8 @@ namespace _24SportLagersystem.Converter
     class DateTimeConverter
     {
         public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date, TimeSpan time)
-        { return new DateTime(date.Year, date.Month, date.Day, time.Hours, time.Minutes, 0); }
+        {
+            return new DateTime(date.Year, date.Month, date.Day, time.Hours, time.Minutes, 0);
+        }
     }
 }

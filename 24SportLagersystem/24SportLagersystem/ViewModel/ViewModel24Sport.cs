@@ -57,7 +57,7 @@ namespace _24SportLagersystem.ViewModel
         private string _name;
         private int _phoneNo;
         private string _address;
-        private int _email;
+        private string _email;
 
         public static Customer Customer { get; set; }
 
@@ -74,7 +74,7 @@ namespace _24SportLagersystem.ViewModel
             set { _name = value; }
         }
 
-        public int phoneNo
+        public int PhoneNo
         {
             get { return _phoneNo; }
             set { _phoneNo = value; }
@@ -86,7 +86,7 @@ namespace _24SportLagersystem.ViewModel
             set { _address = value; }
         }
 
-        public int Email
+        public string Email
         {
             get { return _email; }
             set { _email = value; }
@@ -94,28 +94,35 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region OrderProps
-        private int _orderNo;
-        private DateTime _deliveryDate;
-        private DateTime _orderDate;
+        private int _orderId;
+        private DateTimeOffset _deliveryDate;
+        private DateTimeOffset _orderDate;
+        private TimeSpan _timeSpan;
 
         public static Order Order { get; set; }
 
-        public int OrderNo
+        public int OrderId
         {
-            get { return _orderNo; }
-            set { _orderNo = value; }
+            get { return _orderId; }
+            set { _orderId = value; }
         }
 
-        public DateTime DeliveryDate
+        public DateTimeOffset DeliveryDate
         {
             get { return _deliveryDate; }
             set { _deliveryDate = value; }
         }
 
-        public DateTime OrderDate
+        public DateTimeOffset OrderDate
         {
             get { return _orderDate; }
             set { _orderDate = value; }
+        }
+
+        public TimeSpan TimeSpan
+        {
+            get { return _timeSpan; }
+            set { _timeSpan = value; }
         }
 
         #endregion
@@ -269,6 +276,11 @@ namespace _24SportLagersystem.ViewModel
         {
             Handler24Sport = new Handler.Handler24Sport(this);
             Singleton24Sport = Singleton24Sport.Instance;
+            DateTime dt = System.DateTime.Now;
+
+            _orderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            _deliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            _timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

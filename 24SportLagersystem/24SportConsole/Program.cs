@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using _24SportWS;
 using _24SportConsole;
+using _24SportWS;
 
 namespace _24SportConsole
 {
@@ -18,7 +19,8 @@ namespace _24SportConsole
             //SaveEventsAsJsonAsync(new ConsoleCustomer(0, "Karsten", 12345678, "Vejen 1, 4000", "mail@mail.dk"));
 
             // READ METHOD
-            GetCustomerAsAsync();
+           // GetCustomerAsAsync();
+            LoadOrderFromJsonAsync();
 
             // UPDATE METHOD - virker ikke ordentlig i console
             //EditCustomerAsync(new ConsoleCustomer(1, "Knud", 4321, "Hej 123", "mail@mail.dk"));
@@ -134,6 +136,40 @@ namespace _24SportConsole
                 }
                 catch (Exception ex)
                 {
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<List<Order>> LoadOrderFromJsonAsync()
+        {
+            const string ServerUrl = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                try// i try delen er her vi forventer der kan ske en fejl. 
+                {
+                    var responce = client.GetAsync("api/Orders").Result;
+                    if (responce.IsSuccessStatusCode)
+                    {
+                        var orderdata = responce.Content.ReadAsAsync<IEnumerable<Order>>().Result;
+                        foreach (var order in orderdata)
+                        {
+                            Console.WriteLine(order);
+                        }
+                      //  return orderdata.ToList();
+                    }
+                    return null;
+                }
+                catch (Exception)// i catch er her vi fanger den opstået fejl og giver en evt fejl meddelse/gemmer fejlen i en logfil
+                {
+
                     throw;
                 }
             }
