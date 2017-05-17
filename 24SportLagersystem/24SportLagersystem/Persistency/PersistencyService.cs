@@ -25,11 +25,11 @@ namespace _24SportLagersystem.Persistency
 
                 try// i try delen er her vi forventer der kan ske en fejl. 
                 {
-                    var responce = client.GetAsync("api/Orders").Result;
-                    if (responce.IsSuccessStatusCode)
+                    var response = client.GetAsync("api/Orders").Result;
+                    if (response.IsSuccessStatusCode)
                     {
-                        var orderdata = responce.Content.ReadAsAsync<IEnumerable<Order>>().Result;
-                        return orderdata.ToList();
+                        var orderData = response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
+                        return orderData.ToList();
                     }
                     return null;
                 }

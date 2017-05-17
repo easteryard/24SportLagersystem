@@ -79,10 +79,10 @@ namespace _24SportLagersystem.Model
             Products.Add(myProduct);
         }
 
-        public void AddProductPart(int productPartId, string description, int amount, double pricePerDkk, double pricePerEur,
+        public void AddProductPart(int productPartId, int productPartNo, string description, int amount, double pricePerDkk, double pricePerEur,
             double priceTotalDkk, double priceTotalEur)
         {
-            ProductPart myProductPart = new ProductPart(productPartId, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
+            ProductPart myProductPart = new ProductPart(productPartId, productPartNo, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
             ProductParts.Add(myProductPart);
         }
 
