@@ -20,9 +20,9 @@ namespace _24SportLagersystem.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Unnamed1 : Page
+    public sealed partial class OverviewEmblemer : Page
     {
-        public Unnamed1()
+        public OverviewEmblemer()
         {
             this.InitializeComponent();
         }
