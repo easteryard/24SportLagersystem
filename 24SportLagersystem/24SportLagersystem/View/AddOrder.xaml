@@ -91,12 +91,13 @@
 
 
             </Grid.RowDefinitions>
+            <TextBlock x:Name="søg" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Søg"/>
 
             <TextBox x:Name="Search1" SelectedText="Search" TextAlignment="Center" TextWrapping="Wrap" Text="" Grid.Row="1" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
             <Button x:Name="Medaljer" Content="Medaljer" Grid.Row="3"  Width="183" />
             <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" />
             <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" />
-            <Button x:Name="button3" Content="Button" Grid.Row="6" Width="183" />
+            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" />
             <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
             <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
             <Button x:Name="button6" Content="Button" Grid.Row="9" Width="183"/>
