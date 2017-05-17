@@ -8,17 +8,20 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="DataTemplate">
-            <Grid>
-                <StackPanel HorizontalAlignment="Left" Height="677" VerticalAlignment="Top" Width="760" Margin="0,0,-740,-657">
-                    <TextBox x:Name="textBox" TextWrapping="Wrap" Text="TextBox" Height="78" Margin="0,0,651,0"/>
-                    <TextBox x:Name="textBox1" TextWrapping="Wrap" Text="TextBox"/>
-                </StackPanel>
+            <Grid d:DesignWidth="582" d:DesignHeight="383.5" Height="145">
+                <StackPanel HorizontalAlignment="Left" Height="144" VerticalAlignment="Top" Width="582"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="25,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="131,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Margin="249,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox1_Copy1" HorizontalAlignment="Left" Margin="359,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox1_Copy2" HorizontalAlignment="Left" Margin="464,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="575" Margin="63,47,0,0" VerticalAlignment="Top" Width="396" ItemTemplate="{StaticResource DataTemplate}"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="960,573,0,0" VerticalAlignment="Top" Height="82" Width="96"/>
 
     </Grid>
 </Page>
