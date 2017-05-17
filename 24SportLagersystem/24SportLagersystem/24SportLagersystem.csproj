@@ -122,6 +122,12 @@
     <Compile Include="View\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OverviewPokaler.xaml.cs">
+      <DependentUpon>OverviewPokaler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OverviewVimbler.xaml.cs">
+      <DependentUpon>OverviewVimbler.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductPartTestView.xaml.cs">
       <DependentUpon>ProductPartTestView.xaml</DependentUpon>
     </Compile>
@@ -131,11 +137,11 @@
     <Compile Include="View\Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Unnamed.xaml.cs">
-      <DependentUpon>Unnamed.xaml</DependentUpon>
+    <Compile Include="View\OverviewMedaljer.xaml.cs">
+      <DependentUpon>OverviewMedaljer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Unnamed1.xaml.cs">
-      <DependentUpon>Unnamed1.xaml</DependentUpon>
+    <Compile Include="View\OverviewEmblemer.xaml.cs">
+      <DependentUpon>OverviewEmblemer.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +181,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OverviewPokaler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OverviewVimbler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ProductPartTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,11 +201,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Unnamed.xaml">
+    <Page Include="View\OverviewMedaljer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Unnamed1.xaml">
+    <Page Include="View\OverviewEmblemer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
