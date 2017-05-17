@@ -36,7 +36,7 @@ namespace _24SportLagersystem.Model
             OrderLines = new ObservableCollection<OrderLine>();
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
-            LoadProductsAsync();
+            LoadOrdersAsync();
         }
 
         #region AddMethodsWithObjectParameter
@@ -111,7 +111,7 @@ namespace _24SportLagersystem.Model
         }
         #endregion
 
-        public async void LoadProductsAsync()
+        public async void LoadOrdersAsync()
         {
             var orders = await PersistencyService.LoadProductFromJsonAsync();
             if (orders != null)
