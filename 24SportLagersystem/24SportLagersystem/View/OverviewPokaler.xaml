@@ -103,7 +103,7 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" />
+            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" IsEnabled="False" />
             <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
             <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
             <Button x:Name="button6" Content="Button" Grid.Row="9" Width="183"/>
