@@ -26,22 +26,54 @@ namespace _24SportLagersystem.Model
         public ObservableCollection<OrderLine> OrderLines { get; set; }
         public ObservableCollection<ProductLine> ProductLines { get; set; }
         public ObservableCollection<ProductPart> ProductParts { get; set; }
-        
+
         //dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. i vores konstruktør bliver der lavet et nyt observablecollection objekt af product, og der der bliver også kaldt en load metode af vores products
         private Singleton24Sport()
         {
             Products = new ObservableCollection<Product>();
+            Customers = new ObservableCollection<Customer>();
+            Orders = new ObservableCollection<Order>();
+            OrderLines = new ObservableCollection<OrderLine>();
+            ProductLines = new ObservableCollection<ProductLine>();
+            ProductParts = new ObservableCollection<ProductPart>();
             LoadProductsAsync();
         }
 
-        
+        #region AddMethodsWithObjectParameter
         public void AddProduct(Product newProduct)
         {
             Products.Add(newProduct);
         }
 
+        public void AddProductPart(ProductPart newProductPart)
+        {
+            ProductParts.Add(newProductPart);
+        }
+
+        public void AddProductLine(ProductLine newProductLine)
+        {
+            ProductLines.Add(newProductLine);
+        }
+
+        public void AddCustomer(Customer newCustomer)
+        {
+            Customers.Add(newCustomer);
+        }
+
+        public void AddOrder(Order newOrder)
+        {
+            Orders.Add(newOrder);
+        }
+
+        public void AddOrderLine(OrderLine newOrderLine)
+        {
+            OrderLines.Add(newOrderLine);
+        }
+        #endregion
+
+        #region AddMethodsWithoutObjectParameter
         public void AddProduct(int productId, string productName, double height, double price, int amountMade,
-            int amountMakeable)
+        int amountMakeable)
         {
             Product myProduct = new Product(productId, productName, height, price, amountMade, amountMakeable);
             Products.Add(myProduct);
@@ -53,6 +85,31 @@ namespace _24SportLagersystem.Model
             ProductPart myProductPart = new ProductPart(productPartId, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
             ProductParts.Add(myProductPart);
         }
+
+        public void AddProductLine(int productLineId, int amount)
+        {
+            ProductLine myProductLine = new ProductLine(productLineId, amount);
+            ProductLines.Add(myProductLine);
+        }
+
+        public void AddOrder(int orderId, DateTime orderDate, DateTime deliveryDate)
+        {
+            Order myOrder = new Order(orderId, orderDate, deliveryDate);
+            Orders.Add(myOrder);
+        }
+
+        public void AddOrderLine(int orderLineId, int amount)
+        {
+            OrderLine myOrderLine = new OrderLine(orderLineId, amount);
+            OrderLines.Add(myOrderLine);
+        }
+
+        public void AddCustomer(int customerId, string name, int phoneNo, string address, string email)
+        {
+            Customer myCustomer = new Customer(customerId, name, phoneNo, address, email);
+            Customers.Add(myCustomer);
+        }
+        #endregion
 
         public async void LoadProductsAsync()
         {
