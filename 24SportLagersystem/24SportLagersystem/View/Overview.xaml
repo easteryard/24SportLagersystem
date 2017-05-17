@@ -11,52 +11,6 @@
     mc:Ignorable="d">
 
     <Grid Background="#FF918989">
-        <Grid BorderThickness="0,1,1,1" BorderBrush="White" Margin="578,10,170,20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <TextBlock x:Name="OverviewVareNr"   TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="VareNr"/>
-            <TextBlock x:Name="OverviewBeskrivelse"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Beskrivelse" Grid.Column="1"/>
-            <TextBlock x:Name="OverviewAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Antal" Grid.Column="2"/>
-            <TextBlock x:Name="OverviewPris"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Pris" Grid.Column="3"/>
-            <TextBlock x:Name="OverviewStkAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="StkAntal" Grid.Column="4"/>
-
-            <ListView x:Name="ListviewVareNr" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" >
-                <StackPanel Height="50" Width="80" />
-            </ListView>
-
-            <ListView x:Name="ListviewNeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
-
-            <ListView x:Name="ListviewAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
-
-            <ListView x:Name="ListviewPris" Grid.Row="1" Grid.RowSpan="4" Grid.Column="3" BorderThickness="1" BorderBrush="White">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
-
-            <ListView x:Name="ListviewStkAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" BorderThickness="1" BorderBrush="White">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
-
-
-        </Grid>
 
         <Grid HorizontalAlignment="Left" Width="550" Margin="30,10,0,20" BorderBrush="White" BorderThickness="2">
             <Grid.ColumnDefinitions>
@@ -82,16 +36,40 @@
             </Grid.RowDefinitions>
 
             <TextBox x:Name="Search" SelectedText="Search" TextAlignment="Center" TextWrapping="Wrap" Text="" Grid.Row="1" Grid.Column="1" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-            <Button x:Name="Medaljer" Content="Medaljer" Grid.Row="3"  Width="183" />
-            <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" />
-            <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" />
-            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" />
+            <Button x:Name="Medaljer" Content="Medaljer" Grid.Row="3"  Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewMedaljer"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Emblemer" Content="Emblemer" Grid.Row="4" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewEmblemer"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Vimbler" Content="Vimbler" Grid.Row="5" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewVimbler"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="Pokaler" Content="Pokaler" Grid.Row="6" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OverviewPokaler"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
             <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
             <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
             <Button x:Name="button6" Content="Button" Grid.Row="9" Width="183"/>
             <Button x:Name="button7" Content="Button" Grid.Row="10" Width="183"/>
             <Button x:Name="button8" Content="Button" Grid.Row="11" Width="183"/>
-            <Button x:Name="button11" Content="Tilbage"  Width="183" Grid.Column="2" Grid.Row="11">
+            <Button x:Name="Tilbage" Content="Tilbage"  Width="183" Grid.Column="2" Grid.Row="11">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>
@@ -99,6 +77,52 @@
                 </interactivity:Interaction.Behaviors>
             </Button>
             <TextBlock x:Name="søg" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Søg"/>
+            <Grid BorderThickness="0,1,1,1" BorderBrush="White" Margin="0,10,-564,-14" Grid.Column="2" HorizontalAlignment="Right" Grid.RowSpan="12" Width="532">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="OverviewVareNr"   TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="VareNr"/>
+                <TextBlock x:Name="OverviewBeskrivelse"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Beskrivelse" Grid.Column="1"/>
+                <TextBlock x:Name="OverviewAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Antal" Grid.Column="2"/>
+                <TextBlock x:Name="OverviewPris"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Pris" Grid.Column="3"/>
+                <TextBlock x:Name="OverviewStkAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="StkAntal" Grid.Column="4"/>
+
+                <ListView x:Name="ListviewVareNr" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" >
+                    <StackPanel Height="50" Width="80" />
+                </ListView>
+
+                <ListView x:Name="ListviewNeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White">
+                    <StackPanel Height="50" Width="80"/>
+                </ListView>
+
+                <ListView x:Name="ListviewAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White">
+                    <StackPanel Height="50" Width="80"/>
+                </ListView>
+
+                <ListView x:Name="ListviewPris" Grid.Row="1" Grid.RowSpan="4" Grid.Column="3" BorderThickness="1" BorderBrush="White">
+                    <StackPanel Height="50" Width="80"/>
+                </ListView>
+
+                <ListView x:Name="ListviewStkAntal" Grid.Row="1" Grid.RowSpan="4" Grid.Column="4" BorderThickness="1" BorderBrush="White">
+                    <StackPanel Height="50" Width="80"/>
+                </ListView>
+
+
+            </Grid>
 
         </Grid>
 
