@@ -14,8 +14,7 @@
                 <TextBox x:Name="Height" HorizontalAlignment="Left" Margin="125,32,0,0" TextWrapping="Wrap" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
                 <TextBox x:Name="Price" HorizontalAlignment="Left" Margin="232,32,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
                 <TextBox x:Name="AmountMade" HorizontalAlignment="Left" Margin="337,32,-105,0" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                <TextBox x:Name="AmouneMakeable" HorizontalAlignment="Left" Margin="432,32,-200,0" TextWrapping="Wrap" Text="{Binding AmountMakeable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="934,478,-882,-550" VerticalAlignment="Top" Height="224" Width="312" MinWidth="1" MinHeight="1" BorderBrush="Black"/>
+                <TextBox x:Name="AmountMakeable" HorizontalAlignment="Left" Margin="432,32,-200,0" TextWrapping="Wrap" Text="{Binding AmountMakeable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
@@ -25,5 +24,6 @@
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="461" Margin="10,0,0,0" VerticalAlignment="Top" Width="553" ItemTemplate="{StaticResource DataTemplate}" ItemsSource="{Binding Singleton24Sport.Products}"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="974,493,0,0" VerticalAlignment="Top" Height="110" Width="108"/>
     </Grid>
 </Page>

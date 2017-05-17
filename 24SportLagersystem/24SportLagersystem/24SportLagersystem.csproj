@@ -122,6 +122,9 @@
     <Compile Include="View\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProductPartTestView.xaml.cs">
+      <DependentUpon>ProductPartTestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductTestView.xaml.cs">
       <DependentUpon>ProductTestView.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Overview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductPartTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

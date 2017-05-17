@@ -22,31 +22,12 @@ namespace _24SportLagersystem.ViewModel
         public Handler.Handler24Sport Handler24Sport { get; set; }
 
         #region RelayCommands
-        private ICommand _createCommand;
-        private ICommand _selectCommand;
-        private ICommand _deleteCommand;
 
-        public ICommand CreateCommand
-        {
-            get
-            {
-                if (_createCommand == null) _createCommand = new RelayCommand(Handler24Sport.CreateProduct);
-                return _createCommand; }
+        public ICommand CreateProductPartCommand { get; set; }
+        public ICommand EditProductPartCommand { get; set; }
+        public ICommand DeleteProductPartCommand { get; set; }
 
-            set { _createCommand = value; }
-        }
 
-        public ICommand SelectCommand
-        {
-            get { return _selectCommand; }
-            set { _selectCommand = value; }
-        }
-
-        public ICommand DeleteCommand
-        {
-            get { return _deleteCommand; }
-            set { _deleteCommand = value; }
-        }
 
         #endregion
 
@@ -211,64 +192,25 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region ProductPartProps
-        private int _productPartId;
-        private string _description;
-        private int _productPartAmount;
-        private double _pricePerDkk;
-        private double _pricePerEur;
-        private double _priceTotalDkk;
-        private double _priceTotalEur;
+
+        public int ProductPartId { get; set; }
+        public string Description { get; set; }
+        public int ProductPartAmount { get; set; }
+        public double PricePerDkk { get; set; }
+        public double PricePerEur { get; set; }
+        public double PriceTotalDkk { get; set; }
+        public double PriceTotalEur { get; set; }
 
 
         public static ProductPart ProductPart { get; set; }
 
-        public int ProductPartId
-        {
-            get { return _productPartId; }
-            set { _productPartId = value; }
-        }
-
-        public string Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
-
-        public int ProductPartAmount
-        {
-            get { return _productPartAmount; }
-            set { _productPartAmount = value; }
-        }
-
-        public double PricePerDkk
-        {
-            get { return _pricePerDkk; }
-            set { _pricePerDkk = value; }
-        }
-
-        public double PricePerEur
-        {
-            get { return _pricePerEur; }
-            set { _pricePerEur = value; }
-        }
-
-        public double PriceTotalDkk
-        {
-            get { return _priceTotalDkk; }
-            set { _priceTotalDkk = value; }
-        }
-
-        public double PriceTotalEur
-        {
-            get { return _priceTotalEur; }
-            set { _priceTotalEur = value; }
-        }
         #endregion
 
         public ViewModel24Sport()
         {
             Handler24Sport = new Handler.Handler24Sport(this);
             Singleton24Sport = Singleton24Sport.Instance;
+            CreateProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
