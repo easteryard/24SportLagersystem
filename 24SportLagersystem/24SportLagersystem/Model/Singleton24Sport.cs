@@ -113,13 +113,18 @@ namespace _24SportLagersystem.Model
 
         public async void LoadProductsAsync()
         {
-            var products = await PersistencyService.LoadProductFromJsonAsync();
-            if (products != null)
-                foreach (var ev in products)
+            var orders = await PersistencyService.LoadProductFromJsonAsync();
+            if (orders != null)
+                foreach (var ev in orders)
                 {
-                    Products.Add(ev);
+                    Orders.Add(ev);
                 }
 
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(Orders)}: {Orders}";
         }
     }
 }

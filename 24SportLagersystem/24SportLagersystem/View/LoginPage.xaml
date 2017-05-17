@@ -40,7 +40,7 @@
             <TextBlock x:Name="BrugerLogin" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Bottom" Grid.Row="4" TextWrapping="Wrap" Text="Bruger"/>
             <TextBox x:Name="Brugerlogin1" Grid.Column="2"  VerticalAlignment="Top" Grid.Row="5" TextWrapping="Wrap" Text=""/>
             <TextBlock x:Name="Password" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Bottom" Grid.Row="6" TextWrapping="Wrap" Text="Kodeord"/>
-            <Button x:Name="ToSearchPage" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Login" Grid.Column="4" Grid.Row="10" Height="84" Grid.RowSpan="2" Width="300" Margin="1,45,88,42">
+            <Button x:Name="button" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Login" Grid.Column="4" Grid.Row="10" Height="84" Grid.RowSpan="2" Width="300" Margin="1,45,88,42">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>
@@ -48,10 +48,10 @@
                 </interactivity:Interaction.Behaviors>
             </Button>
             <PasswordBox x:Name="passwordBox" Grid.Column="2"  Grid.Row="7" VerticalAlignment="Top" MaxLength="16" PasswordChar="*"    />
-            <Button x:Name="ToProductPartTestPage" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Login" Grid.Column="1" Grid.Row="10" Height="84" Grid.RowSpan="2" Width="300" Margin="73,16,138,11" Grid.ColumnSpan="2">
+            <Button x:Name="TestKnap" Content="Hemmeligheder" Grid.Column="3" HorizontalAlignment="Left" Margin="54,11,0,0" Grid.Row="11" VerticalAlignment="Top" Width="132">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductPartTestView"/>
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.TestView"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>

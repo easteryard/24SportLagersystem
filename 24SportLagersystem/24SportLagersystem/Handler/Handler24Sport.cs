@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _24SportLagersystem.Converter;
 using _24SportLagersystem.ViewModel;
 
 namespace _24SportLagersystem.Handler
@@ -26,6 +27,16 @@ namespace _24SportLagersystem.Handler
         public void CreateProductPart()
         {
             ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId, ViewModel24Sport.Description, ViewModel24Sport.Amount, ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk, ViewModel24Sport.PriceTotalEur);
+        }
+
+        public void CreateCustomer()
+        {
+            ViewModel24Sport.Singleton24Sport.AddCustomer(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
+        }
+
+        public void CreateOrder()
+        {
+            ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate, ViewModel24Sport.TimeSpan), DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate, ViewModel24Sport.TimeSpan));
         }
 
     }

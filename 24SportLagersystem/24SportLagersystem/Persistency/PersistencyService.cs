@@ -11,7 +11,7 @@ namespace _24SportLagersystem.Persistency
 {
     class PersistencyService
     {
-        public static async Task<List<Product>> LoadProductFromJsonAsync()
+        public static async Task<List<Order>> LoadProductFromJsonAsync()
         {
             const string ServerUrl = "http://localhost:41731";
             HttpClientHandler handler = new HttpClientHandler();
@@ -25,11 +25,11 @@ namespace _24SportLagersystem.Persistency
 
                 try// i try delen er her vi forventer der kan ske en fejl. 
                 {
-                    var responce = client.GetAsync("api/Products").Result;
+                    var responce = client.GetAsync("api/Orders").Result;
                     if (responce.IsSuccessStatusCode)
                     {
-                        var productsdata = responce.Content.ReadAsAsync<IEnumerable<Product>>().Result;
-                        return productsdata.ToList();
+                        var orderdata = responce.Content.ReadAsAsync<IEnumerable<Order>>().Result;
+                        return orderdata.ToList();
                     }
                     return null;
                 }
