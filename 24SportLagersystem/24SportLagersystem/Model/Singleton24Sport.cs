@@ -27,7 +27,7 @@ namespace _24SportLagersystem.Model
         public ObservableCollection<ProductLine> ProductLines { get; set; }
         public ObservableCollection<ProductPart> ProductParts { get; set; }
 
-        //dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. i vores konstruktør bliver der lavet et nyt observablecollection objekt af product, og der der bliver også kaldt en load metode af vores products
+        // Dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. I vores konstruktør bliver der lavet et nyt observablecollection objekt af Product, og der der bliver også kaldt en load metode af vores products
         private Singleton24Sport()
         {
             Products = new ObservableCollection<Product>();
@@ -36,7 +36,7 @@ namespace _24SportLagersystem.Model
             OrderLines = new ObservableCollection<OrderLine>();
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
-            LoadProductsAsync();
+            LoadOrdersAsync();
         }
 
         #region AddMethodsWithObjectParameter
@@ -111,15 +111,26 @@ namespace _24SportLagersystem.Model
         }
         #endregion
 
-        public async void LoadProductsAsync()
+        public async void LoadOrdersAsync()
         {
-            var orders = await PersistencyService.LoadProductFromJsonAsync();
+            var orders = await PersistencyService.LoadOrderFromJsonAsync();
             if (orders != null)
                 foreach (var ev in orders)
                 {
                     Orders.Add(ev);
                 }
+        }
 
+        public async void LoadProductPartsAsync()
+        {
+            var productParts = await ProductPartPersistencyService.LoadProductFromJsonAsync();
+            if (productParts != null)
+            {
+                foreach (var productPart in productParts)
+                {
+                    ProductParts.Add(productPart);
+                }
+            }
         }
 
         public override string ToString()

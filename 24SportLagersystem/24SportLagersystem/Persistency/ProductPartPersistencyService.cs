@@ -9,9 +9,9 @@ using _24SportLagersystem.Model;
 
 namespace _24SportLagersystem.Persistency
 {
-    class PersistencyService
+    class ProductPartPersistencyService
     {
-        public static async Task<List<Order>> LoadOrderFromJsonAsync()
+        public static async Task<List<ProductPart>> LoadProductFromJsonAsync()
         {
             const string ServerUrl = "http://localhost:41731";
             HttpClientHandler handler = new HttpClientHandler();
@@ -23,22 +23,19 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                // i try delen er her vi forventer der kan ske en fejl. 
                 try
                 {
-                    // Run the controller associated with Product in the webservice
-                    var response = client.GetAsync("api/Orders").Result;
+                    // Run the controller associated with ProductPart in the webservice
+                    var response = client.GetAsync("api/ProductParts").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var orderData = response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
-                        return orderData.ToList();
+                        var productPartData = response.Content.ReadAsAsync<IEnumerable<ProductPart>>().Result;
+                        return productPartData.ToList();
                     }
                     return null;
                 }
-                // i catch er her vi fanger den opstået fejl og giver en evt fejl meddelse/gemmer fejlen i en logfil
                 catch (Exception)
                 {
-
                     throw;
                 }
             }

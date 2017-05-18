@@ -22,6 +22,18 @@ namespace _24SportLagersystem.ViewModel
         public Handler.Handler24Sport Handler24Sport { get; set; }
 
         #region RelayCommands
+
+        public ICommand CreateProductPartCommand
+        {
+            get
+            {
+                // Return _createProductPartCommand - if it's null; create a new relaycommand
+                return _createProductPartCommand ??
+                       (_createProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart));
+            }
+            set { _createProductPartCommand = value; }
+        }
+
         private ICommand _createCommand;
         private ICommand _selectCommand;
         private ICommand _deleteCommand;
@@ -51,7 +63,7 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
 
-        #region CustomerProps
+        #region CustomerProperties
 
         private int _customerId;
         private string _name;
@@ -93,7 +105,7 @@ namespace _24SportLagersystem.ViewModel
         }
         #endregion
 
-        #region OrderProps
+        #region OrderProperties
         private int _orderId;
         private DateTimeOffset _deliveryDate;
         private DateTimeOffset _orderDate;
@@ -127,7 +139,7 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
-        #region OrderLineProps
+        #region OrderLineProperties
         private int _orderLineId;
         private int _amount;
 
@@ -147,7 +159,7 @@ namespace _24SportLagersystem.ViewModel
         }
         #endregion
 
-        #region ProductProps
+        #region ProductProperties
         private int _productId;
         private string _productName;
         private double _price;
@@ -195,7 +207,7 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
-        #region ProductLineProps
+        #region ProductLineProperties
         private int _productLineId;
         private int _productLineAmount;
 
@@ -217,7 +229,7 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
-        #region ProductPartProps
+        #region ProductPartProperties
         private int _productPartId;
         private int _productPartNo;
         private string _description;
@@ -226,6 +238,7 @@ namespace _24SportLagersystem.ViewModel
         private double _pricePerEur;
         private double _priceTotalDkk;
         private double _priceTotalEur;
+        private ICommand _createProductPartCommand;
 
         public static ProductPart ProductPart { get; set; }
 
