@@ -30,7 +30,7 @@ namespace _24SportLagersystem.ViewModel
         {
             get
             {
-                if (_createCommand == null) _createCommand = new RelayCommand(Handler24Sport.CreateProduct);
+                if (_createCommand == null) _createCommand = new RelayCommand(Handler24Sport.CreateOrder);
                 return _createCommand; }
 
             set { _createCommand = value; }
@@ -97,7 +97,8 @@ namespace _24SportLagersystem.ViewModel
         private int _orderId;
         private DateTimeOffset _deliveryDate;
         private DateTimeOffset _orderDate;
-        private TimeSpan _timeSpan;
+        private TimeSpan _timeSpanDeliveryDate;
+        private TimeSpan _timeSpanOrderDate;
 
         public static Order Order { get; set; }
 
@@ -119,10 +120,16 @@ namespace _24SportLagersystem.ViewModel
             set { _orderDate = value; }
         }
 
-        public TimeSpan TimeSpan
+        public TimeSpan TimeSpanDeliveryDate
         {
-            get { return _timeSpan; }
-            set { _timeSpan = value; }
+            get { return _timeSpanDeliveryDate; }
+            set { _timeSpanDeliveryDate = value; }
+        }
+
+        public TimeSpan TimeSpanOrdreDate
+        {
+            get { return _timeSpanOrderDate; }
+            set { _timeSpanOrderDate = value; }
         }
 
         #endregion
@@ -280,7 +287,8 @@ namespace _24SportLagersystem.ViewModel
 
             _orderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _deliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            _timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+            _timeSpanDeliveryDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+            _timeSpanOrderDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

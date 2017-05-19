@@ -36,7 +36,7 @@ namespace _24SportLagersystem.Handler
 
         public void CreateOrder()
         {
-            ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate, ViewModel24Sport.TimeSpan), DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate, ViewModel24Sport.TimeSpan));
+            ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate, ViewModel24Sport.TimeSpanOrdreDate), DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate, ViewModel24Sport.TimeSpanDeliveryDate));
         }
 
     }

@@ -60,10 +60,10 @@ namespace _24SportLagersystem.Model
             Customers.Add(newCustomer);
         }
 
-        public void AddOrder(Order newOrder)
-        {
-            Orders.Add(newOrder);
-        }
+        //public void AddOrder(Order newOrder)
+        //{
+        //    Orders.Add(newOrder);
+        //}
 
         public void AddOrderLine(OrderLine newOrderLine)
         {
@@ -96,7 +96,9 @@ namespace _24SportLagersystem.Model
         {
             Order myOrder = new Order(orderId, orderDate, deliveryDate);
             Orders.Add(myOrder);
+            PersistencyService.SaveOrdersAsJsonAsync(myOrder);
         }
+
 
         public void AddOrderLine(int orderLineId, int amount)
         {
@@ -121,6 +123,8 @@ namespace _24SportLagersystem.Model
                 }
 
         }
+
+
 
         public override string ToString()
         {

@@ -19,20 +19,17 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Margin="1,-1,-1,0">
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Margin="-10,0,0,0">
             <Grid.DataContext>
                 <ViewModel:ViewModel24Sport/>
             </Grid.DataContext>
             <ListView x:Name="listView" HorizontalAlignment="Left" Height="403" Margin="196,191,0,0" VerticalAlignment="Top" Width="514" ItemsSource="{Binding Singleton24Sport.Orders}" ItemTemplate="{StaticResource TestTemplate}"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="799,191,0,0" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="799,350,0,0" TextWrapping="Wrap" Text="{Binding Customer.CustomerId, Mode=TwoWay}" VerticalAlignment="Top"/>
             <DatePicker HorizontalAlignment="Right" Margin="0,237,185,0" VerticalAlignment="Top" Date="{Binding Order.OrderDate}"/>
-            <DatePicker HorizontalAlignment="Right" Margin="0,294,185,0" VerticalAlignment="Top" Date="{Binding Order.DeliveryDate}"/>
-            <Button x:Name="Add_Order" Content="Add Order" HorizontalAlignment="Right" Margin="0,350,261,334" VerticalAlignment="Stretch" Width="103" ClickMode="Press">
-                <Interactivity:Interaction.Behaviors>
-                    <Core:EventTriggerBehavior EventName="Click"/>
-                </Interactivity:Interaction.Behaviors>
-            </Button>
+            <DatePicker HorizontalAlignment="Right" Margin="0,399,185,0" VerticalAlignment="Top" Date="{Binding DeliveryDate}"/>
+            <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Create Order" Margin="971,515,0,0" VerticalAlignment="Top" Height="70" Width="124" Command="{Binding CreateCommand}"/>
+            <TimePicker HorizontalAlignment="Left" Margin="799,290,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanOrdreDate}"/>
+            <TimePicker HorizontalAlignment="Left" Margin="799,452,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanDeliveryDate}"/>
         </Grid>
 
     </Grid>
