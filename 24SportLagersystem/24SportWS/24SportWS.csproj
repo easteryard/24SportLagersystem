@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8A24D9E4-2B1F-4F75-8418-2227E6D4CAA9}</ProjectGuid>
+    <ProjectGuid>{B1EBEB53-FBAA-40F4-8F2F-5DA6A674D596}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -212,7 +212,7 @@
     <Compile Include="Models\ProductLine.cs" />
     <Compile Include="Models\ProductPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DatabaseContext\SportDBContext.cs" />
+    <Compile Include="SportDBContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -295,7 +295,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64178</DevelopmentServerPort>
+          <DevelopmentServerPort>11378</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:41731/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
