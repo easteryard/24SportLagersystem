@@ -55,10 +55,17 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="ToProductPartTestView" VerticalAlignment="Center" HorizontalAlignment="Center" Content="To ProductPartTest" Grid.Row="11" Height="44" Width="171" Margin="2,13,83,54" Grid.Column="1" Grid.RowSpan="2">
+            <Button x:Name="ToProductPartTestView" VerticalAlignment="Center" HorizontalAlignment="Center" Content="To ProductPartTest" Grid.Row="11" Height="44" Width="171" Margin="1,0,84,12" Grid.Column="1">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductPartTestView"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+            <Button x:Name="ToProductTestView" VerticalAlignment="Center" HorizontalAlignment="Center" Content="To ProductTest" Grid.Row="11" Height="44" Width="171" Margin="38,2,47,10">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductTestView"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>

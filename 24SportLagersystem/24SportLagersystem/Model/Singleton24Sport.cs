@@ -156,5 +156,6 @@ namespace _24SportLagersystem.Model
         {
             return $"{nameof(Products)}: {Products}, {nameof(Customers)}: {Customers}, {nameof(Orders)}: {Orders}, {nameof(OrderLines)}: {OrderLines}, {nameof(ProductLines)}: {ProductLines}, {nameof(ProductParts)}: {ProductParts}";
         }
+
     }
 }

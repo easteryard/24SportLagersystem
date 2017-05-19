@@ -18,8 +18,9 @@ namespace _24SportConsole
             //SaveEventsAsJsonAsync(new ConsoleCustomer(0, "Karsten", 12345678, "Vejen 1, 4000", "mail@mail.dk"));
 
             // READ METHOD
-            GetCustomerAsAsync();
-            // LoadOrderFromJsonAsync();
+            //GetCustomerAsAsync();
+            //LoadOrderFromJsonAsync();
+            LoadProductPartsFromJsonAsync();
 
             // UPDATE METHOD - virker ikke ordentlig i console
             //EditCustomerAsync(new ConsoleCustomer(1, "Knud", 4321, "Hej 123", "mail@mail.dk"));
@@ -134,6 +135,37 @@ namespace _24SportConsole
                     await client.DeleteAsync("api/Customers/" + customer);
                 }
                 catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public static async Task<List<ProductPart>> LoadProductPartsFromJsonAsync()
+        {
+            const string ServerUrl = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                //
+                try
+                {
+                    // Run the controller associated with ProductPart in the webservice
+                    var response = client.GetAsync("api/ProductParts").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var productPartData = response.Content.ReadAsAsync<IEnumerable<ProductPart>>().Result;
+                        return productPartData.ToList();
+                    }
+                    return null;
+                }
+                catch (Exception)
                 {
                     throw;
                 }

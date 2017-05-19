@@ -23,7 +23,7 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                // i try delen er her vi forventer der kan ske en fejl. 
+                // i try delen er her vi forventer der kan ske en fejl.
                 try
                 {
                     // Run the controller associated with Product in the webservice

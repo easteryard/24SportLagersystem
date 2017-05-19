@@ -9,21 +9,25 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="DataTemplate">
-            <Grid d:DesignWidth="649.167" d:DesignHeight="162.484">
-                <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="10,32,0,0" TextWrapping="Wrap" Text="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                <TextBox x:Name="Height" HorizontalAlignment="Left" Margin="125,32,0,0" TextWrapping="Wrap" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                <TextBox x:Name="Price" HorizontalAlignment="Left" Margin="232,32,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                <TextBox x:Name="AmountMade" HorizontalAlignment="Left" Margin="337,32,-105,0" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                <TextBox x:Name="AmountMakeable" HorizontalAlignment="Left" Margin="432,32,-200,0" TextWrapping="Wrap" Text="{Binding AmountMakeable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <Grid Height="166" Width="458">
+                <StackPanel HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="458">
+                    <TextBlock x:Name="productId" TextWrapping="Wrap" Text="{Binding ProductId}"/>
+                    <TextBlock x:Name="name" TextWrapping="Wrap" Text="{Binding ProductName}"/>
+                    <TextBlock x:Name="height" TextWrapping="Wrap" Text="{Binding Height}"/>
+                    <TextBlock x:Name="price" TextWrapping="Wrap" Text="{Binding Price}"/>
+                    <TextBlock x:Name="amountMade" TextWrapping="Wrap" Text="{Binding AmountMade}"/>
+                    <TextBlock x:Name="amountMakeable" TextWrapping="Wrap" Text="{Binding AmountMakeable}"/>
+                </StackPanel>
             </Grid>
         </DataTemplate>
     </Page.Resources>
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
         <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="974,493,0,0" VerticalAlignment="Top" Height="110" Width="108"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="626" Margin="30,40,0,0" VerticalAlignment="Top" Width="454" ItemsSource="{Binding Singleton24Sport.Products}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="626" Margin="30,40,0,0" VerticalAlignment="Top" Width="454" ItemsSource="{Binding Singleton24Sport.Products}" ItemTemplate="{StaticResource DataTemplate}"/>
     </Grid>
 </Page>
