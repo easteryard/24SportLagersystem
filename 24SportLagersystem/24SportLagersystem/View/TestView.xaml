@@ -19,17 +19,17 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Margin="-10,0,0,0">
+        <Grid HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Margin="-10,10,0,-10">
             <Grid.DataContext>
                 <ViewModel:ViewModel24Sport/>
             </Grid.DataContext>
             <ListView x:Name="listView" HorizontalAlignment="Left" Height="403" Margin="196,191,0,0" VerticalAlignment="Top" Width="514" ItemsSource="{Binding Singleton24Sport.Orders}" ItemTemplate="{StaticResource TestTemplate}"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="799,191,0,0" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Top"/>
-            <DatePicker HorizontalAlignment="Right" Margin="0,237,185,0" VerticalAlignment="Top" Date="{Binding Order.OrderDate}"/>
-            <DatePicker HorizontalAlignment="Right" Margin="0,399,185,0" VerticalAlignment="Top" Date="{Binding DeliveryDate}"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="799,191,0,0" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            <DatePicker HorizontalAlignment="Right" Margin="0,237,185,0" VerticalAlignment="Top" Date="{Binding Order.OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker HorizontalAlignment="Right" Margin="0,399,185,0" VerticalAlignment="Top" Date="{Binding DeliveryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Create Order" Margin="971,515,0,0" VerticalAlignment="Top" Height="70" Width="124" Command="{Binding CreateCommand}"/>
-            <TimePicker HorizontalAlignment="Left" Margin="799,290,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanOrdreDate}"/>
-            <TimePicker HorizontalAlignment="Left" Margin="799,452,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanDeliveryDate}"/>
+            <TimePicker HorizontalAlignment="Left" Margin="799,290,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanOrdreDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TimePicker HorizontalAlignment="Left" Margin="799,452,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanDeliveryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
 
     </Grid>

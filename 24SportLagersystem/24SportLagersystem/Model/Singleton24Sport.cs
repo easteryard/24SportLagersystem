@@ -40,35 +40,35 @@ namespace _24SportLagersystem.Model
         }
 
         #region AddMethodsWithObjectParameter
-        public void AddProduct(Product newProduct)
-        {
-            Products.Add(newProduct);
-        }
+        //public void AddProduct(Product newProduct)
+        //{
+        //    Products.Add(newProduct);
+        //}
 
-        public void AddProductPart(ProductPart newProductPart)
-        {
-            ProductParts.Add(newProductPart);
-        }
+        //public void AddProductPart(ProductPart newProductPart)
+        //{
+        //    ProductParts.Add(newProductPart);
+        //}
 
-        public void AddProductLine(ProductLine newProductLine)
-        {
-            ProductLines.Add(newProductLine);
-        }
+        //public void AddProductLine(ProductLine newProductLine)
+        //{
+        //    ProductLines.Add(newProductLine);
+        //}
 
-        public void AddCustomer(Customer newCustomer)
-        {
-            Customers.Add(newCustomer);
-        }
+        //public void AddCustomer(Customer newCustomer)
+        //{
+        //    Customers.Add(newCustomer);
+        //}
 
         //public void AddOrder(Order newOrder)
         //{
         //    Orders.Add(newOrder);
         //}
 
-        public void AddOrderLine(OrderLine newOrderLine)
-        {
-            OrderLines.Add(newOrderLine);
-        }
+        //public void AddOrderLine(OrderLine newOrderLine)
+        //{
+        //    OrderLines.Add(newOrderLine);
+        //}
         #endregion
 
         #region AddMethodsWithoutObjectParameter
