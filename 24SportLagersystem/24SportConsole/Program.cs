@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-//using _24SportWS;
 using _24SportConsole;
 using _24SportWS;
 
@@ -19,14 +18,16 @@ namespace _24SportConsole
             //SaveEventsAsJsonAsync(new ConsoleCustomer(0, "Karsten", 12345678, "Vejen 1, 4000", "mail@mail.dk"));
 
             // READ METHOD
-           // GetCustomerAsAsync();
-            LoadOrderFromJsonAsync();
+            GetCustomerAsAsync();
+            // LoadOrderFromJsonAsync();
 
             // UPDATE METHOD - virker ikke ordentlig i console
             //EditCustomerAsync(new ConsoleCustomer(1, "Knud", 4321, "Hej 123", "mail@mail.dk"));
 
             // DELETE METHOD - virker ikke ordentlig i console
             //DeleteCustomerAsync(2);
+
+            Console.ReadKey();
         }
 
         // CREATE METHOD

@@ -11,7 +11,7 @@ namespace _24SportLagersystem.Persistency
 {
     class ProductPartPersistencyService
     {
-        public static async Task<List<ProductPart>> LoadProductFromJsonAsync()
+        public static async Task<List<ProductPart>> LoadProductPartsFromJsonAsync()
         {
             const string ServerUrl = "http://localhost:41731";
             HttpClientHandler handler = new HttpClientHandler();

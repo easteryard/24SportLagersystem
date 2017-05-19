@@ -10,6 +10,7 @@ namespace _24SportWS
         public SportDBContext()
             : base("name=SportDBContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
@@ -32,11 +33,6 @@ namespace _24SportWS
             modelBuilder.Entity<Customer>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Customer>()
-                .HasMany(e => e.Orders)
-                .WithRequired(e => e.Customer)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderLines)

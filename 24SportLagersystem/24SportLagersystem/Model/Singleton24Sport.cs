@@ -123,7 +123,7 @@ namespace _24SportLagersystem.Model
 
         public async void LoadProductPartsAsync()
         {
-            var productParts = await ProductPartPersistencyService.LoadProductFromJsonAsync();
+            var productParts = await ProductPartPersistencyService.LoadProductPartsFromJsonAsync();
             if (productParts != null)
             {
                 foreach (var productPart in productParts)
