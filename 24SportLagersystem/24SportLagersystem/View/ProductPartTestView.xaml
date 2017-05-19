@@ -15,7 +15,7 @@
                 <Grid.DataContext>
                     <Model:ProductPart/>
                 </Grid.DataContext>
-                <StackPanel HorizontalAlignment="Left" Height="414" VerticalAlignment="Top" Width="526" Margin="0,0,-100,-116">
+                <StackPanel HorizontalAlignment="Left" Height="394" VerticalAlignment="Top" Width="526" Margin="0,0,-100,-96">
                     <TextBlock x:Name="productPartId" TextWrapping="Wrap" Text="{Binding ProductPartId}"/>
                     <TextBox x:Name="productPartNo" TextWrapping="Wrap" Text="{Binding ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBox x:Name="description" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

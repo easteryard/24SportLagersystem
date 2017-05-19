@@ -61,7 +61,6 @@ namespace _24SportConsole
         }
 
         // READ METHOD
-
         public static async void GetCustomerAsAsync()
         {
             const string SERVER_URL = "http://localhost:41731";
@@ -87,7 +86,6 @@ namespace _24SportConsole
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
             }

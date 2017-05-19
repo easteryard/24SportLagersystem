@@ -8,6 +8,7 @@ namespace _24SportConsole
 {
     class ConsoleProductPart
     {
+        public int ProductPartId { get; set; }
         public int ProductPartNo { get; set; }
         public string Description { get; set; }
         public int Amount { get; set; }
@@ -21,8 +22,9 @@ namespace _24SportConsole
 
         }
 
-        public ConsoleProductPart(int productPartNo, string description, int amount, double pricePerPieceDkk, double pricePerPieceEur, double priceTotalDkk, double priceTotalEur)
+        public ConsoleProductPart(int productPartId, int productPartNo, string description, int amount, double pricePerPieceDkk, double pricePerPieceEur, double priceTotalDkk, double priceTotalEur)
         {
+            ProductPartId = productPartId;
             ProductPartNo = productPartNo;
             Description = description;
             Amount = amount;
@@ -34,7 +36,7 @@ namespace _24SportConsole
 
         public override string ToString()
         {
-            return $"{nameof(ProductPartNo)}: {ProductPartNo}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";
+            return $"{nameof(ProductPartId)}: {ProductPartId}, {nameof(ProductPartNo)}: {ProductPartNo}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";
         }
     }
 }

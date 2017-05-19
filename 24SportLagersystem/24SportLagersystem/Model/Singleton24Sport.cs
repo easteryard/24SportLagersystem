@@ -10,7 +10,7 @@ namespace _24SportLagersystem.Model
 {
     class Singleton24Sport
     {
-        //her laver vi et objekt af singleton 
+        //her laver vi en instans af singleton
         private static Singleton24Sport _instance = new Singleton24Sport();
 
         //denne get metode tjekker om der er oprettet et singleton objekt og er der ikke dette, laver den et og kun et objekt.
@@ -27,7 +27,7 @@ namespace _24SportLagersystem.Model
         public ObservableCollection<ProductLine> ProductLines { get; set; }
         public ObservableCollection<ProductPart> ProductParts { get; set; }
 
-        // Dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. I vores konstruktør bliver der lavet et nyt observablecollection objekt af Product, og der der bliver også kaldt en load metode af vores products
+        // Dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. I vores konstruktør bliver observablecollection initialiseret, og der der bliver også kaldt en load metode af vores products
         private Singleton24Sport()
         {
             Products = new ObservableCollection<Product>();
@@ -37,6 +37,7 @@ namespace _24SportLagersystem.Model
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
+            LoadProductPartsAsync();
         }
 
         #region AddMethodsWithObjectParameter
@@ -133,9 +134,14 @@ namespace _24SportLagersystem.Model
             }
         }
 
+        //public override string ToString()
+        //{
+        //    return $"{nameof(Orders)}: {Orders}";
+        //}
+
         public override string ToString()
         {
-            return $"{nameof(Orders)}: {Orders}";
+            return $"{nameof(Products)}: {Products}, {nameof(Customers)}: {Customers}, {nameof(Orders)}: {Orders}, {nameof(OrderLines)}: {OrderLines}, {nameof(ProductLines)}: {ProductLines}, {nameof(ProductParts)}: {ProductParts}";
         }
     }
 }
