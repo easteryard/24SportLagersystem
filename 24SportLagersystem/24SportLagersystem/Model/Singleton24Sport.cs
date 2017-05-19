@@ -37,6 +37,7 @@ namespace _24SportLagersystem.Model
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
+            LoadProductsAsync();
             LoadProductPartsAsync();
         }
 
@@ -120,6 +121,18 @@ namespace _24SportLagersystem.Model
                 {
                     Orders.Add(ev);
                 }
+        }
+
+        public async void LoadProductsAsync()
+        {
+            var products = await ProductPersistencyService.LoadProductFromJsonAsync();
+            if (products != null)
+            {
+                foreach (var product in products)
+                {
+                    Products.Add(product);
+                }
+            }
         }
 
         public async void LoadProductPartsAsync()
