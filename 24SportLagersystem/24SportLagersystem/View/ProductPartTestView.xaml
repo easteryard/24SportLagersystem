@@ -1,0 +1,34 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_24SportLagersystem.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    x:Class="_24SportLagersystem.View.ProductPartTestView"
+    mc:Ignorable="d">
+    <Page.Resources>
+
+        <DataTemplate x:Key="DataTemplate">
+            <Grid d:DesignWidth="786" d:DesignHeight="414">
+                <Grid.DataContext>
+                    <ViewModel:ViewModel24Sport/>
+                </Grid.DataContext>
+                <StackPanel HorizontalAlignment="Left" Height="414" VerticalAlignment="Top" Width="786">
+                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding Singleton24Sport.ProductParts[0].Description}" Height="78" Margin="0,0,604,0"/>
+                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="TextBlock"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="630" Margin="28,28,0,0" VerticalAlignment="Top" Width="450" ItemTemplate="{StaticResource DataTemplate}"/>
+
+    </Grid>
+</Page>

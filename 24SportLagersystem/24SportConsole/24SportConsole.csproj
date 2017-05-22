@@ -66,11 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\24SportWS\24SportWS.csproj">
-      <Project>{8a24d9e4-2b1f-4f75-8418-2227e6d4caa9}</Project>
+      <Project>{b1ebeb53-fbaa-40f4-8f2f-5da6a674d596}</Project>
       <Name>24SportWS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -18,6 +18,8 @@ namespace _24SportWS
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductPartId { get; set; }
 
+        public int ProductPartNo { get; set; }
+
         [Required]
         [StringLength(50)]
         public string Description { get; set; }
@@ -37,7 +39,7 @@ namespace _24SportWS
 
         public override string ToString()
         {
-            return $"{nameof(ProductPartId)}: {ProductPartId}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";
+            return $"{nameof(ProductPartId)}: {ProductPartId}, {nameof(ProductPartNo)}: {ProductPartNo}, {nameof(Description)}: {Description}, {nameof(Amount)}: {Amount}, {nameof(PricePerPieceDkk)}: {PricePerPieceDkk}, {nameof(PricePerPieceEur)}: {PricePerPieceEur}, {nameof(PriceTotalDkk)}: {PriceTotalDkk}, {nameof(PriceTotalEur)}: {PriceTotalEur}";
         }
     }
 }
