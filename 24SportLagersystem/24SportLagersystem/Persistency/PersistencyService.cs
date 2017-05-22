@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.UI.Popups;
 using _24SportLagersystem.Model;
 
 namespace _24SportLagersystem.Persistency
@@ -26,11 +25,11 @@ namespace _24SportLagersystem.Persistency
 
                 try// i try delen er her vi forventer der kan ske en fejl. 
                 {
-                    var responce = client.GetAsync("api/orders").Result;
-                    if (responce.IsSuccessStatusCode)
+                    var response = client.GetAsync("api/Orders").Result;
+                    if (response.IsSuccessStatusCode)
                     {
-                        var orderdata = responce.Content.ReadAsAsync<IEnumerable<Order>>().Result;
-                        return orderdata.ToList();
+                        var orderData = response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
+                        return orderData.ToList();
                     }
                     return null;
                 }
@@ -38,30 +37,6 @@ namespace _24SportLagersystem.Persistency
                 {
 
                     throw;
-                }
-            }
-        }
-
-
-        public static async void SaveOrdersAsJsonAsync(Order orders)
-        {
-            const string ServerUrl = "http://localhost:41731";
-            HttpClientHandler handler = new HttpClientHandler();
-            handler.UseDefaultCredentials = true;
-
-            using (var client = new HttpClient(handler))
-            {
-                client.BaseAddress = new Uri(ServerUrl);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                try
-                {
-                    await client.PostAsJsonAsync("api/orders", orders);
-                }
-                catch (Exception ex)
-                {
-                    new MessageDialog(ex.Message).ShowAsync();
                 }
             }
         }

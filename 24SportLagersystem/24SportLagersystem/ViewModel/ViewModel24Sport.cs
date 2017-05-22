@@ -226,6 +226,7 @@ namespace _24SportLagersystem.ViewModel
 
         #region ProductPartProps
         private int _productPartId;
+        private int _productPartNo;
         private string _description;
         private int _productPartAmount;
         private double _pricePerDkk;
@@ -233,13 +234,18 @@ namespace _24SportLagersystem.ViewModel
         private double _priceTotalDkk;
         private double _priceTotalEur;
 
-
         public static ProductPart ProductPart { get; set; }
 
         public int ProductPartId
         {
             get { return _productPartId; }
             set { _productPartId = value; }
+        }
+
+        public int ProductPartNo
+        {
+            get { return _productPartNo; }
+            set { _productPartNo = value; }
         }
 
         public string Description
