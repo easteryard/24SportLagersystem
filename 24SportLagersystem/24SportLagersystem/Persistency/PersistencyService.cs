@@ -26,7 +26,7 @@ namespace _24SportLagersystem.Persistency
 
                 try// i try delen er her vi forventer der kan ske en fejl. 
                 {
-                    var responce = client.GetAsync("api/Orders").Result;
+                    var responce = client.GetAsync("api/orders").Result;
                     if (responce.IsSuccessStatusCode)
                     {
                         var orderdata = responce.Content.ReadAsAsync<IEnumerable<Order>>().Result;
