@@ -19,9 +19,9 @@ namespace _24SportConsole
             //SaveEventsAsJsonAsync(new ConsoleCustomer(0, "Karsten", 12345678, "Vejen 1, 4000", "mail@mail.dk"));
 
             // READ METHOD
-            //GetCustomerAsAsync();
+            GetCustomerAsAsync();
             //LoadOrderFromJsonAsync();
-            LoadProductPartsFromJsonAsync();
+            //LoadProductPartsFromJsonAsync();
 
             // UPDATE METHOD - virker ikke ordentlig i console
             //EditCustomerAsync(new ConsoleCustomer(1, "Knud", 4321, "Hej 123", "mail@mail.dk"));
