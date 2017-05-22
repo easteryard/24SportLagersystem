@@ -57,7 +57,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
-                    await client.PostAsJsonAsync("api/Orders", orders);
+                    await client.PostAsJsonAsync("api/orders", orders);
                 }
                 catch (Exception ex)
                 {
