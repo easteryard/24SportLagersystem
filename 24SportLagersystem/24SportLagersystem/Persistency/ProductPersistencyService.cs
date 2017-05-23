@@ -28,8 +28,8 @@ namespace _24SportLagersystem.Persistency
                     var response = client.PostAsJsonAsync("api/Products", products).Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var returnEvent = response.Content.ReadAsAsync<Product>();
-                        products.ProductId = returnEvent.Result.ProductId;
+                        var returnProduct = response.Content.ReadAsAsync<Product>();
+                        products.ProductId = returnProduct.Result.ProductId;
                     }
                 }
                 catch (Exception)
