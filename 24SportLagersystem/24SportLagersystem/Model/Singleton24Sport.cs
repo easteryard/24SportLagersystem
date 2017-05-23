@@ -92,9 +92,9 @@ namespace _24SportLagersystem.Model
             ProductLines.Add(myProductLine);
         }
 
-        public void AddOrder(int orderId, DateTime orderDate, DateTime deliveryDate, int customerId)
+        public void AddOrder(int orderId, DateTime orderDate, DateTime deliveryDate)
         {
-            Order myOrder = new Order(orderId, orderDate, deliveryDate, customerId);
+            Order myOrder = new Order(orderId, orderDate, deliveryDate);
             Orders.Add(myOrder);
             PersistencyService.SaveOrdersAsJsonAsync(myOrder);
         }

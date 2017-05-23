@@ -10,11 +10,10 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="TestTemplate">
-            <StackPanel Height="135" Width="470">
+            <StackPanel Height="109" Width="475">
                 <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding OrderId}" Height="33"/>
                 <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="{Binding OrderDate}" Height="38"/>
                 <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="{Binding DeliveryDate}" Height="35"/>
-                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="{Binding CustomerId}" Height="27"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
@@ -28,10 +27,9 @@
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="799,191,0,0" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
             <DatePicker HorizontalAlignment="Right" Margin="0,237,185,0" VerticalAlignment="Top" Date="{Binding Order.OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <DatePicker HorizontalAlignment="Right" Margin="0,399,185,0" VerticalAlignment="Top" Date="{Binding DeliveryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Create Order" Margin="971,566,0,0" VerticalAlignment="Top" Height="70" Width="124" Command="{Binding CreateCommand}"/>
+            <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Create Order" Margin="971,515,0,0" VerticalAlignment="Top" Height="70" Width="124" Command="{Binding CreateCommand}"/>
             <TimePicker HorizontalAlignment="Left" Margin="799,290,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanOrdreDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TimePicker HorizontalAlignment="Left" Margin="799,452,0,0" VerticalAlignment="Top" Time="{Binding TimeSpanDeliveryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="799,512,0,0" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>
