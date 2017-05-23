@@ -26,7 +26,7 @@ namespace _24SportLagersystem.Persistency
 
                 try// i try delen er her vi forventer der kan ske en fejl. 
                 {
-                    var response = client.GetAsync("api/Orders").Result;
+                    var response = client.GetAsync("api/orders").Result;
                     if (response.IsSuccessStatusCode)
                     {
                         var orderData = response.Content.ReadAsAsync<IEnumerable<Order>>().Result;
@@ -68,7 +68,8 @@ namespace _24SportLagersystem.Persistency
                 }
             }
         }
-        public static async void DeleteEventsAsAsync(Order orders)
+
+        public static async void DeleteOrdersAsAsync(Order orders)
         {
             const string serverURL = "http://localhost:41731";
             HttpClientHandler handler = new HttpClientHandler();

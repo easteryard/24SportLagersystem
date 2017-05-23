@@ -60,10 +60,10 @@ namespace _24SportLagersystem.Model
         //    Customers.Add(newCustomer);
         //}
 
-        //public void AddOrder(Order newOrder)
-        //{
-        //    Orders.Add(newOrder);
-        //}
+        public void AddOrder(Order newOrder)
+        {
+            Orders.Add(newOrder);
+        }
 
         //public void AddOrderLine(OrderLine newOrderLine)
         //{
@@ -117,22 +117,22 @@ namespace _24SportLagersystem.Model
         {
             var orders = await PersistencyService.LoadProductFromJsonAsync();
             if (orders != null)
-                foreach (var ev in orders)
+                foreach (var order in orders)
                 {
-                    Orders.Add(ev);
+                    Orders.Add(order);
                 }
+            else
+            {
+                Orders.Add(new Order(50, DateTime.Now, DateTime.Now, 2));
+                Orders.Add(new Order(51, DateTime.Now, DateTime.Now, 2));
+            }
 
         }
 
         public void DeleteOrder(Order orderToBeRemoved)
         {
             Orders.Remove(orderToBeRemoved);
-            PersistencyService.SaveOrdersAsJsonAsync(orderToBeRemoved);
-        }
-
-        public override string ToString()
-        {
-            return $"{nameof(Orders)}: {Orders}";
+            PersistencyService.DeleteOrdersAsAsync(orderToBeRemoved);
         }
     }
 }

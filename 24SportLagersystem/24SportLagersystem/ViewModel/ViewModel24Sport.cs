@@ -40,7 +40,7 @@ namespace _24SportLagersystem.ViewModel
 
         public ICommand SelectCommand
         {
-            get { return _selectCommand?? (_selectCommand = new RelayArgCommand<Order>(order => Handler24Sport.SetSelectedOrder(order))); }
+            get { return _selectCommand ?? (_selectCommand = new RelayArgCommand<Order>(order => Handler24Sport.SetSelectedOrder(order))); }
             set { _selectCommand = value; }
         }
 
@@ -67,7 +67,7 @@ namespace _24SportLagersystem.ViewModel
         public int CustomerId
         {
             get { return _customerId; }
-            set { _customerId = value; }
+            set { _customerId = value; OnPropertyChanged(); }
         }
 
         public string Name
@@ -107,7 +107,7 @@ namespace _24SportLagersystem.ViewModel
         public int OrderId
         {
             get { return _orderId; }
-            set { _orderId = value; }
+            set { _orderId = value; OnPropertyChanged(); }
         }
 
         public DateTimeOffset DeliveryDate

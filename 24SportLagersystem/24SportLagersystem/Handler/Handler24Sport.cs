@@ -18,7 +18,7 @@ namespace _24SportLagersystem.Handler
         {
             ViewModel24Sport = viewModel24Sport;
         }
-
+/*
         public void CreateProduct()
         {
             ViewModel24Sport.Singleton24Sport.AddProduct(ViewModel24Sport.ProductId, ViewModel24Sport.ProductName,
@@ -35,11 +35,12 @@ namespace _24SportLagersystem.Handler
         {
             ViewModel24Sport.Singleton24Sport.AddCustomer(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
         }
-
+        */
         public void CreateOrder()
         {
             ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate, ViewModel24Sport.TimeSpanOrdreDate), DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate, ViewModel24Sport.TimeSpanDeliveryDate), ViewModel24Sport.CustomerId);
         }
+        
 
         public void SetSelectedOrder(Order order)
         {
@@ -48,6 +49,9 @@ namespace _24SportLagersystem.Handler
 
         public async void DeleteOrder()
         {
+
+           
+           //ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
             // Create the message dialog and set its content
             var messageDialog = new MessageDialog("Are you sure you want to Delete the Event: " + ViewModel24Sport.SelectedOrder.OrderId + " ?");
 
@@ -58,16 +62,19 @@ namespace _24SportLagersystem.Handler
             // Set the command that will be invoked by default
             messageDialog.DefaultCommandIndex = 0;
 
-            // Set the command to be invoked when escape is pressed
+            // Set the command to be invoked when escape is pressedC:\Users\Andreas\GitHub\24SportLagersystem\24SportLagersystem\24SportLagersystem\Handler\Handler24Sport.cs
             messageDialog.CancelCommandIndex = 1;
 
             // Show the message dialog
+
             await messageDialog.ShowAsync();
+            
         }
 
-        private void CommandInvokedHandler(IUICommand command)
+           private void CommandInvokedHandler(IUICommand command)
         {
-            ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
+           ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
         }
+        
     }
 }
