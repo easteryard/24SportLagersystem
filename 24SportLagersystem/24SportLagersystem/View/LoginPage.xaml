@@ -51,7 +51,7 @@
             <Button x:Name="TestKnap" Content="Hemmeligheder" Grid.Column="3" HorizontalAlignment="Left" Margin="54,11,0,0" Grid.Row="11" VerticalAlignment="Top" Width="132">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.TestView"/>
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.OrderTestView"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>

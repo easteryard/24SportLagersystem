@@ -21,6 +21,8 @@ namespace _24SportLagersystem.ViewModel
 
         public Handler.Handler24Sport Handler24Sport { get; set; }
 
+        public static Order SelectedOrder { get; set; }
+
         #region RelayCommands
         private ICommand _createCommand;
         private ICommand _selectCommand;
@@ -38,13 +40,13 @@ namespace _24SportLagersystem.ViewModel
 
         public ICommand SelectCommand
         {
-            get { return _selectCommand; }
+            get { return _selectCommand?? (_selectCommand = new RelayArgCommand<Order>(order => Handler24Sport.SetSelectedOrder(order))); }
             set { _selectCommand = value; }
         }
 
         public ICommand DeleteCommand
         {
-            get { return _deleteCommand; }
+            get { return _deleteCommand ?? (_deleteCommand = new RelayCommand(Handler24Sport.DeleteOrder)); }
             set { _deleteCommand = value; }
         }
 

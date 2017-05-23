@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using _24SportLagersystem.Model;
 
 namespace _24SportLagersystem.Persistency
@@ -37,6 +38,53 @@ namespace _24SportLagersystem.Persistency
                 {
 
                     throw;
+                }
+            }
+        }
+        public static async void SaveOrdersAsJsonAsync(Order orders)
+        {
+            const string serverURL = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(serverURL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    var response =  client.PostAsJsonAsync("api/orders", orders).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var returnOrder = response.Content.ReadAsAsync<Order>();
+                        orders.OrderId = returnOrder.Result.OrderId;
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    new MessageDialog(ex.Message).ShowAsync();
+
+                }
+            }
+        }
+        public static async void DeleteEventsAsAsync(Order orders)
+        {
+            const string serverURL = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(serverURL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                try
+                {
+                    await client.DeleteAsync("api/orders/" + orders.OrderId);
+                }
+                catch (Exception ex)
+                {
+                    new MessageDialog(ex.Message).ShowAsync();
                 }
             }
         }

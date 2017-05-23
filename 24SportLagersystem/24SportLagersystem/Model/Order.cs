@@ -11,7 +11,7 @@ namespace _24SportLagersystem.Model
         public int OrderId { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
-        public int CustomerId { get; set; } 
+        public int CustomerId { get; set; }
 
         public Order()
         {

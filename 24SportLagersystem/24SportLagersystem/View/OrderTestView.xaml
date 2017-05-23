@@ -5,17 +5,23 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
-    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="_24SportLagersystem.View.OrderTestView"
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="OrderTemplate">
-            <Grid Height="106" Width="337">
-                <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="335">
-                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding OrderId}"/>
-                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="{Binding OrderDate}"/>
-                    <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="{Binding DeliveryDate}"/>
-                    <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="{Binding CustomerId}"/>
+            <Grid Height="92" Width="373">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="93" Margin="0,0,-373,0" VerticalAlignment="Top" Width="373">
+                    <TextBlock x:Name="TblOrderId" TextWrapping="Wrap" Text="{Binding OrderId}"/>
+                    <TextBlock x:Name="TblOrderDate" TextWrapping="Wrap" Text="{Binding OrderDate}"/>
+                    <TextBlock x:Name="TblDeliveryDate" TextWrapping="Wrap" Text="{Binding DeliveryDate}"/>
+                    <TextBlock x:Name="TblCustomerId" TextWrapping="Wrap" Text="{Binding CustomerId}"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -25,16 +31,15 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="406" Margin="246,152,0,0" VerticalAlignment="Top" Width="360" ItemsSource="{Binding Singleton24Sport.Orders}" ItemTemplate="{StaticResource OrderTemplate}"/>
-        <Button x:Name="buttonAddOrder" Content="Opret Ordre" HorizontalAlignment="Left" Margin="769,390,0,0" VerticalAlignment="Top" Height="77" Width="134">
-            <Interactivity:Interaction.Behaviors>
-                <Core:EventTriggerBehavior EventName="Click">
-                    <Core:CallMethodAction MethodName="{Binding CreateCommand}"/>
-                </Core:EventTriggerBehavior>
-            </Interactivity:Interaction.Behaviors>
-        </Button>
-        <TextBox x:Name="TBOrderId" HorizontalAlignment="Left" Margin="769,152,0,0" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Top"/>
-        <TextBox x:Name="TBCustomerId" HorizontalAlignment="Left" Margin="774,338,0,0" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay}" VerticalAlignment="Top"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="448" Margin="183,132,0,0" VerticalAlignment="Top" Width="394" ItemsSource="{Binding Singleton24Sport.Orders}" ItemTemplate="{StaticResource OrderTemplate}"/>
+        <TextBox x:Name="TbCustomerId" HorizontalAlignment="Right" Margin="0,0,474,322" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
+        <DatePicker x:Name="DpOrderDate" HorizontalAlignment="Right" Margin="0,185,242,0" VerticalAlignment="Top" Date="{Binding OrderDate, Mode=TwoWay}"/>
+        <DatePicker x:Name="DpDeliveryDate" HorizontalAlignment="Right" Margin="0,280,242,0" VerticalAlignment="Top" Date="{Binding DeliveryDate, Mode=TwoWay}"/>
+        <TimePicker x:Name="TpOrderDate" HorizontalAlignment="Right" Margin="0,222,242,0" VerticalAlignment="Top" Width="296" Time="{Binding TimeSpanOrdreDate, Mode=TwoWay}"/>
+        <TimePicker x:Name="TpDeliveryDate" HorizontalAlignment="Right" Margin="0,317,242,0" VerticalAlignment="Top" Width="296" Time="{Binding TimeSpanDeliveryDate, Mode=TwoWay}"/>
+        <AppBarButton x:Name="AbbCreateOrder" HorizontalAlignment="Right" Icon="Accept" Label="CreateOrder" Margin="0,0,440,206" VerticalAlignment="Bottom" Width="98" Command="{Binding CreateCommand}"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="789,117,0,0" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=Default}" VerticalAlignment="Top"/>
+        <AppBarButton x:Name="AbbDeleteOrder" HorizontalAlignment="Right" Icon="Accept" Label="Delete Order" Margin="0,0,306,206" VerticalAlignment="Bottom" Width="98" Command="{Binding DeleteCommand}"/>
 
     </Grid>
 </Page>
