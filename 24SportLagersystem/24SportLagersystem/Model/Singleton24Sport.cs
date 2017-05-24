@@ -121,11 +121,11 @@ namespace _24SportLagersystem.Model
                 {
                     Orders.Add(order);
                 }
-            else
-            {
-                Orders.Add(new Order(50, DateTime.Now, DateTime.Now, 2));
-                Orders.Add(new Order(51, DateTime.Now, DateTime.Now, 2));
-            }
+            //else
+            //{
+            //    Orders.Add(new Order(50, DateTime.Now, DateTime.Now, 2));
+            //    Orders.Add(new Order(51, DateTime.Now, DateTime.Now, 2));
+            //}
 
         }
 

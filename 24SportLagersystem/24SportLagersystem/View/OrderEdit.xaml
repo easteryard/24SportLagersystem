@@ -18,7 +18,7 @@
         <DatePicker HorizontalAlignment="Left" Margin="165,371,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.DeliveryDate, Mode=TwoWay}"/>
         <TimePicker HorizontalAlignment="Left" Margin="161,276,0,0" VerticalAlignment="Top"/>
         <TimePicker HorizontalAlignment="Left" Margin="165,430,0,0" VerticalAlignment="Top"/>
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="174,516,0,0" VerticalAlignment="Top" Command="{Binding SelectCommand}"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="174,516,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}"/>
 
     </Grid>
 </Page>
