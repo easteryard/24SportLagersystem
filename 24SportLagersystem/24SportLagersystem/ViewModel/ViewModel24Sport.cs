@@ -300,8 +300,8 @@ namespace _24SportLagersystem.ViewModel
             Singleton24Sport = Singleton24Sport.Instance;
             DateTime dt = System.DateTime.Now;
 
-            _orderDate = new DateTimeOffset(2018, 6, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            _deliveryDate = new DateTimeOffset(2018, 6, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            _orderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            _deliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             //_timeSpanDeliveryDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             //_timeSpanOrderDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
