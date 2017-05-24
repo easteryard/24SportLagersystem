@@ -47,7 +47,7 @@
             </interactivity:Interaction.Behaviors>
         </Button>
 
-        <Button x:Name="RedigerSide" Content="Rediger Ordre" IsEnabled="False" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
+        <Button x:Name="RedigerSide" Content="Rediger Ordrer" IsEnabled="False" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
         <Button x:Name="Rediger" Content="Rediger" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
