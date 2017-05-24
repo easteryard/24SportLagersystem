@@ -47,6 +47,6 @@
         <AppBarButton x:Name="AbbCreateOrder" HorizontalAlignment="Right" Icon="Accept" Label="CreateOrder" Margin="0,0,440,206" VerticalAlignment="Bottom" Width="98" Command="{Binding CreateCommand}"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="789,117,0,0" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=Default}" VerticalAlignment="Top"/>
         <AppBarButton x:Name="AbbDeleteOrder" HorizontalAlignment="Right" Icon="Accept" Label="Delete Order" Margin="0,0,306,206" VerticalAlignment="Bottom" Width="98" Command="{Binding DeleteCommand}"/>
-
+        <AppBarButton x:Name="appBarButton2" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="136,581,0,0" VerticalAlignment="Top" Command="{Binding ToOrderEditPagecCommand}"/>
     </Grid>
 </Page>

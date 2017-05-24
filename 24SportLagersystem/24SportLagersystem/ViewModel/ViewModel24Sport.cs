@@ -7,10 +7,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using _24SportLagersystem.Annotations;
 using _24SportLagersystem.Common;
 using _24SportLagersystem.Model;
 using _24SportLagersystem.Handler;
+using _24SportLagersystem.View;
 
 namespace _24SportLagersystem.ViewModel
 {
@@ -22,11 +25,14 @@ namespace _24SportLagersystem.ViewModel
         public Handler.Handler24Sport Handler24Sport { get; set; }
 
         public static Order SelectedOrder { get; set; }
+        public ICommand EditOrderCommand { get; set; }
+        public ICommand ToOrderEditPagecCommand { get; set; }
 
         #region RelayCommands
         private ICommand _createCommand;
         private ICommand _selectCommand;
         private ICommand _deleteCommand;
+
 
         public ICommand CreateCommand
         {
@@ -297,6 +303,20 @@ namespace _24SportLagersystem.ViewModel
             _deliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _timeSpanDeliveryDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             _timeSpanOrderDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+            EditOrderCommand = new RelayCommand(Handler24Sport.EditOrder);
+            ToOrderEditPagecCommand = new RelayCommand(NavigateToEditEventPage);
+        }
+
+        public void NavigateToEditEventPage()
+        {
+            Frame f = GetFrame();
+            f.Navigate(typeof(OrderEdit));
+        }
+
+        public Frame GetFrame()
+        {
+            return Window.Current.Content as Frame;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

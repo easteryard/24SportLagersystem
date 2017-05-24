@@ -75,6 +75,15 @@ namespace _24SportLagersystem.Handler
         {
            ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
         }
-        
+
+        public void EditOrder(Order selectedOrder)
+        {
+            ViewModel24Sport.Handler24Sport.EditOrder(ViewModel24Sport.SelectedOrder);
+        }
+
+        public void EditOrder()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

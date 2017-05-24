@@ -48,7 +48,11 @@ namespace _24SportLagersystem.Common
         /// <returns>true if this command can be executed; otherwise, false.</returns>
         public bool CanExecute(object parameter)
         {
-            if (!typeof(T).Equals(parameter.GetType())) return false;  //If the parameters type is not equal to Type T return false
+            if (parameter != null)
+            {
+                if (!typeof(T).Equals(parameter.GetType()))
+                    return false; //If the parameters type is not equal to Type T return false
+            }
             return _canExecute == null ? true : _canExecute();
         }
 

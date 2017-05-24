@@ -89,5 +89,28 @@ namespace _24SportLagersystem.Persistency
                 }
             }
         }
+
+        public static async void EditOrdersAsJsonAsync(Order orders)
+        {
+            const string ServerUrl = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(ServerUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    await client.PutAsJsonAsync("api/orders/" + orders.OrderId, orders);
+                }
+                catch (Exception ex)
+                {
+                    new MessageDialog(ex.Message).ShowAsync();
+                }
+            }
+        }
     }
 }

@@ -134,5 +134,10 @@ namespace _24SportLagersystem.Model
             Orders.Remove(orderToBeRemoved);
             PersistencyService.DeleteOrdersAsAsync(orderToBeRemoved);
         }
+
+        public void EditOrder(Order orders)
+        {
+            PersistencyService.EditOrdersAsJsonAsync(orders);
+        }
     }
 }
