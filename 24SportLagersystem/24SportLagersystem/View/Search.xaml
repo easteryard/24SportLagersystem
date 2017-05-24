@@ -39,10 +39,10 @@
         </Grid.RowDefinitions>
 
         <Button x:Name="button" IsEnabled="False"  Content="Søg" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Height="85" Margin="0,0,0,0" Width="274"/>
-        <Button x:Name="button1" Content="Tilføj Ordre" Grid.Column="3" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Height="85" Margin="0,0,0,0" Width="274">
+        <Button x:Name="button1" Content="Tilføj Produkt" Grid.Column="3" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Height="85" Margin="0,0,0,0" Width="274">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddOrder"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddProduct"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
