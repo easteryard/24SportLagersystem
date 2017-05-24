@@ -44,7 +44,7 @@
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
-        <Button x:Name="RedigerOrdre" Content="Rediger Ordre" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
+        <Button x:Name="RedigerOrdre" Content="Rediger Ordrer" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
                     <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditOrder"/>
