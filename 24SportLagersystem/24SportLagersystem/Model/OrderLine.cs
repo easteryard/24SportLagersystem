@@ -18,7 +18,7 @@ namespace _24SportLagersystem.Model
             
         }
 
-        //dette er vores konstruktør som initialisere vores properties
+        //Dette er vores konstruktør som initialisere vores properties
         public OrderLine(int orderLineId, int amount)
         {
             OrderLineId = orderLineId;
