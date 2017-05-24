@@ -71,7 +71,7 @@ namespace _24SportLagersystem.Handler
             
         }
 
-           private void CommandInvokedHandler(IUICommand command)
+        private void CommandInvokedHandler(IUICommand command)
         {
            ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
         }

@@ -56,6 +56,7 @@ namespace _24SportLagersystem.ViewModel
             set { _deleteCommand = value; }
         }
 
+
         #endregion
 
 

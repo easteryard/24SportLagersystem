@@ -14,10 +14,10 @@
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="156,154,0,0" TextWrapping="Wrap" Text="{Binding SelectedOrder.CustomerId, Mode=TwoWay}" VerticalAlignment="Top" Height="32" Width="137"/>
-        <DatePicker HorizontalAlignment="Left" Margin="156,229,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.OrderDate, Mode=TwoWay}"/>
-        <DatePicker HorizontalAlignment="Left" Margin="165,371,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.DeliveryDate, Mode=TwoWay}"/>
-        <TimePicker HorizontalAlignment="Left" Margin="161,276,0,0" VerticalAlignment="Top"/>
-        <TimePicker HorizontalAlignment="Left" Margin="165,430,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="156,229,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.OrderDate.Date, Mode=OneWay}"/>
+        <DatePicker HorizontalAlignment="Left" Margin="165,371,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.DeliveryDate.Date, Mode=OneWay}"/>
+        <TimePicker HorizontalAlignment="Left" Margin="161,276,0,0" VerticalAlignment="Top" Time="{Binding SelectedOrder.OrderDate.TimeOfDay, Mode=OneWay}"/>
+        <TimePicker HorizontalAlignment="Left" Margin="165,430,0,0" VerticalAlignment="Top" Time="{Binding SelectedOrder.DeliveryDate.TimeOfDay, Mode=OneWay}"/>
         <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="174,516,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}"/>
 
     </Grid>
