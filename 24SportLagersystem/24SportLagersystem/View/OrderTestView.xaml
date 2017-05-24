@@ -42,11 +42,8 @@
         <TextBox x:Name="TbCustomerId" HorizontalAlignment="Right" Margin="0,0,474,322" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
         <DatePicker x:Name="DpOrderDate" HorizontalAlignment="Right" Margin="0,185,242,0" VerticalAlignment="Top" Date="{Binding OrderDate, Mode=TwoWay}"/>
         <DatePicker x:Name="DpDeliveryDate" HorizontalAlignment="Right" Margin="0,280,242,0" VerticalAlignment="Top" Date="{Binding DeliveryDate, Mode=TwoWay}"/>
-        <TimePicker x:Name="TpOrderDate" HorizontalAlignment="Right" Margin="0,222,242,0" VerticalAlignment="Top" Width="296" Time="{Binding TimeSpanOrdreDate, Mode=TwoWay}"/>
-        <TimePicker x:Name="TpDeliveryDate" HorizontalAlignment="Right" Margin="0,317,242,0" VerticalAlignment="Top" Width="296" Time="{Binding TimeSpanDeliveryDate, Mode=TwoWay}"/>
         <AppBarButton x:Name="AbbCreateOrder" HorizontalAlignment="Right" Icon="Accept" Label="CreateOrder" Margin="0,0,440,206" VerticalAlignment="Bottom" Width="98" Command="{Binding CreateCommand}"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="789,117,0,0" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=Default}" VerticalAlignment="Top"/>
         <AppBarButton x:Name="AbbDeleteOrder" HorizontalAlignment="Right" Icon="Accept" Label="Delete Order" Margin="0,0,306,206" VerticalAlignment="Bottom" Width="98" Command="{Binding DeleteCommand}"/>
-        <AppBarButton x:Name="appBarButton2" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="136,581,0,0" VerticalAlignment="Top" Command="{Binding ToOrderEditPagecCommand}"/>
+        <AppBarButton x:Name="appBarButton2" HorizontalAlignment="Left" Icon="Accept" Label="Edit Order" Margin="136,581,0,0" VerticalAlignment="Top" Command="{Binding ToOrderEditPagecCommand}"/>
     </Grid>
 </Page>
