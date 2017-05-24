@@ -34,6 +34,11 @@ namespace _24SportWS
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Customer>()
+                .HasMany(e => e.Orders)
+                .WithRequired(e => e.Customer)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderLines)
                 .WithRequired(e => e.Order)
