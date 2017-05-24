@@ -26,6 +26,19 @@ namespace _24SportLagersystem.ViewModel
 
         #region ProdutPartRelayCommands
 
+        public ICommand CreateProductPartCommand
+        {
+            get
+            {
+                // Return _createProductPartCommand - if it's null; create a new relaycommand
+                return _createProductPartCommand ??
+                       (_createProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart));
+            }
+            set { _createProductPartCommand = value; }
+        }
+
+
+
         public ICommand DeleteProductPartCommand
         {
             get
@@ -39,17 +52,6 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region RelayCommands
-
-        public ICommand CreateProductPartCommand
-        {
-            get
-            {
-                // Return _createProductPartCommand - if it's null; create a new relaycommand
-                return _createProductPartCommand ??
-                       (_createProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart));
-            }
-            set { _createProductPartCommand = value; }
-        }
 
         private ICommand _createCommand;
         private ICommand _selectCommand;
