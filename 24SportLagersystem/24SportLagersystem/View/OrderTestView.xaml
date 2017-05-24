@@ -39,11 +39,14 @@
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </ListView>
-        <TextBox x:Name="TbCustomerId" HorizontalAlignment="Right" Margin="0,0,474,322" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="TbCustomerId" HorizontalAlignment="Right" Margin="0,0,474,576" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
         <DatePicker x:Name="DpOrderDate" HorizontalAlignment="Right" Margin="0,185,242,0" VerticalAlignment="Top" Date="{Binding OrderDate, Mode=TwoWay}"/>
         <DatePicker x:Name="DpDeliveryDate" HorizontalAlignment="Right" Margin="0,280,242,0" VerticalAlignment="Top" Date="{Binding DeliveryDate, Mode=TwoWay}"/>
         <AppBarButton x:Name="AbbCreateOrder" HorizontalAlignment="Right" Icon="Accept" Label="CreateOrder" Margin="0,0,440,206" VerticalAlignment="Bottom" Width="98" Command="{Binding CreateCommand}"/>
         <AppBarButton x:Name="AbbDeleteOrder" HorizontalAlignment="Right" Icon="Accept" Label="Delete Order" Margin="0,0,306,206" VerticalAlignment="Bottom" Width="98" Command="{Binding DeleteCommand}"/>
         <AppBarButton x:Name="appBarButton2" HorizontalAlignment="Left" Icon="Accept" Label="Edit Order" Margin="136,581,0,0" VerticalAlignment="Top" Command="{Binding ToOrderEditPagecCommand}"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="742,79,0,0" TextWrapping="Wrap" Text="Customer ID" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="742,149,0,0" TextWrapping="Wrap" Text="Order Date" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="742,254,0,0" TextWrapping="Wrap" Text="Order Delivery" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -14,9 +14,12 @@
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="156,154,0,0" TextWrapping="Wrap" Text="{Binding SelectedOrder.CustomerId, Mode=TwoWay}" VerticalAlignment="Top" Height="32" Width="137"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Edit Order" Margin="174,516,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="174,127,0,0" TextWrapping="Wrap" Text="Customer ID" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="156,204,0,0" TextWrapping="Wrap" Text="Order Date" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="156,310,0,0" TextWrapping="Wrap" Text="Order Delivery" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="156,229,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.OrderDate.Date, Mode=OneWay}"/>
-        <DatePicker HorizontalAlignment="Left" Margin="165,371,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.DeliveryDate.Date, Mode=OneWay}"/>
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="174,516,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}"/>
+        <DatePicker HorizontalAlignment="Left" Margin="165,353,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.DeliveryDate.Date, Mode=OneWay}"/>
 
     </Grid>
 </Page>
