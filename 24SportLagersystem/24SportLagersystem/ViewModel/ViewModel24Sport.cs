@@ -26,6 +26,19 @@ namespace _24SportLagersystem.ViewModel
 
         #region ProdutPartRelayCommands
 
+        public ICommand CreateProductPartCommand
+        {
+            get
+            {
+                // Return _createProductPartCommand - if it's null; create a new relaycommand
+                return _createProductPartCommand ??
+                       (_createProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart));
+            }
+            set { _createProductPartCommand = value; }
+        }
+
+
+
         public ICommand DeleteProductPartCommand
         {
             get
@@ -39,17 +52,6 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region RelayCommands
-
-        public ICommand CreateProductPartCommand
-        {
-            get
-            {
-                // Return _createProductPartCommand - if it's null; create a new relaycommand
-                return _createProductPartCommand ??
-                       (_createProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart));
-            }
-            set { _createProductPartCommand = value; }
-        }
 
         private ICommand _createCommand;
         private ICommand _selectCommand;
@@ -245,6 +247,16 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region ProductPartProperties
+
+        //public int ProductPartId { get; set; }
+        //public int ProductPartNo { get; set; }
+        //public string Description { get; set; }
+        //public int ProductPartAmount { get; set; }
+        //public double PricePerDkk { get; set; }
+        //public double PricePerEur { get; set; }
+        //public double PriceTotalDkk { get; set; }
+        //public double PriceTotalEur { get; set; }
+
         private int _productPartId;
         private int _productPartNo;
         private string _description;
