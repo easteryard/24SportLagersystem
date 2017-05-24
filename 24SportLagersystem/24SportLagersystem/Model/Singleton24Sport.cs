@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _24SportLagersystem.Persistency;
+using _24SportLagersystem.ViewModel;
 
 namespace _24SportLagersystem.Model
 {
@@ -86,23 +87,24 @@ namespace _24SportLagersystem.Model
         {
             ProductPart myProductPart = new ProductPart(productPartId, productPartNo, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
             ProductParts.Add(myProductPart);
+            ProductPartPersistencyService.SaveProductPartsAsJsonAsync(myProductPart);
         }
 
-        public void AddProductLine(int productLineId, int amount)
+        public void AddProductLine(int productLineId, int productId, int productPartId, int amount)
         {
-            ProductLine myProductLine = new ProductLine(productLineId, amount);
+            ProductLine myProductLine = new ProductLine(productLineId, productId, productPartId, amount);
             ProductLines.Add(myProductLine);
         }
 
-        public void AddOrder(int orderId, DateTime orderDate, DateTime deliveryDate)
+        public void AddOrder(int orderId, int customerId, DateTime orderDate, DateTime deliveryDate)
         {
-            Order myOrder = new Order(orderId, orderDate, deliveryDate);
+            Order myOrder = new Order(orderId, customerId, orderDate, deliveryDate);
             Orders.Add(myOrder);
         }
 
-        public void AddOrderLine(int orderLineId, int amount)
+        public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
         {
-            OrderLine myOrderLine = new OrderLine(orderLineId, amount);
+            OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
             OrderLines.Add(myOrderLine);
         }
 
@@ -147,10 +149,16 @@ namespace _24SportLagersystem.Model
             }
         }
 
-        //public override string ToString()
-        //{
-        //    return $"{nameof(Orders)}: {Orders}";
-        //}
+        public void EditProductPart(ProductPart productPart)
+        {
+            ProductPartPersistencyService.EditProductPartAsync(ViewModel24Sport.SelectedItem);
+        }
+
+        public void DeleteProductPart(ProductPart selectedItem)
+        {
+            ProductParts.Remove(selectedItem);
+            ProductPartPersistencyService.DeleteProductPartAsync(selectedItem);
+        }
 
         public override string ToString()
         {
