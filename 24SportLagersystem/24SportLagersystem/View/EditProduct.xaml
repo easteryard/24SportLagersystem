@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="_24SportLagersystem.View.EditOrder"
+    x:Class="_24SportLagersystem.View.EditProduct"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:_24SportLagersystem.View"
@@ -59,7 +59,7 @@
         <Button x:Name="Tilbage" Content="Tilbage" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddOrder"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddProduct"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>

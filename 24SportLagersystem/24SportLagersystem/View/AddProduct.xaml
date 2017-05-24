@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="_24SportLagersystem.View.AddOrder"
+    x:Class="_24SportLagersystem.View.AddProduct"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:_24SportLagersystem.View"
@@ -49,7 +49,7 @@
         <Button x:Name="RedigerOrdre" Content="Rediger Ordrer" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditOrder"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditProduct"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
@@ -57,24 +57,22 @@
         <Button x:Name="Gem" Content="Gem" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditOrder"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditProduct"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
 
-        <TextBlock x:Name="Varenr" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Varenavn" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Beskrivelse" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Antal" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Pris" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="KundeID1" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock x:Name="Varenr" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Varenavn" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Beskrivelse" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Antal" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Pris" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-        <TextBox x:Name="VarenrTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" />
-        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="4" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="4" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBlock x:Name="KundeID" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="VarenrTextbox" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="VarenavnTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" />
+        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="4" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
 
     </Grid>
 
