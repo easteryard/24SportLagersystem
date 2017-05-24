@@ -11,6 +11,34 @@ namespace _24SportLagersystem.Persistency
 {
     class ProductPersistencyService
     {
+        public static async void SaveProductsAsJsonAsync(Product products)
+        {
+            const string SERVER_URL = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    var response = client.PostAsJsonAsync("api/Products", products).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var returnProduct = response.Content.ReadAsAsync<Product>();
+                        products.ProductId = returnProduct.Result.ProductId;
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
         public static async Task<List<Product>> LoadProductFromJsonAsync()
         {
             const string ServerUrl = "http://localhost:41731";
@@ -42,5 +70,7 @@ namespace _24SportLagersystem.Persistency
                 }
             }
         }
+
+
     }
 }
