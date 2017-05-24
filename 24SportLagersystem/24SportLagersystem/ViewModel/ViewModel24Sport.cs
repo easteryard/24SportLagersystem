@@ -247,16 +247,6 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region ProductPartProperties
-
-        //public int ProductPartId { get; set; }
-        //public int ProductPartNo { get; set; }
-        //public string Description { get; set; }
-        //public int ProductPartAmount { get; set; }
-        //public double PricePerDkk { get; set; }
-        //public double PricePerEur { get; set; }
-        //public double PriceTotalDkk { get; set; }
-        //public double PriceTotalEur { get; set; }
-
         private int _productPartId;
         private int _productPartNo;
         private string _description;
