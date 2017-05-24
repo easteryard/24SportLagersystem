@@ -104,7 +104,13 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="button4" Content="Button" Grid.Row="7" Width="183" />
+            <Button x:Name="Ordreline" Content="Ordre" Grid.Row="7" Width="183" >
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Overview"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
             <Button x:Name="button5" Content="Button" Grid.Row="8" Width="183" />
             <Button x:Name="button6" Content="Button" Grid.Row="9" Width="183"/>
             <Button x:Name="button7" Content="Button" Grid.Row="10" Width="183"/>

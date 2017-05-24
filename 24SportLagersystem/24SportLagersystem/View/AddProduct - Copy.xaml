@@ -42,7 +42,7 @@
         <Button x:Name="Search" Content="Søg" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Overview"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
