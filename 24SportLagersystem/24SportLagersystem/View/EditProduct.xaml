@@ -77,7 +77,7 @@
         <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <ListView x:Name="listView" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" Margin="0" BorderThickness="1" BorderBrush="White">
+        <ListView x:Name="listView" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
             <StackPanel Height="70" Width="300" />
         </ListView>
 
