@@ -20,6 +20,23 @@ namespace _24SportLagersystem.ViewModel
         public Singleton24Sport Singleton24Sport { get; set; }
 
         public Handler.Handler24Sport Handler24Sport { get; set; }
+        public ProductPartHandler ProductPartHandler { get; set; }
+
+        public static ProductPart SelectedItem { get; set; }
+
+        #region ProdutPartRelayCommands
+
+        public ICommand DeleteProductPartCommand
+        {
+            get
+            {
+                return _deleteProductPartCommand ??
+                       (_deleteProductPartCommand = new RelayCommand(ProductPartHandler.DeleteProductPart));
+            }
+            set { _deleteProductPartCommand = value; }
+        }
+
+        #endregion
 
         #region RelayCommands
 
@@ -59,9 +76,7 @@ namespace _24SportLagersystem.ViewModel
             get { return _deleteCommand; }
             set { _deleteCommand = value; }
         }
-
         #endregion
-
 
         #region CustomerProperties
 
@@ -239,6 +254,7 @@ namespace _24SportLagersystem.ViewModel
         private double _priceTotalDkk;
         private double _priceTotalEur;
         private ICommand _createProductPartCommand;
+        private ICommand _deleteProductPartCommand;
 
         public static ProductPart ProductPart { get; set; }
 
@@ -294,6 +310,8 @@ namespace _24SportLagersystem.ViewModel
         public ViewModel24Sport()
         {
             Handler24Sport = new Handler.Handler24Sport(this);
+            ProductPartHandler = new ProductPartHandler(this);
+
             Singleton24Sport = Singleton24Sport.Instance;
             DateTime dt = System.DateTime.Now;
 
