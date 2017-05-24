@@ -58,17 +58,15 @@
         <TextBlock x:Name="Varenr" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock x:Name="Varenavn" Grid.Column="3" Grid.Row="5" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock x:Name="Beskrivelse" Grid.Column="3" Grid.Row="6" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Str" Grid.Column="3" Grid.Row="7" TextWrapping="Wrap" Text="Str." VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Antal" Grid.Column="3" Grid.Row="8" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Pris" Grid.Column="3" Grid.Row="9" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Antal" Grid.Column="3" Grid.Row="7" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="Pris" Grid.Column="3" Grid.Row="8" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox x:Name="KundeID1" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
 
         <TextBox x:Name="VarenrTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBox x:Name="VarenavnTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" />
         <TextBox x:Name="BeskrivelseTextbox" Grid.Column="4" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="StrTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="4" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="4" Grid.Row="9" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="4" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
         <Grid HorizontalAlignment="Left" Width="550" Margin="30,10,0,20" BorderBrush="White" BorderThickness="2" Grid.ColumnSpan="3" Grid.RowSpan="13">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
