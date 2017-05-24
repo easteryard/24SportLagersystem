@@ -20,9 +20,9 @@ namespace _24SportLagersystem.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class EditOrder : Page
+    public sealed partial class AddProduct : Page
     {
-        public EditOrder()
+        public AddProduct()
         {
             this.InitializeComponent();
         }
