@@ -74,13 +74,13 @@
         <TextBlock x:Name="Beskrivelse" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock x:Name="Antal" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock x:Name="Pris" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="KundeID1" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="KundeID1" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
 
-        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" />
+        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Product.ProductId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Product.ProductName, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
         <TextBox x:Name="BeskrivelseTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Product.AmountMakeable, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Product.Price, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <ListView x:Name="listView" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
             <StackPanel Height="70" Width="300" />
