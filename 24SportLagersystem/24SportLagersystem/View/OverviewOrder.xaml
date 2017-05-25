@@ -11,6 +11,9 @@
     mc:Ignorable="d">
 
     <Grid Background="#FF918989">
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
 
         <Grid HorizontalAlignment="Left" Width="550" Margin="30,10,0,20" BorderBrush="White" BorderThickness="2">
             <Grid.ColumnDefinitions>
@@ -107,16 +110,16 @@
             <TextBlock x:Name="OverviewAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Dato" Grid.Column="2"/>
             <TextBlock x:Name="OverviewKundeID"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="KundeID" Grid.Column="0"/>
 
-            <ListView x:Name="ListviewKundeID" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
-            
-            
-            <ListView x:Name="ListviewOrderNr" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White">
+            <ListView x:Name="ListviewKundeID" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Order.CustomerId}">
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 
-            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White">
+
+            <ListView x:Name="ListviewOrderNr" Grid.RowSpan="5" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Order.OrderId}" Grid.ColumnSpan="2" Margin="170,135,7,3">
+                <StackPanel Height="50" Width="80"/>
+            </ListView>
+
+            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding DeliveryDate.DateTime, Mode=OneWay}">
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 

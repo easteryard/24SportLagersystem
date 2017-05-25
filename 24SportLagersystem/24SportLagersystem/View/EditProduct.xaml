@@ -1,5 +1,4 @@
 ﻿<Page
-    x:Class="_24SportLagersystem.View.EditProduct"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:_24SportLagersystem.View"
@@ -7,6 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    x:Class="_24SportLagersystem.View.EditProduct"
     mc:Ignorable="d">
 
     <Grid Background="#FF918989">
@@ -38,6 +39,10 @@
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
+
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
 
         <Button x:Name="Search" Content="Søg" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>
