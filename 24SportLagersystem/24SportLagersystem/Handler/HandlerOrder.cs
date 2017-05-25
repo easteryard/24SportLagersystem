@@ -5,42 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using _24SportLagersystem.Converter;
-using _24SportLagersystem.ViewModel;
 using _24SportLagersystem.Model;
+using _24SportLagersystem.ViewModel;
 
 namespace _24SportLagersystem.Handler
 {
-    class Handler24Sport
+    class HandlerOrder
     {
         public ViewModel24Sport ViewModel24Sport { get; set; }
 
-        public Handler24Sport(ViewModel24Sport viewModel24Sport)
+        public HandlerOrder(ViewModel24Sport viewModel24Sport)
         {
             ViewModel24Sport = viewModel24Sport;
         }
-/*
-        public void CreateProduct()
-        {
-            ViewModel24Sport.Singleton24Sport.AddProduct(ViewModel24Sport.ProductId, ViewModel24Sport.ProductName,
-                ViewModel24Sport.Price, ViewModel24Sport.Height, ViewModel24Sport.AmountMade,
-                ViewModel24Sport.AmountMakeable);
-        }
 
-        public void CreateProductPart()
-        {
-            ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId, ViewModel24Sport.ProductPartNo, ViewModel24Sport.Description, ViewModel24Sport.Amount, ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk, ViewModel24Sport.PriceTotalEur);
-        }
-
-        public void CreateCustomer()
-        {
-            ViewModel24Sport.Singleton24Sport.AddCustomer(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
-        }
-        */
         public void CreateOrder()
         {
             ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate, ViewModel24Sport.TimeSpanOrdreDate), DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate, ViewModel24Sport.TimeSpanDeliveryDate), ViewModel24Sport.CustomerId);
         }
-        
+
 
         public void SetSelectedOrder(Order order)
         {
@@ -50,8 +33,8 @@ namespace _24SportLagersystem.Handler
         public async void DeleteOrder()
         {
 
-           
-           //ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
+
+            //ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
             // Create the message dialog and set its content
             var messageDialog = new MessageDialog("Are you sure you want to Delete the Event: " + ViewModel24Sport.SelectedOrder.OrderId + " ?");
 
@@ -68,18 +51,17 @@ namespace _24SportLagersystem.Handler
             // Show the message dialog
 
             await messageDialog.ShowAsync();
-            
+
         }
 
         private void CommandInvokedHandler(IUICommand command)
         {
-           ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
+            ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
         }
 
         public void EditOrder()
         {
             ViewModel24Sport.Singleton24Sport.EditOrder(ViewModel24Sport.SelectedOrder);
         }
-
     }
 }

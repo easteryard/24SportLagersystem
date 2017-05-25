@@ -22,7 +22,7 @@ namespace _24SportLagersystem.ViewModel
 
         public Singleton24Sport Singleton24Sport { get; set; }
 
-        public Handler.Handler24Sport Handler24Sport { get; set; }
+        public Handler.HandlerOrder HandlerOrder { get; set; }
 
         public static Order SelectedOrder { get; set; }
         public ICommand EditOrderCommand { get; set; }
@@ -38,7 +38,7 @@ namespace _24SportLagersystem.ViewModel
         {
             get
             {
-                if (_createCommand == null) _createCommand = new RelayCommand(Handler24Sport.CreateOrder);
+                if (_createCommand == null) _createCommand = new RelayCommand(HandlerOrder.CreateOrder);
                 return _createCommand; }
 
             set { _createCommand = value; }
@@ -46,13 +46,13 @@ namespace _24SportLagersystem.ViewModel
 
         public ICommand SelectCommand
         {
-            get { return _selectCommand ?? (_selectCommand = new RelayArgCommand<Order>(order => Handler24Sport.SetSelectedOrder(order))); }
+            get { return _selectCommand ?? (_selectCommand = new RelayArgCommand<Order>(order => HandlerOrder.SetSelectedOrder(order))); }
             set { _selectCommand = value; }
         }
 
         public ICommand DeleteCommand
         {
-            get { return _deleteCommand ?? (_deleteCommand = new RelayCommand(Handler24Sport.DeleteOrder)); }
+            get { return _deleteCommand ?? (_deleteCommand = new RelayCommand(HandlerOrder.DeleteOrder)); }
             set { _deleteCommand = value; }
         }
 
@@ -296,16 +296,15 @@ namespace _24SportLagersystem.ViewModel
 
         public ViewModel24Sport()
         {
-            Handler24Sport = new Handler.Handler24Sport(this);
+            HandlerOrder = new Handler.HandlerOrder(this);
             Singleton24Sport = Singleton24Sport.Instance;
             DateTime dt = System.DateTime.Now;
 
             _orderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _deliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            //_timeSpanDeliveryDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-            //_timeSpanOrderDate = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
-            EditOrderCommand = new RelayCommand(Handler24Sport.EditOrder);
+
+            EditOrderCommand = new RelayCommand(HandlerOrder.EditOrder);
             ToOrderEditPagecCommand = new RelayCommand(NavigateToEditEventPage);
         }
 
