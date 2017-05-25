@@ -24,6 +24,28 @@ namespace _24SportLagersystem.ViewModel
 
         public static ProductPart SelectedItem { get; set; }
 
+        #region ProductRelayCommands
+
+        public ICommand CreateProductCommand
+        {
+            get
+            {
+                return _createProductCommand ??
+                    (_createProductCommand = new RelayCommand());
+            }
+            set { _createProductCommand = value; }
+        }
+
+        public ICommand EditProductCommand
+        {
+            get { return _editProductCommand ?? (_editProductCommand = new RelayCommand(Handler24Sport.)); }
+            set { _editProductCommand = value; }
+        }
+
+        public ICommand DeleteProductCommand { get; set; }
+
+        #endregion
+
         #region ProdutPartRelayCommands
 
         public ICommand CreateProductPartCommand
@@ -186,50 +208,15 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region ProductProperties
-        private int _productId;
-        private string _productName;
-        private double _price;
-        private double _height;
-        private int _amountMade;
-        private int _amountMakeable;
+
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public double Price { get; set; }
+        public double Height { get; set; }
+        public int AmountMade { get; set; }
+        public int AmountMakeable { get; set; }
 
         public static Product Product { get; set; }
-
-        public int ProductId
-        {
-            get { return _productId; }
-            set { _productId = value; }
-        }
-
-        public string ProductName
-        {
-            get { return _productName; }
-            set { _productName = value; }
-        }
-
-        public double Price
-        {
-            get { return _price; }
-            set { _price = value; }
-        }
-
-        public double Height
-        {
-            get { return _height; }
-            set { _height = value; }
-        }
-
-        public int AmountMade
-        {
-            get { return _amountMade; }
-            set { _amountMade = value; }
-        }
-
-        public int AmountMakeable
-        {
-            get { return _amountMakeable; }
-            set { _amountMakeable = value; }
-        }
 
         #endregion
 
@@ -267,6 +254,8 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _createProductPartCommand;
         private ICommand _deleteProductPartCommand;
         private ICommand _editProductPartCommand;
+        private ICommand _createProductCommand;
+        private ICommand _editProductCommand;
 
         public static ProductPart ProductPart { get; set; }
 

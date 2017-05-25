@@ -82,14 +82,6 @@ namespace _24SportLagersystem.Model
             Products.Add(myProduct);
         }
 
-        public void AddProductPart(int productPartId, int productPartNo, string description, int amount, double pricePerDkk, double pricePerEur,
-            double priceTotalDkk, double priceTotalEur)
-        {
-            ProductPart myProductPart = new ProductPart(productPartId, productPartNo, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
-            ProductParts.Add(myProductPart);
-            ProductPartPersistencyService.SaveProductPartsAsJsonAsync(myProductPart);
-        }
-
         public void AddProductLine(int productLineId, int productId, int productPartId, int amount)
         {
             ProductLine myProductLine = new ProductLine(productLineId, productId, productPartId, amount);
@@ -125,6 +117,8 @@ namespace _24SportLagersystem.Model
                 }
         }
 
+        #region ProductCrudMethods
+
         public async void LoadProductsAsync()
         {
             var products = await ProductPersistencyService.LoadProductFromJsonAsync();
@@ -135,6 +129,18 @@ namespace _24SportLagersystem.Model
                     Products.Add(product);
                 }
             }
+        }
+
+        #endregion
+
+        #region ProductPartCrudMethods
+
+        public void AddProductPart(int productPartId, int productPartNo, string description, int amount, double pricePerDkk, double pricePerEur,
+            double priceTotalDkk, double priceTotalEur)
+        {
+            ProductPart myProductPart = new ProductPart(productPartId, productPartNo, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
+            ProductParts.Add(myProductPart);
+            ProductPartPersistencyService.SaveProductPartsAsJsonAsync(myProductPart);
         }
 
         public async void LoadProductPartsAsync()
@@ -159,6 +165,8 @@ namespace _24SportLagersystem.Model
             ProductParts.Remove(selectedItem);
             ProductPartPersistencyService.DeleteProductPartAsync(selectedItem);
         }
+
+        #endregion
 
         public override string ToString()
         {

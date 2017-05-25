@@ -71,7 +71,7 @@ namespace _24SportLagersystem.Persistency
             }
         }
 
-        public static async void EditProductPartAsync(Product product)
+        public static async void EditProductAsync(Product product)
         {
             const string SERVER_URL = "http://localhost:41731";
             HttpClientHandler handler = new HttpClientHandler();
@@ -94,8 +94,8 @@ namespace _24SportLagersystem.Persistency
                 }
             }
         }
-
-        public static async void DeleteProductPartAsync(Product product)
+        
+        public static async void DeleteProductAsync(Product product)
         {
             const string SERVER_URL = "http://localhost:41731";
             HttpClientHandler handler = new HttpClientHandler();

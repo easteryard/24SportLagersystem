@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="_24SportLagersystem.View.ProductTestView"
     mc:Ignorable="d">
     <Page.Resources>
@@ -27,7 +28,21 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="974,493,0,0" VerticalAlignment="Top" Height="110" Width="108"/>
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="626" Margin="30,40,0,0" VerticalAlignment="Top" Width="454" ItemsSource="{Binding Singleton24Sport.Products}" ItemTemplate="{StaticResource DataTemplate}"/>
+        <AppBarButton x:Name="deleteProductPartButton" VerticalAlignment="Top" Margin="972,536,0,0" Label="Delete ProductPart" Icon="Delete" HorizontalAlignment="Left" Command="{Binding DeleteProductPartCommand}"/>
+        <AppBarButton x:Name="createProductPartButton" VerticalAlignment="Top" Margin="730,536,0,0" Label="Create ProductPart" Icon="Add" HorizontalAlignment="Left" Command="{Binding CreateProductPartCommand}"/>
+        <AppBarButton x:Name="toProductPartEditTestButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit ProductPart" Margin="854,536,0,0" VerticalAlignment="Top">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductPartEditTestView"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </AppBarButton>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Margin="590,109,0,0" TextWrapping="Wrap" Text="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="height" HorizontalAlignment="Left" Margin="590,177,0,0" TextWrapping="Wrap" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="price" HorizontalAlignment="Left" Margin="590,247,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="amountMade" HorizontalAlignment="Left" Margin="590,321,0,0" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="amountMakeable" HorizontalAlignment="Left" Margin="590,393,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="46" Width="91"/>
+
     </Grid>
 </Page>
