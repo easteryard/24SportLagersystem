@@ -74,7 +74,7 @@
         <TextBox x:Name="KundeIDTextbox" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBox x:Name="OrdreNrTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
         <DatePicker Grid.Column="4" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center"  Grid.ColumnSpan="2" Date="{Binding OrderDate, Mode=TwoWay}"  />
-        <DatePicker Grid.Column="3" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center"  Grid.ColumnSpan="3" Date="{Binding DeliveryDate, Mode=TwoWay}"  Margin="181,8,0,15"  />
+        <DatePicker Grid.Column="4" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" Date="{Binding DeliveryDate, Mode=TwoWay}" Grid.ColumnSpan="2"  />
         <TextBlock x:Name="Dato_Copy" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="leveringsdato" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="3" Width="97"/>
 
     </Grid>
