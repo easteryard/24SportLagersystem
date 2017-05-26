@@ -116,7 +116,7 @@
                 <StackPanel Height="50" Width="80" />
             </ListView>
 
-            <ListView x:Name="ListviewNeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White">
+            <ListView x:Name="ListviewBeskrivelse" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding ProductName}">
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 
