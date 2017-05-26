@@ -9,26 +9,26 @@ namespace _24SportLagersystem.Model
     class Order
     {
         public int OrderId { get; set; }
-        public int CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public int CustomerId { get; set; }
 
         public Order()
         {
 
         }
 
-        public Order(int orderId, int customerId, DateTime orderDate, DateTime deliveryDate)
+        public Order(int orderId, DateTime orderDate, DateTime deliveryDate, int customerId)
         {
             OrderId = orderId;
-            CustomerId = customerId;
             OrderDate = orderDate;
             DeliveryDate = deliveryDate;
+            CustomerId = customerId;
         }
 
         public override string ToString()
         {
-            return $"{nameof(OrderId)}: {OrderId}, {nameof(CustomerId)}: {CustomerId}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}";
+            return $"{nameof(OrderId)}: {OrderId}, {nameof(OrderDate)}: {OrderDate}, {nameof(DeliveryDate)}: {DeliveryDate}, {nameof(CustomerId)}: {CustomerId}";
         }
     }
 }
