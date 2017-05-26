@@ -59,7 +59,7 @@
             </interactivity:Interaction.Behaviors>
         </Button>
         <Button x:Name="TilføjProdukt" Content="Tilføj Ordre" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="83" Width="320" />
-        <Button x:Name="Gem" Content="Gem" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
+        <Button x:Name="Gem" Content="Gem" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding CreateCommand}"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
                     <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>

@@ -92,6 +92,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
 
 
 
@@ -119,7 +120,11 @@
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 
-            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding DeliveryDate.DateTime, Mode=OneWay}" Grid.ColumnSpan="2">
+            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding DeliveryDate.DateTime, Mode=OneWay}" Grid.ColumnSpan="1">
+                <StackPanel Height="50" Width="80"/>
+            </ListView>
+            <TextBlock x:Name="OverviewLeveringsdato"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Leverings dato" Grid.Column="3" Grid.ColumnSpan="1"/>
+            <ListView x:Name="ListviewDato_Copy" Grid.Column="3" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="1" Grid.Row="1" ItemsSource="{Binding DeliveryDate}" Grid.RowSpan="4">
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 
