@@ -71,6 +71,51 @@ namespace _24SportLagersystem.Persistency
             }
         }
 
+        public static async void EditProductPartAsync(Product product)
+        {
+            const string SERVER_URL = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
 
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("ApplicationData/JsonConvert"));
+
+                try
+                {
+                    var response = client.PutAsJsonAsync("api/ProductParts/" + product.ProductId, product).Result;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+        public static async void DeleteProductPartAsync(Product product)
+        {
+            const string SERVER_URL = "http://localhost:41731";
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.UseDefaultCredentials = true;
+
+            using (var client = new HttpClient(handler))
+            {
+                client.BaseAddress = new Uri(SERVER_URL);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                try
+                {
+                    await client.DeleteAsync("api/ProductParts/" + product.ProductId);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
     }
 }

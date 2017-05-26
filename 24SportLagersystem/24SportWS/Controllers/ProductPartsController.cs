@@ -80,22 +80,7 @@ namespace _24SportWS.Controllers
             }
 
             db.ProductParts.Add(productPart);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (ProductPartExists(productPart.ProductPartId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = productPart.ProductPartId }, productPart);
         }

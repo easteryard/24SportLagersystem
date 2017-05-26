@@ -87,6 +87,7 @@ namespace _24SportLagersystem.Model
         {
             ProductPart myProductPart = new ProductPart(productPartId, productPartNo, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
             ProductParts.Add(myProductPart);
+            ProductPartPersistencyService.SaveProductPartsAsJsonAsync(myProductPart);
         }
 
         public void AddProductLine(int productLineId, int productId, int productPartId, int amount)

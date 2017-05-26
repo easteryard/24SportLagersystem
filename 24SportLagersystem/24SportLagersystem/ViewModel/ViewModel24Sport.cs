@@ -37,7 +37,16 @@ namespace _24SportLagersystem.ViewModel
             set { _createProductPartCommand = value; }
         }
 
-
+        public ICommand EditProductPartCommand
+        {
+            get
+            {
+                return
+                    _editProductPartCommand ?? (_editProductPartCommand =
+                        new RelayCommand(ProductPartHandler.EditProductPart));
+            }
+            set { _editProductPartCommand = value; }
+        }
 
         public ICommand DeleteProductPartCommand
         {
@@ -257,6 +266,7 @@ namespace _24SportLagersystem.ViewModel
         private double _priceTotalEur;
         private ICommand _createProductPartCommand;
         private ICommand _deleteProductPartCommand;
+        private ICommand _editProductPartCommand;
 
         public static ProductPart ProductPart { get; set; }
 
