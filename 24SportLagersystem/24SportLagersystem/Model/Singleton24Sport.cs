@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _24SportLagersystem.Persistency;
-using _24SportLagersystem.ViewModel;
 
 namespace _24SportLagersystem.Model
 {
     class Singleton24Sport
     {
-        //her laver vi en instans af singleton
+        //her laver vi et objekt af singleton 
         private static Singleton24Sport _instance = new Singleton24Sport();
 
         //denne get metode tjekker om der er oprettet et singleton objekt og er der ikke dette, laver den et og kun et objekt.
@@ -28,7 +27,7 @@ namespace _24SportLagersystem.Model
         public ObservableCollection<ProductLine> ProductLines { get; set; }
         public ObservableCollection<ProductPart> ProductParts { get; set; }
 
-        // Dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. I vores konstruktør bliver observablecollection initialiseret, og der der bliver også kaldt en load metode af vores products
+        //dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. i vores konstruktør bliver der lavet et nyt observablecollection objekt af product, og der der bliver også kaldt en load metode af vores products
         private Singleton24Sport()
         {
             Products = new ObservableCollection<Product>();
@@ -38,40 +37,38 @@ namespace _24SportLagersystem.Model
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
-            LoadProductsAsync();
-            LoadProductPartsAsync();
         }
 
         #region AddMethodsWithObjectParameter
-        public void AddProduct(Product newProduct)
-        {
-            Products.Add(newProduct);
-        }
+        //public void AddProduct(Product newProduct)
+        //{
+        //    Products.Add(newProduct);
+        //}
 
-        public void AddProductPart(ProductPart newProductPart)
-        {
-            ProductParts.Add(newProductPart);
-        }
+        //public void AddProductPart(ProductPart newProductPart)
+        //{
+        //    ProductParts.Add(newProductPart);
+        //}
 
-        public void AddProductLine(ProductLine newProductLine)
-        {
-            ProductLines.Add(newProductLine);
-        }
+        //public void AddProductLine(ProductLine newProductLine)
+        //{
+        //    ProductLines.Add(newProductLine);
+        //}
 
-        public void AddCustomer(Customer newCustomer)
-        {
-            Customers.Add(newCustomer);
-        }
+        //public void AddCustomer(Customer newCustomer)
+        //{
+        //    Customers.Add(newCustomer);
+        //}
 
         public void AddOrder(Order newOrder)
         {
             Orders.Add(newOrder);
         }
 
-        public void AddOrderLine(OrderLine newOrderLine)
-        {
-            OrderLines.Add(newOrderLine);
-        }
+        //public void AddOrderLine(OrderLine newOrderLine)
+        //{
+        //    OrderLines.Add(newOrderLine);
+        //}
         #endregion
 
         #region AddMethodsWithoutObjectParameter
@@ -87,24 +84,25 @@ namespace _24SportLagersystem.Model
         {
             ProductPart myProductPart = new ProductPart(productPartId, productPartNo, description, amount, pricePerDkk, pricePerEur, priceTotalDkk, priceTotalEur);
             ProductParts.Add(myProductPart);
-            ProductPartPersistencyService.SaveProductPartsAsJsonAsync(myProductPart);
         }
 
-        public void AddProductLine(int productLineId, int productId, int productPartId, int amount)
+        public void AddProductLine(int productLineId, int amount)
         {
-            ProductLine myProductLine = new ProductLine(productLineId, productId, productPartId, amount);
+            ProductLine myProductLine = new ProductLine(productLineId, amount);
             ProductLines.Add(myProductLine);
         }
 
-        public void AddOrder(int orderId, int customerId, DateTime orderDate, DateTime deliveryDate)
+        public void AddOrder(int orderId, DateTime orderDate, DateTime deliveryDate, int customerId)
         {
-            Order myOrder = new Order(orderId, customerId, orderDate, deliveryDate);
+            Order myOrder = new Order(orderId, orderDate, deliveryDate, customerId);
             Orders.Add(myOrder);
+            PersistencyService.SaveOrdersAsJsonAsync(myOrder);
         }
 
-        public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
+
+        public void AddOrderLine(int orderLineId, int amount)
         {
-            OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
+            OrderLine myOrderLine = new OrderLine(orderLineId, amount);
             OrderLines.Add(myOrderLine);
         }
 
@@ -117,53 +115,24 @@ namespace _24SportLagersystem.Model
 
         public async void LoadOrdersAsync()
         {
-            var orders = await PersistencyService.LoadOrderFromJsonAsync();
+            var orders = await PersistencyService.LoadProductFromJsonAsync();
             if (orders != null)
-                foreach (var ev in orders)
+                foreach (var order in orders)
                 {
-                    Orders.Add(ev);
+                    Orders.Add(order);
                 }
+
         }
 
-        public async void LoadProductsAsync()
+        public void DeleteOrder(Order orderToBeRemoved)
         {
-            var products = await ProductPersistencyService.LoadProductFromJsonAsync();
-            if (products != null)
-            {
-                foreach (var product in products)
-                {
-                    Products.Add(product);
-                }
-            }
+            Orders.Remove(orderToBeRemoved);
+            PersistencyService.DeleteOrdersAsAsync(orderToBeRemoved);
         }
 
-        public async void LoadProductPartsAsync()
+        public void EditOrder(Order orders)
         {
-            var productParts = await ProductPartPersistencyService.LoadProductPartsFromJsonAsync();
-            if (productParts != null)
-            {
-                foreach (var productPart in productParts)
-                {
-                    ProductParts.Add(productPart);
-                }
-            }
+            PersistencyService.EditOrdersAsJsonAsync(orders);
         }
-
-        public void EditProductPart(ProductPart productPart)
-        {
-            ProductPartPersistencyService.EditProductPartAsync(ViewModel24Sport.SelectedItem);
-        }
-
-        public void DeleteProductPart(ProductPart selectedItem)
-        {
-            ProductParts.Remove(selectedItem);
-            ProductPartPersistencyService.DeleteProductPartAsync(selectedItem);
-        }
-
-        public override string ToString()
-        {
-            return $"{nameof(Products)}: {Products}, {nameof(Customers)}: {Customers}, {nameof(Orders)}: {Orders}, {nameof(OrderLines)}: {OrderLines}, {nameof(ProductLines)}: {ProductLines}, {nameof(ProductParts)}: {ProductParts}";
-        }
-
     }
 }
