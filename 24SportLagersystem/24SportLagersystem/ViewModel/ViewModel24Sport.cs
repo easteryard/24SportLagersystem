@@ -59,6 +59,38 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
+        public static Customer SelectedCustomer { get; set; }
+        public ICommand EditCustomerCommand { get; set; }
+        public ICommand ToCustomerEditPagecCommand { get; set; }
+
+        
+        private ICommand _createCustomerCommand;
+        private ICommand _selectCustomerCommand;
+        private ICommand _deleteCustomerCommand;
+
+
+        public ICommand CreateCustomerCommand
+        {
+            get
+            {
+                if (_createCustomerCommand == null) _createCustomerCommand = new RelayCommand(HandlerOrder.CreateCustomer);
+                return _createCustomerCommand;
+            }
+
+            set { _createCustomerCommand = value; }
+        }
+
+        public ICommand SelectCustomerCommand
+        {
+            get { return _selectCustomerCommand ?? (_selectCustomerCommand = new RelayArgCommand<Customer>(customer => HandlerOrder.SetSelectedCustomer(customer))); }
+            set { _selectCustomerCommand = value; }
+        }
+
+        public ICommand DeleteCustomerCommand
+        {
+            get { return _deleteCustomerCommand ?? (_deleteCustomerCommand = new RelayCommand(HandlerOrder.DeleteCustomer)); }
+            set { _deleteCustomerCommand = value; }
+        }
 
         #region CustomerProps
 

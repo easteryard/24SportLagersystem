@@ -37,6 +37,7 @@ namespace _24SportLagersystem.Model
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
+            LoadCustomersAsync();
         }
 
         #region AddMethodsWithObjectParameter
@@ -115,13 +116,12 @@ namespace _24SportLagersystem.Model
 
         public async void LoadOrdersAsync()
         {
-            var orders = await PersistencyService.LoadProductFromJsonAsync();
+            var orders = await PersistencyService.LoadOrdersFromJsonAsync();
             if (orders != null)
                 foreach (var order in orders)
                 {
                     Orders.Add(order);
                 }
-
         }
 
         public void DeleteOrder(Order orderToBeRemoved)
@@ -133,6 +133,30 @@ namespace _24SportLagersystem.Model
         public void EditOrder(Order orders)
         {
             PersistencyService.EditOrdersAsJsonAsync(orders);
+        }
+
+
+
+
+        public async void LoadCustomersAsync()
+        {
+            var customers = await PersistencyService.LoadCustomersFromJsonAsync();
+            if (customers != null)
+                foreach (var customer in customers)
+                {
+                    customers.Add(customer);
+                }
+        }
+
+        public void DeleteCustomer(Customer customerToBeRemoved)
+        {
+            Customers.Remove(customerToBeRemoved);
+            PersistencyService.DeleteCustomersAsAsync(customerToBeRemoved);
+        }
+
+        public void EditCustomer(Customer customers)
+        {
+            PersistencyService.EditCustomersAsJsonAsync(customers);
         }
     }
 }
