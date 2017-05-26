@@ -1,0 +1,46 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_24SportLagersystem.TestView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="_24SportLagersystem.TestView.OrderTestView"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="DataTemplate">
+            <Grid d:DesignWidth="396" d:DesignHeight="131" Width="486">
+                <StackPanel HorizontalAlignment="Left" Height="131" VerticalAlignment="Top" Width="486">
+                    <TextBlock x:Name="orderId" TextWrapping="Wrap" Text="{Binding OrderId}"/>
+                    <TextBlock x:Name="customerId" TextWrapping="Wrap" Text="{Binding CustomerId}"/>
+                    <TextBlock x:Name="orderDate" TextWrapping="Wrap" Text="{Binding OrderDate}"/>
+                    <TextBlock x:Name="deliveryDate" TextWrapping="Wrap" Text="{Binding DeliveryDate}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="600" Margin="40,45,0,0" VerticalAlignment="Top" Width="400" ItemTemplate="{StaticResource DataTemplate}" ItemsSource="{Binding Singleton24Sport.Orders}" SelectedItem="{Binding SelectedOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <AppBarButton x:Name="createProductButton" VerticalAlignment="Top" Margin="730,536,0,0" Label="Create Order" Icon="Add" HorizontalAlignment="Left" Command="{Binding CreateOrderCommand}"/>
+        <AppBarButton x:Name="toProductEditTestButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit Product" Margin="854,536,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.OrderEditTestView"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </AppBarButton>
+        <DatePicker x:Name="orderDate" HorizontalAlignment="Left" Margin="590,262,0,0" VerticalAlignment="Top" Date="{Binding OrderDateDate}"/>
+        <DatePicker x:Name="deliveryDate" HorizontalAlignment="Left" Margin="590,342,0,0" VerticalAlignment="Top" Date="{Binding DeliveryDateDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="customerId" HorizontalAlignment="Left" Margin="590,168,0,0" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="44" Width="87"/>
+        <AppBarButton x:Name="deleteOrderButton" HorizontalAlignment="Left" Icon="Delete" Label="Delete Order" Margin="987,536,0,0" VerticalAlignment="Top" Command="{Binding DeleteOrderCommand}"/>
+
+    </Grid>
+</Page>
+

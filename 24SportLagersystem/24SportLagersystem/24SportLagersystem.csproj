@@ -99,6 +99,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Handler\Handler24Sport.cs" />
+    <Compile Include="Handler\OrderHandler.cs" />
     <Compile Include="Handler\ProductHandler.cs" />
     <Compile Include="Handler\ProductPartHandler.cs" />
     <Compile Include="Model\Customer.cs" />
@@ -108,10 +109,17 @@
     <Compile Include="Model\ProductLine.cs" />
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
+    <Compile Include="Persistency\OrderPersistencyService.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Persistency\ProductPartPersistencyService.cs" />
     <Compile Include="Persistency\ProductPersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="TestView\OrderEditTestView.xaml.cs">
+      <DependentUpon>OrderEditTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestView\OrderTestView.xaml.cs">
+      <DependentUpon>OrderTestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ViewModel24Sport.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
@@ -141,16 +149,16 @@
     <Compile Include="View\OverviewVimbler.xaml.cs">
       <DependentUpon>OverviewVimbler.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductEditTestView.xaml.cs">
+    <Compile Include="TestView\ProductEditTestView.xaml.cs">
       <DependentUpon>ProductEditTestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductPartEditTestView.xaml.cs">
+    <Compile Include="TestView\ProductPartEditTestView.xaml.cs">
       <DependentUpon>ProductPartEditTestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductPartTestView.xaml.cs">
+    <Compile Include="TestView\ProductPartTestView.xaml.cs">
       <DependentUpon>ProductPartTestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductTestView.xaml.cs">
+    <Compile Include="TestView\ProductTestView.xaml.cs">
       <DependentUpon>ProductTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Search.xaml.cs">
@@ -178,6 +186,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="TestView\OrderEditTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestView\OrderTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddOrder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -214,19 +230,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductEditTestView.xaml">
+    <Page Include="TestView\ProductEditTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductPartEditTestView.xaml">
+    <Page Include="TestView\ProductPartEditTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductPartTestView.xaml">
+    <Page Include="TestView\ProductPartTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductTestView.xaml">
+    <Page Include="TestView\ProductTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

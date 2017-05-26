@@ -16,15 +16,38 @@ namespace _24SportLagersystem.ViewModel
 {
     class ViewModel24Sport : INotifyPropertyChanged
     {
-
         public Singleton24Sport Singleton24Sport { get; set; }
 
         public Handler.Handler24Sport Handler24Sport { get; set; }
+
+        public OrderHandler OrderHandler { get; set; }
         public ProductHandler ProductHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
 
         public static Product SelectedProduct { get; set; }
         public static ProductPart SelectedProductPart { get; set; }
+
+        #region OrderRelayCommands
+
+        public ICommand CreateOrderCommand
+        {
+            get { return _createOrderCommand ?? (_createOrderCommand = new RelayCommand(OrderHandler.CreateOrder)); }
+            set { _createOrderCommand = value; }
+        }
+
+        public ICommand EditOrderCommand
+        {
+            get { return _editOrderCommand ?? (_editOrderCommand = new RelayCommand(OrderHandler.EditOrder)); }
+            set { _editOrderCommand = value; }
+        }
+
+        public ICommand DeleteOrderCommand
+        {
+            get { return _deleteOrderCommand ?? (_deleteOrderCommand = new RelayCommand(OrderHandler.DeleteOrder)); }
+            set { _deleteOrderCommand = value; }
+        }
+
+        #endregion
 
         #region ProductRelayCommands
 
@@ -104,11 +127,7 @@ namespace _24SportLagersystem.ViewModel
 
         public ICommand CreateCommand
         {
-            get
-            {
-                if (_createCommand == null) _createCommand = new RelayCommand(Handler24Sport.CreateProduct);
-                return _createCommand; }
-
+            get { return _createCommand; }
             set { _createCommand = value; }
         }
 
@@ -168,36 +187,48 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region OrderProperties
-        private int _orderId;
-        private DateTimeOffset _deliveryDate;
-        private DateTimeOffset _orderDate;
-        private TimeSpan _timeSpan;
+
+        public int OrderId { get; set; }
+        public DateTimeOffset OrderDateDate { get; set; }
+        public TimeSpan OrderDateTime { get; set; }
+        public DateTimeOffset DeliveryDateDate { get; set; }
+        public TimeSpan DeliveryDateTime { get; set; }
+
+        public static Order SelectedOrder { get; set; }
 
         public static Order Order { get; set; }
 
-        public int OrderId
-        {
-            get { return _orderId; }
-            set { _orderId = value; }
-        }
+        //public DateTimeOffset OrderDate { get; set; }
+        //public DateTimeOffset DeliveryDate { get; set; }
 
-        public DateTimeOffset DeliveryDate
-        {
-            get { return _deliveryDate; }
-            set { _deliveryDate = value; }
-        }
+        //private int _orderId;
+        //private DateTimeOffset _deliveryDate;
+        //private DateTimeOffset _orderDate;
+        //private TimeSpan _timeSpan;
 
-        public DateTimeOffset OrderDate
-        {
-            get { return _orderDate; }
-            set { _orderDate = value; }
-        }
+        //public int OrderId
+        //{
+        //    get { return _orderId; }
+        //    set { _orderId = value; }
+        //}
 
-        public TimeSpan TimeSpan
-        {
-            get { return _timeSpan; }
-            set { _timeSpan = value; }
-        }
+        //public DateTimeOffset DeliveryDate
+        //{
+        //    get { return _deliveryDate; }
+        //    set { _deliveryDate = value; }
+        //}
+
+        //public DateTimeOffset OrderDate
+        //{
+        //    get { return _orderDate; }
+        //    set { _orderDate = value; }
+        //}
+
+        //public TimeSpan TimeSpan
+        //{
+        //    get { return _timeSpan; }
+        //    set { _timeSpan = value; }
+        //}
 
         #endregion
 
@@ -271,6 +302,9 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _createProductCommand;
         private ICommand _editProductCommand;
         private ICommand _deleteProductCommand;
+        private ICommand _createOrderCommand;
+        private ICommand _editOrderCommand;
+        private ICommand _deleteOrderCommand;
 
         public static ProductPart ProductPart { get; set; }
 
@@ -326,15 +360,22 @@ namespace _24SportLagersystem.ViewModel
         public ViewModel24Sport()
         {
             Handler24Sport = new Handler.Handler24Sport(this);
+            OrderHandler = new OrderHandler(this);
             ProductHandler = new ProductHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
 
             Singleton24Sport = Singleton24Sport.Instance;
+
             DateTime dt = System.DateTime.Now;
 
-            _orderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            _deliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            _timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+            OrderDateDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, new TimeSpan());
+            OrderDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+            DeliveryDateDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, new TimeSpan());
+            DeliveryDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+            //OrderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            //DeliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            //_timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

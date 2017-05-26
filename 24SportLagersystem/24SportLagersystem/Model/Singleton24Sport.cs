@@ -82,12 +82,6 @@ namespace _24SportLagersystem.Model
             ProductLines.Add(myProductLine);
         }
 
-        public void AddOrder(int orderId, int customerId, DateTime orderDate, DateTime deliveryDate)
-        {
-            Order myOrder = new Order(orderId, customerId, orderDate, deliveryDate);
-            Orders.Add(myOrder);
-        }
-
         public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
         {
             OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
@@ -101,6 +95,15 @@ namespace _24SportLagersystem.Model
         }
         #endregion
 
+        #region OrderCrudMethods
+
+        public void AddOrder(int orderId, int customerId, DateTime orderDate, DateTime deliveryDate)
+        {
+            Order myOrder = new Order(orderId, customerId, orderDate, deliveryDate);
+            Orders.Add(myOrder);
+            OrderPersistencyService.SaveOrdersAsJsonAsync(myOrder);
+        }
+
         public async void LoadOrdersAsync()
         {
             var orders = await PersistencyService.LoadOrderFromJsonAsync();
@@ -111,7 +114,28 @@ namespace _24SportLagersystem.Model
                 }
         }
 
+        public void EditOrder(Order order)
+        {
+            OrderPersistencyService.EditOrdersAsJsonAsync(order);
+        }
+
+        public void DeleteOrder(Order order)
+        {
+            Orders.Remove(order);
+            OrderPersistencyService.DeleteOrdersAsAsync(order);
+        }
+
+        #endregion
+
         #region ProductCrudMethods
+
+        public void AddProduct(int productId, string productName, double height, double price, int amountMade,
+        int amountMakeable)
+        {
+            Product myProduct = new Product(productId, productName, height, price, amountMade, amountMakeable);
+            Products.Add(myProduct);
+            ProductPersistencyService.SaveProductsAsJsonAsync(myProduct);
+        }
 
         public async void LoadProductsAsync()
         {
@@ -123,14 +147,6 @@ namespace _24SportLagersystem.Model
                     Products.Add(product);
                 }
             }
-        }
-
-        public void AddProduct(int productId, string productName, double height, double price, int amountMade,
-        int amountMakeable)
-        {
-            Product myProduct = new Product(productId, productName, height, price, amountMade, amountMakeable);
-            Products.Add(myProduct);
-            ProductPersistencyService.SaveProductsAsJsonAsync(myProduct);
         }
 
         public void EditProduct(Product product)
