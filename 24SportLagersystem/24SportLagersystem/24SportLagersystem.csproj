@@ -99,7 +99,6 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Handler\Handler24Sport.cs" />
-    <Compile Include="Handler\ProductPartHandler.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderLine.cs" />
@@ -108,31 +107,23 @@
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
-    <Compile Include="Persistency\ProductPartPersistencyService.cs" />
-    <Compile Include="Persistency\ProductPersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\ViewModel24Sport.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
       <DependentUpon>AddOrder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddProduct.xaml.cs">
-      <DependentUpon>AddProduct.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\CostumerTestView.xaml.cs">
       <DependentUpon>CostumerTestView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EditOrder.xaml.cs">
-      <DependentUpon>EditOrder.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EditProduct.xaml.cs">
-      <DependentUpon>EditProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\OverviewOrder.xaml.cs">
-      <DependentUpon>OverviewOrder.xaml</DependentUpon>
+    <Compile Include="View\OrderEdit.xaml.cs">
+      <DependentUpon>OrderEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderTestView.xaml.cs">
+      <DependentUpon>OrderTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
@@ -142,9 +133,6 @@
     </Compile>
     <Compile Include="View\OverviewVimbler.xaml.cs">
       <DependentUpon>OverviewVimbler.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductPartEditTestView.xaml.cs">
-      <DependentUpon>ProductPartEditTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductPartTestView.xaml.cs">
       <DependentUpon>ProductPartTestView.xaml</DependentUpon>
@@ -169,8 +157,14 @@
     <None Include="24SportLagersystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -178,10 +172,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\AddOrder.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\AddProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,21 +179,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditOrder.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\EditProduct.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\OverviewOrder.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\OrderEdit.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Overview.xaml">
       <SubType>Designer</SubType>
@@ -214,10 +200,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OverviewVimbler.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ProductPartEditTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

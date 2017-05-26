@@ -50,7 +50,8 @@ namespace _24SportLagersystem.Common
         {
             if (parameter != null)
             {
-                if (!typeof(T).Equals(parameter.GetType())) return false;  //If the parameters type is not equal to Type T return false
+                if (!typeof(T).Equals(parameter.GetType()))
+                    return false; //If the parameters type is not equal to Type T return false
             }
             return _canExecute == null ? true : _canExecute();
         }

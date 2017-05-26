@@ -1,0 +1,24 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_24SportLagersystem.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    x:Class="_24SportLagersystem.View.OrderEdit"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF9B9898">
+
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="156,154,0,0" TextWrapping="Wrap" Text="{Binding SelectedOrder.CustomerId, Mode=TwoWay}" VerticalAlignment="Top" Height="32" Width="137"/>
+        <DatePicker HorizontalAlignment="Left" Margin="156,229,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.OrderDate.Date, Mode=OneWay}"/>
+        <DatePicker HorizontalAlignment="Left" Margin="165,371,0,0" VerticalAlignment="Top" Date="{Binding SelectedOrder.DeliveryDate.Date, Mode=OneWay}"/>
+        <TimePicker HorizontalAlignment="Left" Margin="161,276,0,0" VerticalAlignment="Top" Time="{Binding SelectedOrder.OrderDate.TimeOfDay, Mode=OneWay}"/>
+        <TimePicker HorizontalAlignment="Left" Margin="165,430,0,0" VerticalAlignment="Top" Time="{Binding SelectedOrder.DeliveryDate.TimeOfDay, Mode=OneWay}"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="174,516,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}"/>
+
+    </Grid>
+</Page>
