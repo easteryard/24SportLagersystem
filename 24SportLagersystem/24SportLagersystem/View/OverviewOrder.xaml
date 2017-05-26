@@ -115,11 +115,11 @@
             </ListView>
 
 
-            <ListView x:Name="ListviewOrderNr" Grid.RowSpan="5" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Order.OrderId}" Grid.ColumnSpan="2" Margin="170,135,7,3">
+            <ListView x:Name="ListviewOrderNr" Grid.RowSpan="4" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Order.OrderId}" Grid.Row="1" Grid.Column="1">
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 
-            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding DeliveryDate.DateTime, Mode=OneWay}">
+            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="1" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding DeliveryDate.DateTime, Mode=OneWay}" Grid.ColumnSpan="2">
                 <StackPanel Height="50" Width="80"/>
             </ListView>
 
