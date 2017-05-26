@@ -14,13 +14,13 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <TextBox x:Name="productPartNo" HorizontalAlignment="Left" Margin="97,95,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
-        <TextBox x:Name="description" HorizontalAlignment="Left" Margin="97,171,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
-        <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="97,243,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
-        <TextBox x:Name="pricePerPieceDkk" HorizontalAlignment="Left" Margin="97,319,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.PricePerPieceDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
-        <TextBox x:Name="pricePerPieceEur" HorizontalAlignment="Left" Margin="97,397,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.PricePerPieceEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
-        <TextBox x:Name="priceTotalDkk" HorizontalAlignment="Left" Margin="97,475,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.PriceTotalDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
-        <TextBox x:Name="priceTotalEur" HorizontalAlignment="Left" Margin="97,557,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.PriceTotalEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="productPartNo" HorizontalAlignment="Left" Margin="97,95,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="description" HorizontalAlignment="Left" Margin="97,171,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="97,243,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="pricePerPieceDkk" HorizontalAlignment="Left" Margin="97,319,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.PricePerPieceDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="pricePerPieceEur" HorizontalAlignment="Left" Margin="97,397,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.PricePerPieceEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="priceTotalDkk" HorizontalAlignment="Left" Margin="97,475,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.PriceTotalDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="priceTotalEur" HorizontalAlignment="Left" Margin="97,557,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductPart.PriceTotalEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
         <AppBarButton x:Name="editProductPart" HorizontalAlignment="Left" Icon="Accept" Label="Accept" Margin="401,503,0,0" VerticalAlignment="Top" Command="{Binding EditProductPartCommand}"/>
         <AppBarButton x:Name="toProductPartTestView" HorizontalAlignment="Left" Icon="Back" Label="Back" Margin="553,503,0,0" VerticalAlignment="Top">
         <interactivity:Interaction.Behaviors>

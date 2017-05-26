@@ -28,13 +28,13 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="626" Margin="30,40,0,0" VerticalAlignment="Top" Width="454" ItemsSource="{Binding Singleton24Sport.Products}" ItemTemplate="{StaticResource DataTemplate}"/>
-        <AppBarButton x:Name="deleteProductPartButton" VerticalAlignment="Top" Margin="972,536,0,0" Label="Delete ProductPart" Icon="Delete" HorizontalAlignment="Left" Command="{Binding DeleteProductPartCommand}"/>
-        <AppBarButton x:Name="createProductPartButton" VerticalAlignment="Top" Margin="730,536,0,0" Label="Create ProductPart" Icon="Add" HorizontalAlignment="Left" Command="{Binding CreateProductPartCommand}"/>
-        <AppBarButton x:Name="toProductPartEditTestButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit ProductPart" Margin="854,536,0,0" VerticalAlignment="Top">
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="626" Margin="30,40,0,0" VerticalAlignment="Top" Width="454" ItemsSource="{Binding Singleton24Sport.Products}" ItemTemplate="{StaticResource DataTemplate}" SelectedItem="{Binding SelectedProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <AppBarButton x:Name="deleteProductButton" VerticalAlignment="Top" Margin="972,536,0,0" Label="Delete Product" Icon="Delete" HorizontalAlignment="Left" Command="{Binding DeleteProductCommand}"/>
+        <AppBarButton x:Name="createProductButton" VerticalAlignment="Top" Margin="730,536,0,0" Label="Create Product" Icon="Add" HorizontalAlignment="Left" Command="{Binding CreateProductCommand}"/>
+        <AppBarButton x:Name="toProductEditTestButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit Product" Margin="854,536,0,0" VerticalAlignment="Top">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
-                    <Core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductPartEditTestView"/>
+                    <Core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductEditTestView"/>
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </AppBarButton>
@@ -42,7 +42,7 @@
         <TextBox x:Name="height" HorizontalAlignment="Left" Margin="590,177,0,0" TextWrapping="Wrap" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
         <TextBox x:Name="price" HorizontalAlignment="Left" Margin="590,247,0,0" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
         <TextBox x:Name="amountMade" HorizontalAlignment="Left" Margin="590,321,0,0" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
-        <TextBox x:Name="amountMakeable" HorizontalAlignment="Left" Margin="590,393,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="amountMakeable" HorizontalAlignment="Left" Margin="590,393,0,0" TextWrapping="Wrap" Text="{Binding AmountMakeable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
 
     </Grid>
 </Page>

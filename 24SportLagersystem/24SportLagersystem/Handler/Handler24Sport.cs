@@ -26,17 +26,25 @@ namespace _24SportLagersystem.Handler
 
         public void CreateProductPart()
         {
-            ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId, ViewModel24Sport.ProductPartNo, ViewModel24Sport.Description, ViewModel24Sport.Amount, ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk, ViewModel24Sport.PriceTotalEur);
+            ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId,
+                ViewModel24Sport.ProductPartNo, ViewModel24Sport.Description, ViewModel24Sport.Amount,
+                ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk,
+                ViewModel24Sport.PriceTotalEur);
         }
 
         public void CreateCustomer()
         {
-            ViewModel24Sport.Singleton24Sport.AddCustomer(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
+            ViewModel24Sport.Singleton24Sport.AddCustomer(ViewModel24Sport.CustomerId, ViewModel24Sport.Name,
+                ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
         }
 
         public void CreateOrder()
         {
-            ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, ViewModel24Sport.CustomerId, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate, ViewModel24Sport.TimeSpan), DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate, ViewModel24Sport.TimeSpan));
+            ViewModel24Sport.Singleton24Sport.AddOrder(ViewModel24Sport.OrderId, ViewModel24Sport.CustomerId,
+                DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.OrderDate,
+                    ViewModel24Sport.TimeSpan),
+                DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(ViewModel24Sport.DeliveryDate,
+                    ViewModel24Sport.TimeSpan));
         }
 
     }

@@ -86,7 +86,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
-                    var response = client.PutAsJsonAsync("api/ProductParts/" + product.ProductId, product).Result;
+                    var response = client.PutAsJsonAsync("api/Products/" + product.ProductId, product).Result;
                 }
                 catch (Exception)
                 {
@@ -109,7 +109,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
-                    await client.DeleteAsync("api/ProductParts/" + product.ProductId);
+                    await client.DeleteAsync("api/Products/" + product.ProductId);
                 }
                 catch (Exception)
                 {

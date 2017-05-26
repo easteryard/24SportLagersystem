@@ -20,9 +20,11 @@ namespace _24SportLagersystem.ViewModel
         public Singleton24Sport Singleton24Sport { get; set; }
 
         public Handler.Handler24Sport Handler24Sport { get; set; }
+        public ProductHandler ProductHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
 
-        public static ProductPart SelectedItem { get; set; }
+        public static Product SelectedProduct { get; set; }
+        public static ProductPart SelectedProductPart { get; set; }
 
         #region ProductRelayCommands
 
@@ -31,18 +33,30 @@ namespace _24SportLagersystem.ViewModel
             get
             {
                 return _createProductCommand ??
-                    (_createProductCommand = new RelayCommand());
+                    (_createProductCommand = new RelayCommand(ProductHandler.CreateProduct));
             }
             set { _createProductCommand = value; }
         }
 
         public ICommand EditProductCommand
         {
-            get { return _editProductCommand ?? (_editProductCommand = new RelayCommand(Handler24Sport.)); }
+            get
+            {
+                return _editProductCommand ??
+                    (_editProductCommand = new RelayCommand(ProductHandler.EditProduct));
+            }
             set { _editProductCommand = value; }
         }
 
-        public ICommand DeleteProductCommand { get; set; }
+        public ICommand DeleteProductCommand
+        {
+            get
+            {
+                return _deleteProductCommand ??
+                    (_deleteProductCommand = new RelayCommand(ProductHandler.DeleteProduct));
+            }
+            set { _deleteProductCommand = value; }
+        }
 
         #endregion
 
@@ -54,7 +68,7 @@ namespace _24SportLagersystem.ViewModel
             {
                 // Return _createProductPartCommand - if it's null; create a new relaycommand
                 return _createProductPartCommand ??
-                       (_createProductPartCommand = new RelayCommand(Handler24Sport.CreateProductPart));
+                       (_createProductPartCommand = new RelayCommand(ProductPartHandler.CreateProductPart));
             }
             set { _createProductPartCommand = value; }
         }
@@ -256,6 +270,7 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _editProductPartCommand;
         private ICommand _createProductCommand;
         private ICommand _editProductCommand;
+        private ICommand _deleteProductCommand;
 
         public static ProductPart ProductPart { get; set; }
 
@@ -311,6 +326,7 @@ namespace _24SportLagersystem.ViewModel
         public ViewModel24Sport()
         {
             Handler24Sport = new Handler.Handler24Sport(this);
+            ProductHandler = new ProductHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
 
             Singleton24Sport = Singleton24Sport.Instance;

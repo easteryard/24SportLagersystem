@@ -24,9 +24,14 @@ namespace _24SportLagersystem.Handler
                 ViewModel24Sport.AmountMakeable);
         }
 
-        public static void DeleteProduct()
+        public void EditProduct()
         {
-            Singleton24Sport.Instance.
+            Singleton24Sport.Instance.EditProduct(ViewModel24Sport.SelectedProduct);
+        }
+
+        public void DeleteProduct()
+        {
+            Singleton24Sport.Instance.DeleteProduct(ViewModel24Sport.SelectedProduct);
         }
     }
 }

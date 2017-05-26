@@ -141,6 +141,9 @@
     <Compile Include="View\OverviewVimbler.xaml.cs">
       <DependentUpon>OverviewVimbler.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProductEditTestView.xaml.cs">
+      <DependentUpon>ProductEditTestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductPartEditTestView.xaml.cs">
       <DependentUpon>ProductPartEditTestView.xaml</DependentUpon>
     </Compile>
@@ -208,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OverviewVimbler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductEditTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

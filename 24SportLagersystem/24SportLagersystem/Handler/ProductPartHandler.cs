@@ -19,17 +19,20 @@ namespace _24SportLagersystem.Handler
 
         public void CreateProductPart()
         {
-            ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId, ViewModel24Sport.ProductPartNo, ViewModel24Sport.Description, ViewModel24Sport.Amount, ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk, ViewModel24Sport.PriceTotalEur);
+            ViewModel24Sport.Singleton24Sport.AddProductPart(ViewModel24Sport.ProductPartId,
+                ViewModel24Sport.ProductPartNo, ViewModel24Sport.Description, ViewModel24Sport.Amount,
+                ViewModel24Sport.PricePerDkk, ViewModel24Sport.PricePerEur, ViewModel24Sport.PriceTotalDkk,
+                ViewModel24Sport.PriceTotalEur);
         }
 
         public void EditProductPart()
         {
-            ViewModel24Sport.Singleton24Sport.EditProductPart(ViewModel24Sport.SelectedItem);
+            ViewModel24Sport.Singleton24Sport.EditProductPart(ViewModel24Sport.SelectedProductPart);
         }
 
         public void DeleteProductPart()
         {
-            ViewModel24Sport.Singleton24Sport.DeleteProductPart(ViewModel24Sport.SelectedItem);
+            ViewModel24Sport.Singleton24Sport.DeleteProductPart(ViewModel24Sport.SelectedProductPart);
         }
     }
 }

@@ -75,12 +75,6 @@ namespace _24SportLagersystem.Model
         #endregion
 
         #region AddMethodsWithoutObjectParameter
-        public void AddProduct(int productId, string productName, double height, double price, int amountMade,
-        int amountMakeable)
-        {
-            Product myProduct = new Product(productId, productName, height, price, amountMade, amountMakeable);
-            Products.Add(myProduct);
-        }
 
         public void AddProductLine(int productLineId, int productId, int productPartId, int amount)
         {
@@ -131,6 +125,25 @@ namespace _24SportLagersystem.Model
             }
         }
 
+        public void AddProduct(int productId, string productName, double height, double price, int amountMade,
+        int amountMakeable)
+        {
+            Product myProduct = new Product(productId, productName, height, price, amountMade, amountMakeable);
+            Products.Add(myProduct);
+            ProductPersistencyService.SaveProductsAsJsonAsync(myProduct);
+        }
+
+        public void EditProduct(Product product)
+        {
+            ProductPersistencyService.EditProductAsync(product);
+        }
+
+        public void DeleteProduct(Product product)
+        {
+            Products.Remove(product);
+            ProductPersistencyService.DeleteProductAsync(product);
+        }
+
         #endregion
 
         #region ProductPartCrudMethods
@@ -157,13 +170,13 @@ namespace _24SportLagersystem.Model
 
         public void EditProductPart(ProductPart productPart)
         {
-            ProductPartPersistencyService.EditProductPartAsync(ViewModel24Sport.SelectedItem);
+            ProductPartPersistencyService.EditProductPartAsync(ViewModel24Sport.SelectedProductPart);
         }
 
-        public void DeleteProductPart(ProductPart selectedItem)
+        public void DeleteProductPart(ProductPart productPart)
         {
-            ProductParts.Remove(selectedItem);
-            ProductPartPersistencyService.DeleteProductPartAsync(selectedItem);
+            ProductParts.Remove(productPart);
+            ProductPartPersistencyService.DeleteProductPartAsync(productPart);
         }
 
         #endregion
