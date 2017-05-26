@@ -10,6 +10,7 @@ namespace _24SportWS
         public SportDBContext()
             : base("name=SportDBContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Customer> Customers { get; set; }

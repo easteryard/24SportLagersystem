@@ -9,7 +9,6 @@ namespace _24SportWS
     [Table("ProductLine")]
     public partial class ProductLine
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductLineId { get; set; }
 
         public int ProductId { get; set; }

@@ -80,22 +80,7 @@ namespace _24SportWS.Controllers
             }
 
             db.ProductLines.Add(productLine);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (ProductLineExists(productLine.ProductLineId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = productLine.ProductLineId }, productLine);
         }

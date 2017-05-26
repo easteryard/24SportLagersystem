@@ -15,7 +15,6 @@ namespace _24SportWS
             ProductLines = new HashSet<ProductLine>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductPartId { get; set; }
 
         public int ProductPartNo { get; set; }

@@ -5,18 +5,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    xmlns:Model="using:_24SportLagersystem.Model"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="_24SportLagersystem.View.ProductPartTestView"
     mc:Ignorable="d">
     <Page.Resources>
 
         <DataTemplate x:Key="DataTemplate">
-            <Grid d:DesignWidth="786" d:DesignHeight="414">
-                <Grid.DataContext>
-                    <ViewModel:ViewModel24Sport/>
-                </Grid.DataContext>
-                <StackPanel HorizontalAlignment="Left" Height="414" VerticalAlignment="Top" Width="786">
-                    <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding Singleton24Sport.ProductParts[0].Description}" Height="78" Margin="0,0,604,0"/>
-                    <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="TextBlock"/>
+            <Grid d:DesignWidth="786" d:DesignHeight="414" Height="214">
+                <StackPanel HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="426">
+                    <TextBlock x:Name="productPartId" TextWrapping="Wrap" Text="{Binding ProductPartId}"/>
+                    <TextBlock x:Name="productPartNo" TextWrapping="Wrap" Text="{Binding ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="description" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="amount" TextWrapping="Wrap" Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="pricePerPieceDkk" TextWrapping="Wrap" Text="{Binding PricePerPieceDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="pricePerPieceEur" TextWrapping="Wrap" Text="{Binding PricePerPieceEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="priceTotalDkk" TextWrapping="Wrap" Text="{Binding PriceTotalDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="priceTotalEur" TextWrapping="Wrap" Text="{Binding PriceTotalEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -28,7 +34,23 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="630" Margin="28,28,0,0" VerticalAlignment="Top" Width="450" ItemTemplate="{StaticResource DataTemplate}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="630" Margin="28,28,0,0" VerticalAlignment="Top" Width="554" ItemTemplate="{StaticResource DataTemplate}" ItemsSource="{Binding Singleton24Sport.ProductParts}" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <AppBarButton x:Name="deleteProductPartButton" HorizontalAlignment="Left" Icon="Delete" Label="Delete ProductPart" Margin="1146,538,0,0" VerticalAlignment="Top" Command="{Binding DeleteProductPartCommand}"/>
+        <TextBox x:Name="productPartNo" HorizontalAlignment="Left" Margin="714,46,0,0" TextWrapping="Wrap" Text="{Binding ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <TextBox x:Name="description" HorizontalAlignment="Left" Margin="714,114,0,0" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="714,182,0,0" TextWrapping="Wrap" Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <TextBox x:Name="pricePerPieceDkk" HorizontalAlignment="Left" Margin="714,250,0,0" TextWrapping="Wrap" Text="{Binding PricePerDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <TextBox x:Name="pricePerPieceEur" HorizontalAlignment="Left" Margin="714,318,0,0" TextWrapping="Wrap" Text="{Binding PricePerEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <TextBox x:Name="priceTotalDkk" HorizontalAlignment="Left" Margin="714,390,0,0" TextWrapping="Wrap" Text="{Binding PriceTotalDkk, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <TextBox x:Name="priceTotalEur" HorizontalAlignment="Left" Margin="714,458,0,0" TextWrapping="Wrap" Text="{Binding PriceTotalEur, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="42" Width="90"/>
+        <AppBarButton x:Name="createProductPartButton" HorizontalAlignment="Left" Icon="Add" Label="Create ProductPart" Margin="904,538,0,0" VerticalAlignment="Top" Command="{Binding CreateProductPartCommand}"/>
+        <AppBarButton x:Name="toProductPartEditTestButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit ProductPart" Margin="1028,538,0,0" VerticalAlignment="Top">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductPartEditTestView"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </AppBarButton>
 
     </Grid>
 </Page>
