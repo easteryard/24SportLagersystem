@@ -9,6 +9,29 @@
     xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
     x:Class="_24SportLagersystem.View.OverviewOrder"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="OrderDateTemplate">
+            <StackPanel Height="100" Width="100">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="DeliveryDateTemplate">
+            <StackPanel Height="100" Width="100">
+                <TextBlock x:Name="TblDeliveryDate" TextWrapping="Wrap" Text="{Binding DeliveryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="CustomerIdTemplate">
+            <StackPanel Height="100" Width="100">
+                <TextBlock x:Name="TblCustomerId" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="OrderNrTemplate">
+            <StackPanel Height="100" Width="100">
+                <TextBlock x:Name="TblOrderId" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </DataTemplate>
+
+    </Page.Resources>
 
     <Grid Background="#FF918989">
         <Grid.DataContext>
@@ -111,22 +134,14 @@
             <TextBlock x:Name="OverviewAntal"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Dato" Grid.Column="2"/>
             <TextBlock x:Name="OverviewKundeID"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="KundeID" Grid.Column="0"/>
 
-            <ListView x:Name="ListviewKundeID" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Order.CustomerId}">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
+            <ListView x:Name="ListviewKundeID" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Singleton24Sport.Orders, Mode=TwoWay}" ItemTemplate="{StaticResource CustomerIdTemplate}"/>
 
 
-            <ListView x:Name="ListviewOrderNr" Grid.RowSpan="4" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Order.OrderId}" Grid.Row="1" Grid.Column="1">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
+            <ListView x:Name="ListviewOrderNr" Grid.RowSpan="4" BorderThickness="1" BorderBrush="White" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Singleton24Sport.Orders, Mode=TwoWay}" ItemTemplate="{StaticResource OrderNrTemplate}"/>
 
-            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding DeliveryDate.DateTime, Mode=OneWay}" Grid.ColumnSpan="1">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
+            <ListView x:Name="ListviewDato" Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" BorderThickness="1" BorderBrush="White" ItemsSource="{Binding Singleton24Sport.Orders, Mode=TwoWay}" Grid.ColumnSpan="1" ItemTemplate="{StaticResource OrderDateTemplate}"/>
             <TextBlock x:Name="OverviewLeveringsdato"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="Leverings dato" Grid.Column="3" Grid.ColumnSpan="1"/>
-            <ListView x:Name="ListviewDato_Copy" Grid.Column="3" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="1" Grid.Row="1" ItemsSource="{Binding DeliveryDate}" Grid.RowSpan="4">
-                <StackPanel Height="50" Width="80"/>
-            </ListView>
+            <ListView x:Name="ListviewDato_Copy" Grid.Column="3" BorderThickness="1" BorderBrush="White" Grid.ColumnSpan="1" Grid.Row="1" ItemsSource="{Binding Singleton24Sport.Orders, Mode=TwoWay}" Grid.RowSpan="4" ItemTemplate="{StaticResource DeliveryDateTemplate}"/>
 
 
         </Grid>

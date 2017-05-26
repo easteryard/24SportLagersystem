@@ -39,10 +39,8 @@
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
+        
 
-        <Grid.DataContext>
-            <ViewModel:ViewModel24Sport/>
-        </Grid.DataContext>
 
         <Button x:Name="Search" Content="Søg" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>

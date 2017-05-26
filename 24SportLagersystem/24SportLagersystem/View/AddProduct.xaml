@@ -75,7 +75,7 @@
 
         <TextBox x:Name="VarenrTextbox" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="{Binding ProductId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBox x:Name="VarenavnTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding Product.ProductName, Mode=TwoWay}" />
-        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding ProductName, Mode=TwoWay}"/>
+        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding ProductPart.Description, Mode=TwoWay}"/>
         <TextBox x:Name="AntalTextbox" Grid.Column="4" Grid.Row="6" TextWrapping="Wrap" Text="{Binding Product.AmountMade, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
         <TextBox x:Name="PrisTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Product.Price, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
 
