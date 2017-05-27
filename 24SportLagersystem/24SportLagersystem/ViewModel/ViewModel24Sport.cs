@@ -23,10 +23,32 @@ namespace _24SportLagersystem.ViewModel
         public OrderHandler OrderHandler { get; set; }
         public ProductHandler ProductHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
+        public CustomerHandler CustomerHandler { get; set; }
 
         public static Product SelectedProduct { get; set; }
         public static ProductPart SelectedProductPart { get; set; }
 
+        public static Customer SelectedCustomer { get; set; }
+
+        public ICommand CreateCustomerCommand
+        {
+            get { return _createCustomerCommand ?? (_createCustomerCommand = new RelayCommand(CustomerHandler.CreateCustomer)); }
+            set { _createCustomerCommand = value; }
+        }
+
+        public ICommand EditCustomerCommand
+        {
+            get { return _editCustomerCommand ?? (_editCustomerCommand = new RelayCommand(CustomerHandler.EditCustomer)); }
+            set { _editCustomerCommand = value; }
+        }
+
+        public ICommand DeleteCustomerCommand
+        {
+            get { return _deleteCustomerCommand ?? (_deleteCustomerCommand = new RelayCommand(CustomerHandler.DeleteCustomer)); }
+            set { _deleteCustomerCommand = value; }
+        }
+
+        
         #region OrderRelayCommands
 
         public ICommand CreateOrderCommand
@@ -153,8 +175,9 @@ namespace _24SportLagersystem.ViewModel
         private string _email;
 
         public static Customer Customer { get; set; }
-
-
+        private ICommand _deleteCustomerCommand;
+        private ICommand _editCustomerCommand;
+        private ICommand _createCustomerCommand;
         public int CustomerId
         {
             get { return _customerId; }
@@ -363,6 +386,7 @@ namespace _24SportLagersystem.ViewModel
             OrderHandler = new OrderHandler(this);
             ProductHandler = new ProductHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
+            CustomerHandler = new CustomerHandler(this);
 
             Singleton24Sport = Singleton24Sport.Instance;
 

@@ -98,6 +98,7 @@
     <Compile Include="Common\RelayArgCommand.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Handler\Handler24Sport.cs" />
     <Compile Include="Handler\OrderHandler.cs" />
     <Compile Include="Handler\ProductHandler.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Model\ProductLine.cs" />
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
+    <Compile Include="Persistency\CustomerPersistencyService.cs" />
     <Compile Include="Persistency\OrderPersistencyService.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Persistency\ProductPartPersistencyService.cs" />
@@ -129,6 +131,9 @@
     </Compile>
     <Compile Include="View\CostumerTestView.xaml.cs">
       <DependentUpon>CostumerTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerTestView2.xaml.cs">
+      <DependentUpon>CustomerTestView2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditOrderView.xaml.cs">
       <DependentUpon>EditOrderView.xaml</DependentUpon>
@@ -206,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CostumerTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerTestView2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
