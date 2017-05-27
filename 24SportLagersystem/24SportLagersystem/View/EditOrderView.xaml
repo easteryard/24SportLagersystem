@@ -7,7 +7,7 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
-    x:Class="_24SportLagersystem.View.EditProduct"
+    x:Class="_24SportLagersystem.View.EditOrderView"
     mc:Ignorable="d">
 
     <Grid Background="#FF918989">
@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="55" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -52,7 +52,7 @@
             </interactivity:Interaction.Behaviors>
         </Button>
 
-        <Button x:Name="RedigerSide" Content="Rediger Produkt" IsEnabled="False" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
+        <Button x:Name="RedigerSide" Content="Rediger Ordre" IsEnabled="False" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
         <Button x:Name="Rediger" Content="Rediger" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
@@ -64,28 +64,22 @@
         <Button x:Name="Tilbage" Content="Tilbage" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddProduct"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddOrder"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
-
-        <TextBlock x:Name="Varenr" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Varenavn" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Beskrivelse" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Antal" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Pris" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="KundeID1" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-
-        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Product.ProductId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Product.ProductName, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
-        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Product.AmountMakeable, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Product.Price, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <ListView x:Name="ListviewProduct" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
+        <ListView x:Name="ListviewOrdre" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
             <StackPanel Height="70" Width="300" />
         </ListView>
         <Button x:Name="Delete" Content="Fjern" Grid.Column="3" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="OrdreNr" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="OrdreNr" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock x:Name="Dato" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Dato" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBox x:Name="KundeIDTextbox" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
+        <TextBox x:Name="OrdreNrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
+        <DatePicker Grid.Column="2" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center"  Grid.ColumnSpan="2" Date="{Binding OrderDate, Mode=TwoWay}"  />
+        <DatePicker Grid.Column="2" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" Date="{Binding DeliveryDate, Mode=TwoWay}" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="Leveringsdatoblock" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="leveringsdato" VerticalAlignment="Center" HorizontalAlignment="Center" Width="97"/>
 
 
 
