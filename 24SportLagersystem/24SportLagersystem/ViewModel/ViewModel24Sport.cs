@@ -378,6 +378,9 @@ namespace _24SportLagersystem.ViewModel
             //_timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
 
+
+    
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

@@ -85,6 +85,7 @@
         <ListView x:Name="listView" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
             <StackPanel Height="70" Width="300" />
         </ListView>
+        <Button x:Name="Delete" Content="Fjern" Grid.Column="3" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center"/>
 
 
 
