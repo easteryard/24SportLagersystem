@@ -22,10 +22,19 @@ namespace _24SportLagersystem.ViewModel
 
         public OrderHandler OrderHandler { get; set; }
         public ProductHandler ProductHandler { get; set; }
+        public ProductLineHandler ProductLineHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
 
-        public static Product SelectedProduct { get; set; }
-        public static ProductPart SelectedProductPart { get; set; }
+        private ICommand _createProductPartCommand;
+        private ICommand _deleteProductPartCommand;
+        private ICommand _editProductPartCommand;
+        private ICommand _createProductCommand;
+        private ICommand _editProductCommand;
+        private ICommand _deleteProductCommand;
+        private ICommand _createOrderCommand;
+        private ICommand _editOrderCommand;
+        private ICommand _deleteOrderCommand;
+
 
         #region OrderRelayCommands
 
@@ -83,6 +92,41 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
+        #region ProductLineCommands
+
+        public ICommand CreateProductLineCommand
+        {
+            get
+            {
+                return
+                    _createProductLineCommand ?? (_createProductLineCommand =
+                        new RelayCommand(ProductLineHandler.CreateProductLine));
+            }
+            set { _createProductLineCommand = value; }
+        }
+
+        public ICommand EditProductLineCommand
+        {
+            get
+            {
+                return _editProductLineCommand ??
+                       (_editProductLineCommand = new RelayCommand(ProductLineHandler.EditProductLine));
+            }
+            set { _editProductLineCommand = value; }
+        }
+
+        public ICommand DeleteProductLineCommand
+        {
+            get
+            {
+                return _deleteProductLineCommand ??
+                       (_deleteProductLineCommand = new RelayCommand(ProductLineHandler.EditProductLine));
+            }
+            set { _deleteProductLineCommand = value; }
+        }
+
+        #endregion
+
         #region ProdutPartRelayCommands
 
         public ICommand CreateProductPartCommand
@@ -119,6 +163,7 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
+
         #region RelayCommands
 
         private ICommand _createCommand;
@@ -144,6 +189,7 @@ namespace _24SportLagersystem.ViewModel
         }
         #endregion
 
+
         #region CustomerProperties
 
         private int _customerId;
@@ -151,6 +197,9 @@ namespace _24SportLagersystem.ViewModel
         private int _phoneNo;
         private string _address;
         private string _email;
+        private ICommand _createProductLineCommand;
+        private ICommand _editProductLineCommand;
+        private ICommand _deleteProductLineCommand;
 
         public static Customer Customer { get; set; }
 
@@ -233,23 +282,12 @@ namespace _24SportLagersystem.ViewModel
         #endregion
 
         #region OrderLineProperties
-        private int _orderLineId;
-        private int _amount;
 
+        public int OrderLineId { get; set; }
+        public int Amount { get; set; }
+        
         public static OrderLine OrderLine { get; set; }
-
-
-        public int OrderLineId
-        {
-            get { return _orderLineId; }
-            set { _orderLineId = value; }
-        }
-
-        public int Amount
-        {
-            get { return _amount; }
-            set { _amount = value; }
-        }
+        
         #endregion
 
         #region ProductProperties
@@ -261,100 +299,38 @@ namespace _24SportLagersystem.ViewModel
         public int AmountMade { get; set; }
         public int AmountMakeable { get; set; }
 
+        public static Product SelectedProduct { get; set; }
+
         public static Product Product { get; set; }
 
         #endregion
 
         #region ProductLineProperties
-        private int _productLineId;
-        private int _productLineAmount;
+
+        public int ProductLineId { get; set; }
+        public int ProductLineAmount { get; set; }
+
+        public static ProductLine SelectedProductLine { get; set; }
 
         public static ProductLine ProductLine { get; set; }
-
-        public int ProductLineId
-        {
-            get { return _productLineId; }
-            set { _productLineId = value; }
-        }
-
-        public int ProductLineAmount
-        {
-            get { return _productLineAmount; }
-            set { _productLineAmount = value; }
-        }
-
-
 
         #endregion
 
         #region ProductPartProperties
-        private int _productPartId;
-        private int _productPartNo;
-        private string _description;
-        private int _productPartAmount;
-        private double _pricePerDkk;
-        private double _pricePerEur;
-        private double _priceTotalDkk;
-        private double _priceTotalEur;
-        private ICommand _createProductPartCommand;
-        private ICommand _deleteProductPartCommand;
-        private ICommand _editProductPartCommand;
-        private ICommand _createProductCommand;
-        private ICommand _editProductCommand;
-        private ICommand _deleteProductCommand;
-        private ICommand _createOrderCommand;
-        private ICommand _editOrderCommand;
-        private ICommand _deleteOrderCommand;
 
+        public int ProductPartId { get; set; }
+        public int ProductPartNo { get; set; }
+        public string Description { get; set; }
+        public int ProductPartAmount { get; set; }
+        public double PricePerDkk { get; set; }
+        public double PricePerEur { get; set; }
+        public double PriceTotalDkk { get; set; }
+        public double PriceTotalEur { get; set; }
+
+        public static ProductPart SelectedProductPart { get; set; }
+        
         public static ProductPart ProductPart { get; set; }
 
-        public int ProductPartId
-        {
-            get { return _productPartId; }
-            set { _productPartId = value; }
-        }
-
-        public int ProductPartNo
-        {
-            get { return _productPartNo; }
-            set { _productPartNo = value; }
-        }
-
-        public string Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
-
-        public int ProductPartAmount
-        {
-            get { return _productPartAmount; }
-            set { _productPartAmount = value; }
-        }
-
-        public double PricePerDkk
-        {
-            get { return _pricePerDkk; }
-            set { _pricePerDkk = value; }
-        }
-
-        public double PricePerEur
-        {
-            get { return _pricePerEur; }
-            set { _pricePerEur = value; }
-        }
-
-        public double PriceTotalDkk
-        {
-            get { return _priceTotalDkk; }
-            set { _priceTotalDkk = value; }
-        }
-
-        public double PriceTotalEur
-        {
-            get { return _priceTotalEur; }
-            set { _priceTotalEur = value; }
-        }
         #endregion
 
         public ViewModel24Sport()

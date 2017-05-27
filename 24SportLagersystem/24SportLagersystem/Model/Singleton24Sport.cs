@@ -39,6 +39,7 @@ namespace _24SportLagersystem.Model
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
             LoadProductsAsync();
+            LoadProductLinesAsync();
             LoadProductPartsAsync();
         }
 
@@ -76,11 +77,7 @@ namespace _24SportLagersystem.Model
 
         #region AddMethodsWithoutObjectParameter
 
-        public void AddProductLine(int productLineId, int productId, int productPartId, int amount)
-        {
-            ProductLine myProductLine = new ProductLine(productLineId, productId, productPartId, amount);
-            ProductLines.Add(myProductLine);
-        }
+        
 
         public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
         {
@@ -158,6 +155,40 @@ namespace _24SportLagersystem.Model
         {
             Products.Remove(product);
             ProductPersistencyService.DeleteProductAsync(product);
+        }
+
+        #endregion
+
+        #region ProductLineCrudMethods
+
+        public void AddProductLine(int productLineId, int productId, int productPartId, int amount)
+        {
+            ProductLine myProductLine = new ProductLine(productLineId, productId, productPartId, amount);
+            ProductLines.Add(myProductLine);
+            ProductLinePersistencyService.SaveProductLinesAsAsync(myProductLine);
+        }
+
+        public async void LoadProductLinesAsync()
+        {
+            var productLines = await ProductLinePersistencyService.LoadProductLinesFromJsonAsync();
+            if (productLines != null)
+            {
+                foreach (var productLine in productLines)
+                {
+                    ProductLines.Add(productLine);
+                }
+            }
+        }
+
+        public void EditProductLine(ProductLine productLine)
+        {
+            ProductLinePersistencyService.EditProductLineAsync(ViewModel24Sport.SelectedProductLine);
+        }
+
+        public void DeleteProductLine(ProductLine productLine)
+        {
+            ProductLines.Remove(productLine);
+            ProductLinePersistencyService.DeleteProductLineAsync(productLine);
         }
 
         #endregion

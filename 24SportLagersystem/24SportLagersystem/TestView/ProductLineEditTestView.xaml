@@ -1,0 +1,31 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_24SportLagersystem.TestView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="_24SportLagersystem.TestView.ProductLineEditTestView"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
+        <TextBox x:Name="productId" HorizontalAlignment="Left" Margin="145,166,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductLine.ProductId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="102"/>
+        <TextBox x:Name="productPartId" HorizontalAlignment="Left" Margin="145,238,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductLine.ProductPartId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="102"/>
+        <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="145,313,0,0" TextWrapping="Wrap" Text="{Binding SelectedProductLine.Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="102"/>
+        <AppBarButton x:Name="editProductLineButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="494,460,0,0" VerticalAlignment="Top" Command="{Binding EditProductLineCommand}"/>
+        <AppBarButton x:Name="toProductLineTestView" HorizontalAlignment="Left" Icon="Back" Label="appbarbutton" Margin="631,460,0,0" VerticalAlignment="Top">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductLineTestView"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </AppBarButton>
+
+    </Grid>
+</Page>

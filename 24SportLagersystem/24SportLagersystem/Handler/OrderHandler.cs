@@ -35,7 +35,6 @@ namespace _24SportLagersystem.Handler
         public void DeleteOrder()
         {
             Singleton24Sport.Instance.DeleteOrder(ViewModel24Sport.SelectedOrder);
-            //ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
         }
     }
 }
