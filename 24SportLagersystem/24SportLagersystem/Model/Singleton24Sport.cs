@@ -40,6 +40,7 @@ namespace _24SportLagersystem.Model
             LoadOrdersAsync();
             LoadProductsAsync();
             LoadProductPartsAsync();
+            LoadCustomersAsync();
         }
 
         public void AddCustomers(int customerId, String name, int phoneNo, String address, String email)
