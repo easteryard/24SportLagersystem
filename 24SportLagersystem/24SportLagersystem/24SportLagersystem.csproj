@@ -138,6 +138,9 @@
     <Compile Include="View\CostumerTestView.xaml.cs">
       <DependentUpon>CostumerTestView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditOrderView.xaml.cs">
+      <DependentUpon>EditOrderView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
     </Compile>
@@ -221,6 +224,10 @@
     <Page Include="View\CostumerTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\EditProduct.xaml">
       <SubType>Designer</SubType>
