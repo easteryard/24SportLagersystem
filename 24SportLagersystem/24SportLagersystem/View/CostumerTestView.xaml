@@ -26,12 +26,12 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <ListView x:Name="LvCustomers" HorizontalAlignment="Left" Margin="391,49,0,77" Width="254" ItemsSource="{Binding Singleton24Sport.Customers}" ItemTemplate="{StaticResource CustomersTemplate}" BorderBrush="#FFDE0000" BorderThickness="2" SelectedItem="{Binding SelectedCustomer}"/>
-        <TextBox x:Name="TbCustomerId" HorizontalAlignment="Right" Margin="0,133,324,0" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay}" VerticalAlignment="Top" Width="205"/>
-        <TextBox x:Name="TbName" HorizontalAlignment="Right" Margin="0,185,324,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Width="205"/>
-        <TextBox x:Name="TbAddress" HorizontalAlignment="Right" Margin="0,243,324,0" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay}" VerticalAlignment="Top" Width="205"/>
-        <TextBox x:Name="TbPhoneNo" HorizontalAlignment="Right" Margin="0,303,324,0" TextWrapping="Wrap" Text="{Binding PhoneNo, Mode=TwoWay}" VerticalAlignment="Top" Width="205"/>
-        <TextBox x:Name="TbEmail" HorizontalAlignment="Right" Margin="0,359,324,309" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" Width="205"/>
+        <ListView x:Name="LvCustomers" HorizontalAlignment="Left" Margin="391,49,0,77" Width="254" ItemsSource="{Binding Singleton24Sport.Customers}" ItemTemplate="{StaticResource CustomersTemplate}" BorderBrush="#FFDE0000" BorderThickness="2" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="TbCustomerId" HorizontalAlignment="Right" Margin="0,133,324,0" TextWrapping="Wrap" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="205"/>
+        <TextBox x:Name="TbName" HorizontalAlignment="Right" Margin="0,185,324,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="205"/>
+        <TextBox x:Name="TbAddress" HorizontalAlignment="Right" Margin="0,243,324,0" TextWrapping="Wrap" Text="{Binding Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="205"/>
+        <TextBox x:Name="TbPhoneNo" HorizontalAlignment="Right" Margin="0,303,324,0" TextWrapping="Wrap" Text="{Binding PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="205"/>
+        <TextBox x:Name="TbEmail" HorizontalAlignment="Right" Margin="0,359,324,309" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="205"/>
         <AppBarButton x:Name="Create_Customer" HorizontalAlignment="Right" Icon="Add" Label="Create Customer" Margin="0,0,475,115" VerticalAlignment="Bottom" Width="82" Command="{Binding CreateCustomerCommand}">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
