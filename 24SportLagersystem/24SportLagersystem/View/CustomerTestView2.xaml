@@ -13,7 +13,7 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="429" Margin="68,71,0,0" VerticalAlignment="Top" Width="320"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="462" Margin="50,54,0,0" VerticalAlignment="Top" Width="354"/>
 
     </Grid>
 </Page>
