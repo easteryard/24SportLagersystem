@@ -22,7 +22,7 @@ namespace _24SportLagersystem.Handler
 
         public void CreateCustomer()
         {
-            Singleton24Sport.Instance.AddCustomer(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
+            Singleton24Sport.Instance.AddCustomers(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
         }
 
         public void EditCustomer()
@@ -71,9 +71,6 @@ namespace _24SportLagersystem.Handler
             ViewModel24Sport.Singleton24Sport.DeleteCustomer(ViewModel24Sport.SelectedCustomer);
         }
 
-        public void EditCustomers()
-        {
-            ViewModel24Sport.Singleton24Sport.EditCustomers(ViewModel24Sport.SelectedCustomer);
-        }
+
     }
 }
