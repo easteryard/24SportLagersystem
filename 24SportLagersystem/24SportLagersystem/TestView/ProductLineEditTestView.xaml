@@ -22,7 +22,7 @@
         <AppBarButton x:Name="toProductLineTestView" HorizontalAlignment="Left" Icon="Back" Label="appbarbutton" Margin="631,460,0,0" VerticalAlignment="Top">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductLineTestView"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.ProductLineTestView"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </AppBarButton>
