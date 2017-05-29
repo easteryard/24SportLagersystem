@@ -43,6 +43,7 @@ namespace _24SportLagersystem.Model
             LoadCustomersAsync();
         }
 
+        #region CustomerCRUD
         public void AddCustomers(int customerId, String name, int phoneNo, String address, String email)
         {
             Customer myCustomer = new Customer(customerId, name, phoneNo, address, email);
@@ -70,6 +71,10 @@ namespace _24SportLagersystem.Model
             Customers.Remove(customer);
             CustomerPersistencyService.DeleteCustomersAsAsync(customer);
         }
+
+
+        #endregion
+
         #region AddMethodsWithObjectParameter
         public void AddProduct(Product newProduct)
         {

@@ -19,7 +19,7 @@ namespace _24SportLagersystem.Handler
         {
             ViewModel24Sport = viewModel24Sport;
         }
-
+ 
         public void CreateCustomer()
         {
             Singleton24Sport.Instance.AddCustomers(ViewModel24Sport.CustomerId, ViewModel24Sport.Name, ViewModel24Sport.PhoneNo, ViewModel24Sport.Address, ViewModel24Sport.Email);
@@ -44,9 +44,6 @@ namespace _24SportLagersystem.Handler
 
         public async void DeleteCustomers()
         {
-            
-
-            //ViewModel24Sport.Singleton24Sport.DeleteOrder(ViewModel24Sport.SelectedOrder);
             // Create the message dialog and set its content
             var messageDialog = new MessageDialog("Er du sikker på du vil slette denne kunde: " + ViewModel24Sport.SelectedCustomer.CustomerId + " ?");
 
