@@ -1,0 +1,47 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_24SportLagersystem.TestView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="_24SportLagersystem.TestView.OrderLineTestView"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="DataTemplate">
+            <Grid Height="104" Width="472">
+                <StackPanel HorizontalAlignment="Left" Height="104" VerticalAlignment="Top" Width="472">
+                    <TextBlock x:Name="orderLineId" TextWrapping="Wrap" Text="{Binding OrderLineId}"/>
+                    <TextBlock x:Name="orderId" TextWrapping="Wrap" Text="{Binding OrderId}"/>
+                    <TextBlock x:Name="productId" TextWrapping="Wrap" Text="{Binding ProductId}"/>
+                    <TextBlock x:Name="amount" TextWrapping="Wrap" Text="{Binding Amount}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.DataContext>
+            <ViewModel:ViewModel24Sport/>
+        </Grid.DataContext>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="600" Margin="58,49,0,0" VerticalAlignment="Top" Width="397" ItemsSource="{Binding Singleton24Sport.OrderLines}" ItemTemplate="{StaticResource DataTemplate}" SelectedItem="{Binding SelectedOrderLine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <AppBarButton x:Name="deleteOrderLineButton" VerticalAlignment="Top" Margin="972,536,0,0" Label="Delete OrderLine" Icon="Delete" HorizontalAlignment="Left" Command="{Binding DeleteOrderLineCommand}"/>
+        <AppBarButton x:Name="createOrderLineButton" VerticalAlignment="Top" Margin="730,536,0,0" Label="Create OrderLine" Icon="Add" HorizontalAlignment="Left" Command="{Binding CreateOrderLineCommand}"/>
+        <AppBarButton x:Name="toOrderLineEditTestButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit OrderLine" Margin="854,536,0,0" VerticalAlignment="Top">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.OrderLineEditTestView"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </AppBarButton>
+        <TextBox x:Name="orderId" HorizontalAlignment="Left" Margin="590,109,0,0" TextWrapping="Wrap" Text="{Binding OrderId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="productId" HorizontalAlignment="Left" Margin="590,177,0,0" TextWrapping="Wrap" Text="{Binding ProductId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="590,247,0,0" TextWrapping="Wrap" Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="46" Width="91"/>
+        
+    </Grid>
+</Page>
+

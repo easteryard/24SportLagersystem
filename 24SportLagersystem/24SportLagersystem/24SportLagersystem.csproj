@@ -100,6 +100,7 @@
     <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="Handler\Handler24Sport.cs" />
     <Compile Include="Handler\OrderHandler.cs" />
+    <Compile Include="Handler\OrderLineHandler.cs" />
     <Compile Include="Handler\ProductHandler.cs" />
     <Compile Include="Handler\ProductLineHandler.cs" />
     <Compile Include="Handler\ProductPartHandler.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Model\ProductLine.cs" />
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
+    <Compile Include="Persistency\OrderLinePersistencyService.cs" />
     <Compile Include="Persistency\OrderPersistencyService.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Persistency\ProductLinePersistencyService.cs" />
@@ -118,6 +120,12 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="TestView\OrderEditTestView.xaml.cs">
       <DependentUpon>OrderEditTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestView\OrderLineEditTestView.xaml.cs">
+      <DependentUpon>OrderLineEditTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestView\OrderLineTestView.xaml.cs">
+      <DependentUpon>OrderLineTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestView\OrderTestView.xaml.cs">
       <DependentUpon>OrderTestView.xaml</DependentUpon>
@@ -201,6 +209,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="TestView\OrderEditTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestView\OrderLineEditTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestView\OrderLineTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
