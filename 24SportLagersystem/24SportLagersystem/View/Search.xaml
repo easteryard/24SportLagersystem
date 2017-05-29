@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+
 
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -54,11 +54,18 @@
         </Button>
 
 
-        <Button x:Name="button" IsEnabled="False"  Content="Søg" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Height="85" Margin="0,0,0,0" Width="274"/>
-        <Button x:Name="button1" Content="Tilføj Produkt" Grid.Column="3" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Height="85" Margin="0,0,0,0" Width="274">
+        <Button x:Name="button" IsEnabled="False"  Content="Søg" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Height="85" Margin="0,0,0,0" Width="274"/>
+        <Button x:Name="button1" Content="Tilføj Produkt" Grid.Column="2" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Height="85" Width="274">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
                     <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddProduct"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </Button>
+        <Button x:Name="KundeInfo" Content="Tilføj KundeInfo" Grid.Column="3" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" Height="85" Width="274">
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddCustomer"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
@@ -69,10 +76,10 @@
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
-        <TextBlock x:Name="Varenr" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="4" TextWrapping="Wrap" Text="Vare Nr." FontSize="36"/>
-        <TextBlock x:Name="VareNavn" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="7" TextWrapping="Wrap" Text="Varenavn." FontSize="36"/>
-        <TextBox x:Name="Varenr1" Grid.Column="3" Grid.Row="7" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Product.ProductName, Mode=TwoWay}" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="vare" Grid.Column="3" Grid.Row="4" TextAlignment="Center"  TextWrapping="Wrap" Text="{Binding Product.ProductId, Mode=TwoWay}" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="Varenr" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="4" TextWrapping="Wrap" Text="Vare Nr." FontSize="36"/>
+        <TextBlock x:Name="VareNavn" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="7" TextWrapping="Wrap" Text="Varenavn." FontSize="36"/>
+        <TextBox x:Name="Varenr1" Grid.Column="2" Grid.Row="7" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Product.ProductName, Mode=TwoWay}" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="vare" Grid.Column="2" Grid.Row="4" TextAlignment="Center"  TextWrapping="Wrap" Text="{Binding Product.ProductId, Mode=TwoWay}" Grid.ColumnSpan="3"/>
         <Button x:Name="Søg" Content="Søg" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Height="85" Margin="0,0,0,0" Width="274" FontSize="36">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
