@@ -23,6 +23,16 @@
                 </StackPanel>
             </Grid>
         </DataTemplate>
+        <DataTemplate x:Key="DataTemplate1">
+            <Grid Height="94" Width="387">
+                <StackPanel HorizontalAlignment="Left" Height="94" VerticalAlignment="Top" Width="387">
+                    <TextBlock x:Name="productLineId" TextWrapping="Wrap" Text="{Binding ProductLineId}"/>
+                    <TextBlock x:Name="productId" TextWrapping="Wrap" Text="{Binding ProductId}"/>
+                    <TextBlock x:Name="productPartId" TextWrapping="Wrap" Text="{Binding ProductPartId}"/>
+                    <TextBlock x:Name="amount" TextWrapping="Wrap" Text="{Binding Amount}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -30,7 +40,6 @@
         <Grid.DataContext>
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="600" Margin="51,51,0,0" VerticalAlignment="Top" Width="401" ItemTemplate="{StaticResource DataTemplate}" ItemsSource="{Binding Singleton24Sport.ProductLines}" SelectedItem="{Binding SelectedProductLine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <TextBox x:Name="productLineId" HorizontalAlignment="Left" Margin="570,111,0,0" TextWrapping="Wrap" Text="{Binding ProductLineId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="44" Width="93"/>
         <TextBox x:Name="productId" HorizontalAlignment="Left" Margin="570,184,0,0" TextWrapping="Wrap" Text="{Binding ProductId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="44" Width="93"/>
         <TextBox x:Name="productPartId" HorizontalAlignment="Left" Margin="570,254,0,0" TextWrapping="Wrap" Text="{Binding ProductPartId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="44" Width="93"/>
@@ -39,11 +48,12 @@
         <AppBarButton x:Name="editProductLineButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit ProductLine" Margin="836,484,0,0" VerticalAlignment="Top">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductLineEditTestView"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.ProductLineEditTestView"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </AppBarButton>
         <AppBarButton x:Name="deleteProductLineButton" HorizontalAlignment="Left" Icon="Accept" Label="Delete ProductLine" Margin="973,484,0,0" VerticalAlignment="Top" Command="{Binding DeleteProductLineCommand}"/>
+        <ListView x:Name="listView1" HorizontalAlignment="Left" Height="600" Margin="47,53,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding Singleton24Sport.ProductLines}" SelectedItem="{Binding SelectedProductLine, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource DataTemplate1}"/>
 
     </Grid>
 </Page>
