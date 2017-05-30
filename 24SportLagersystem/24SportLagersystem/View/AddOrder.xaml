@@ -79,7 +79,7 @@
         <ListView x:Name="ListviewOrdre" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White" ItemTemplate="{StaticResource OrderDatatemplate}" ItemsSource="{Binding Singleton24Sport.Orders}" SelectedItem="{Binding SelectedOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <StackPanel Height="70" Width="300" />
         </ListView>
-        <Button x:Name="Delete" Content="Fjern" Grid.Column="4" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding DeleteOrderCommand}"/>
+        <Button x:Name="Delete" Content="Fjern" Grid.Column="4" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding DeleteOrderCommand}" Click="Delete_Click"/>
         <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="63.067,18.024,62.933,17.976"/>
         <TextBlock x:Name="OrdreNr" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="OrdreNr" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="64.074,17.524,63.926,17.476" />
         <TextBlock x:Name="Dato" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Dato" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="75.489,18.024,74.511,17.976" />
@@ -88,7 +88,7 @@
         <DatePicker Grid.Column="2" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center"  Grid.ColumnSpan="2" Date="{Binding OrderDateDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="0,12"  />
         <DatePicker Grid.Column="2" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" Date="{Binding DeliveryDateDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" />
         <TextBlock x:Name="Leveringsdatoblock" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="leveringsdato" VerticalAlignment="Center" HorizontalAlignment="Center" Width="97" Margin="43,17.524,43,17.476"/>
-        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateOrderCommand}"/>
+        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateOrderCommand}" Click="Gem_Click"/>
 
     </Grid>
 
