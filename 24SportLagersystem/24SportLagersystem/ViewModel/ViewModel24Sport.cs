@@ -27,22 +27,46 @@ namespace _24SportLagersystem.ViewModel
         public ProductLineHandler ProductLineHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
 
-        private ICommand _createProductPartCommand;
-        private ICommand _deleteProductPartCommand;
-        private ICommand _editProductPartCommand;
-        private ICommand _createProductCommand;
-        private ICommand _editProductCommand;
-        private ICommand _deleteProductCommand;
+        private ICommand _createCustomerCommand;
+        private ICommand _editCustomerCommand;
+        private ICommand _deleteCustomerCommand;
+
         private ICommand _createOrderCommand;
         private ICommand _editOrderCommand;
         private ICommand _deleteOrderCommand;
-
-        private ICommand _createProductLineCommand;
-        private ICommand _editProductLineCommand;
-        private ICommand _deleteProductLineCommand;
         private ICommand _createOrderLineCommand;
         private ICommand _editOrderLineCommand;
         private ICommand _deleteOrderLineCommand;
+        private ICommand _createProductCommand;
+        private ICommand _editProductCommand;
+        private ICommand _deleteProductCommand;
+        private ICommand _createProductLineCommand;
+        private ICommand _editProductLineCommand;
+        private ICommand _deleteProductLineCommand;
+        private ICommand _createProductPartCommand;
+        private ICommand _deleteProductPartCommand;
+        private ICommand _editProductPartCommand;
+        
+        #region CustomerCommands
+        public ICommand CreateCustomerCommand
+        {
+            get { return _createCustomerCommand ?? (_createCustomerCommand = new RelayCommand(CustomerHandler.CreateCustomer)); }
+            set { _createCustomerCommand = value; }
+        }
+
+        public ICommand EditCustomerCommand
+        {
+            get { return _editCustomerCommand ?? (_editCustomerCommand = new RelayCommand(CustomerHandler.EditCustomer)); }
+            set { _editCustomerCommand = value; }
+        }
+
+        public ICommand DeleteCustomerCommand
+        {
+            get { return _deleteCustomerCommand ?? (_deleteCustomerCommand = new RelayCommand(CustomerHandler.DeleteCustomer)); }
+            set { _deleteCustomerCommand = value; }
+        }
+
+        #endregion
 
         #region OrderRelayCommands
 
@@ -205,33 +229,6 @@ namespace _24SportLagersystem.ViewModel
 
         #endregion
 
-
-        #region RelayCommands
-
-        private ICommand _createCommand;
-        private ICommand _selectCommand;
-        private ICommand _deleteCommand;
-
-        public ICommand CreateCommand
-        {
-            get { return _createCommand; }
-            set { _createCommand = value; }
-        }
-
-        public ICommand SelectCommand
-        {
-            get { return _selectCommand; }
-            set { _selectCommand = value; }
-        }
-
-        public ICommand DeleteCommand
-        {
-            get { return _deleteCommand; }
-            set { _deleteCommand = value; }
-        }
-        #endregion
-
-
         #region CustomerProperties
 
         public int CustomerId { get; set; }
@@ -364,14 +361,7 @@ namespace _24SportLagersystem.ViewModel
             OrderDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             DeliveryDateDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, new TimeSpan());
             DeliveryDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-
-            //OrderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            //DeliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            //_timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
