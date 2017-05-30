@@ -98,8 +98,10 @@
     <Compile Include="Common\RelayArgCommand.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Handler\Handler24Sport.cs" />
     <Compile Include="Handler\OrderHandler.cs" />
+    <Compile Include="Handler\OrderLineHandler.cs" />
     <Compile Include="Handler\ProductHandler.cs" />
     <Compile Include="Handler\ProductLineHandler.cs" />
     <Compile Include="Handler\ProductPartHandler.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Model\ProductLine.cs" />
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
+    <Compile Include="Persistency\CustomerPersistencyService.cs" />
     <Compile Include="Persistency\OrderPersistencyService.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
     <Compile Include="Persistency\ProductLinePersistencyService.cs" />
