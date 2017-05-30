@@ -121,8 +121,8 @@ namespace _24SportLagersystem.ViewModel
             get
             {
                 return
-                    _createProductLineCommand ??
-                    (_createProductLineCommand = new RelayCommand(ProductLineHandler.CreateProductLine));
+                    _createProductLineCommand ?? (_createProductLineCommand =
+                        new RelayCommand(ProductLineHandler.CreateProductLine));
             }
             set { _createProductLineCommand = value; }
         }
@@ -142,7 +142,7 @@ namespace _24SportLagersystem.ViewModel
             get
             {
                 return _deleteProductLineCommand ??
-                       (_deleteProductLineCommand = new RelayCommand(ProductLineHandler.DeleteProductLine));
+                       (_deleteProductLineCommand = new RelayCommand(ProductLineHandler.EditProductLine));
             }
             set { _deleteProductLineCommand = value; }
         }
@@ -361,7 +361,6 @@ namespace _24SportLagersystem.ViewModel
             Handler24Sport = new Handler.Handler24Sport(this);
             OrderHandler = new OrderHandler(this);
             ProductHandler = new ProductHandler(this);
-            ProductLineHandler = new ProductLineHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
             CustomerHandler = new CustomerHandler(this);
 

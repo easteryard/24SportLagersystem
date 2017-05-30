@@ -10,10 +10,12 @@
     x:Class="_24SportLagersystem.TestView.ProductLineTestView"
     mc:Ignorable="d">
     <Page.Resources>
-
         <DataTemplate x:Key="DataTemplate">
-            <Grid Height="100" Width="409">
-                <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="409">
+            <Grid d:DesignWidth="628.214" d:DesignHeight="337.329" Height="113">
+                <Grid.DataContext>
+                    <Model:ProductLine/>
+                </Grid.DataContext>
+                <StackPanel HorizontalAlignment="Left" Height="113" VerticalAlignment="Top" Width="377">
                     <TextBlock x:Name="productLineId" TextWrapping="Wrap" Text="{Binding ProductLineId}"/>
                     <TextBlock x:Name="productId" TextWrapping="Wrap" Text="{Binding ProductId}"/>
                     <TextBlock x:Name="productPartId" TextWrapping="Wrap" Text="{Binding ProductPartId}"/>
@@ -21,7 +23,6 @@
                 </StackPanel>
             </Grid>
         </DataTemplate>
-
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -38,7 +39,7 @@
         <AppBarButton x:Name="editProductLineButton" HorizontalAlignment="Left" Icon="Edit" Label="Edit ProductLine" Margin="836,484,0,0" VerticalAlignment="Top">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.ProductLineEditTestView"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.ProductLineEditTestView"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </AppBarButton>
