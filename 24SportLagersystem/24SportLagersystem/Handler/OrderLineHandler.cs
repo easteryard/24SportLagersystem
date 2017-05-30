@@ -10,6 +10,7 @@ namespace _24SportLagersystem.Handler
 {
     class OrderLineHandler
     {
+        // Opretter en objekt reference til ViewModel24Sport
         public ViewModel24Sport ViewModel24Sport { get; set; }
 
         public OrderLineHandler(ViewModel24Sport viewModel24Sport)
