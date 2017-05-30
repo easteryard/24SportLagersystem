@@ -7,10 +7,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using _24SportLagersystem.Annotations;
 using _24SportLagersystem.Common;
 using _24SportLagersystem.Model;
 using _24SportLagersystem.Handler;
+using _24SportLagersystem.View;
 
 namespace _24SportLagersystem.ViewModel
 {
@@ -361,6 +364,7 @@ namespace _24SportLagersystem.ViewModel
             OrderDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             DeliveryDateDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, new TimeSpan());
             DeliveryDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -370,5 +374,7 @@ namespace _24SportLagersystem.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }
