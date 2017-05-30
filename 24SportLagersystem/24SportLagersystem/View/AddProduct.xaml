@@ -9,6 +9,19 @@
     xmlns:ViewModel="using:_24SportLagersystem.ViewModel"
     x:Class="_24SportLagersystem.View.AddProduct"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="ProductDatatemplate">
+            <StackPanel Height="164" Width="348">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock x:Name="textBlock5" TextWrapping="Wrap" Text="TextBlock"/>
+                <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="TextBlock"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="#FF918989">
         <Grid.ColumnDefinitions>
@@ -78,17 +91,17 @@
         <TextBlock x:Name="Beskrivelse" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="55.509,17.524,55.491,17.476"/>
         <TextBlock x:Name="Antal" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="74.244,18.024,73.756,17.976"/>
         <TextBlock x:Name="Pris" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="79.693,17.524,79.307,17.476"/>
-        <TextBox x:Name="KundeID1" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
-        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Product.ProductId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Product.ProductName, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12" />
-        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Product.AmountMakeable, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Product.Price, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="KundeID1" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding ProductId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
+        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12" />
+        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
         <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="63.067,18.024,62.933,17.976"/>
-        <ListView x:Name="ListviewProduct" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
+        <ListView x:Name="ListviewProduct" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White" ItemsSource="{Binding Singleton24Sport.Products}" SelectedItem="{Binding SelectedProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource ProductDatatemplate}">
             <StackPanel Height="70" Width="300" />
         </ListView>
-        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center"/>
+        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateProductCommand}"/>
         <Button x:Name="Tilbage_Copy" Content="Tilbage" HorizontalAlignment="Center" Height="85" Width="320" Grid.Row="1"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">

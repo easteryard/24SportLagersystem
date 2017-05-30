@@ -29,6 +29,7 @@ namespace _24SportLagersystem.ViewModel
         public ProductHandler ProductHandler { get; set; }
         public ProductLineHandler ProductLineHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
+        
 
         private ICommand _createCustomerCommand;
         private ICommand _editCustomerCommand;
