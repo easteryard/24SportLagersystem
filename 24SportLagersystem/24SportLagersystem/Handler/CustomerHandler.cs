@@ -8,6 +8,7 @@ using _24SportLagersystem.Converter;
 using _24SportLagersystem.Model;
 using _24SportLagersystem.ViewModel;
 
+
 namespace _24SportLagersystem.Handler
 {
     class CustomerHandler
@@ -28,15 +29,14 @@ namespace _24SportLagersystem.Handler
         public void EditCustomer()
         {
             Singleton24Sport.Instance.EditCustomers(ViewModel24Sport.SelectedCustomer);
+
         }
 
         public void DeleteCustomer()
         {
             Singleton24Sport.Instance.DeleteCustomer(ViewModel24Sport.SelectedCustomer);
         }
-
-
-
+                
         public void SetSelectedCustomer(Customer customers)
         {
             ViewModel24Sport.SelectedCustomer = customers;

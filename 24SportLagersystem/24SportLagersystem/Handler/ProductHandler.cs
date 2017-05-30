@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _24SportLagersystem.Model;
 using _24SportLagersystem.ViewModel;
+using Windows.UI.Popups;
 
 namespace _24SportLagersystem.Handler
 {
@@ -33,5 +34,11 @@ namespace _24SportLagersystem.Handler
         {
             Singleton24Sport.Instance.DeleteProduct(ViewModel24Sport.SelectedProduct);
         }
+
+        public void SetSelectedProduct(Product products)
+        {
+            ViewModel24Sport.SelectedProduct = products;
+        }
+
     }
 }

@@ -134,8 +134,7 @@ namespace _24SportLagersystem.ViewModel
         {
             get
             {
-                return _createProductCommand ??
-                    (_createProductCommand = new RelayCommand(ProductHandler.CreateProduct));
+                return _createProductCommand ?? (_createProductCommand = new RelayCommand(ProductHandler.CreateProduct));
             }
             set { _createProductCommand = value; }
         }
@@ -144,8 +143,7 @@ namespace _24SportLagersystem.ViewModel
         {
             get
             {
-                return _editProductCommand ??
-                    (_editProductCommand = new RelayCommand(ProductHandler.EditProduct));
+                return _editProductCommand ?? (_editProductCommand = new RelayCommand(ProductHandler.EditProduct));
             }
             set { _editProductCommand = value; }
         }

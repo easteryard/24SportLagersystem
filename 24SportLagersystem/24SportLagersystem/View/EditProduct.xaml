@@ -53,13 +53,7 @@
         </Button>
 
         <Button x:Name="RedigerSide" Content="Rediger Produkt" IsEnabled="False" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
-        <Button x:Name="Gem" Content="Gem" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View"/>
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
-        </Button>
+        <Button x:Name="Gem" Content="Gem" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding EditProductCommand}" />
 
         <Button x:Name="Tilbage" Content="Tilbage" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
@@ -69,19 +63,17 @@
             </interactivity:Interaction.Behaviors>
         </Button>
 
-        <TextBlock x:Name="Varenr" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Varenavn" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Beskrivelse" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Beskrivelse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Antal" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Pris" Grid.Column="1" Grid.Row="8" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="KundeID1" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock x:Name="Varenr" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="VareNr" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="68.828,17.524,68.172,17.476"/>
+        <TextBlock x:Name="VareNavn" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Varenavn" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="55.509,17.524,55.491,17.476"/>
+        <TextBlock x:Name="Antal" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Antal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="74.244,18.024,73.756,17.976"/>
+        <TextBlock x:Name="Pris" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="79.693,17.524,79.307,17.476"/>
+        <TextBlock x:Name="Højde" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Højde" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="61.148,18.024,60.852,17.976"/>
 
-        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Product.ProductId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Product.ProductName, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
-        <TextBox x:Name="BeskrivelseTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Product.AmountMakeable, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="8" TextWrapping="Wrap" Text="{Binding Product.Price, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="HøjdeTextBox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12" />
 
 
 

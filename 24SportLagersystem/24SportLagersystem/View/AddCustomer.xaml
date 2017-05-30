@@ -75,7 +75,7 @@
         <Button x:Name="Tilbage" Content="Tilbage" Height="85" Width="320" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddCustomer"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
