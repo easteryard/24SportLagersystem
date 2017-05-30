@@ -40,7 +40,6 @@ namespace _24SportLagersystem.ViewModel
 
         public static Customer SelectedCustomer { get; set; }
 
-        #region CustomerCommands
         public ICommand CreateCustomerCommand
         {
             get { return _createCustomerCommand ?? (_createCustomerCommand = new RelayCommand(CustomerHandler.CreateCustomer)); }
@@ -59,9 +58,7 @@ namespace _24SportLagersystem.ViewModel
             set { _deleteCustomerCommand = value; }
         }
 
-
-        #endregion
-
+        
         #region OrderRelayCommands
 
         public ICommand CreateOrderCommand
@@ -417,6 +414,10 @@ namespace _24SportLagersystem.ViewModel
             OrderDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             DeliveryDateDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, new TimeSpan());
             DeliveryDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+            //OrderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            //DeliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            //_timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
 
 
