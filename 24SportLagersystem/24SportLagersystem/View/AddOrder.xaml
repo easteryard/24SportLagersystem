@@ -59,23 +59,33 @@
             </interactivity:Interaction.Behaviors>
         </Button>
         <Button x:Name="TilføjProdukt" Content="Tilføj Ordre" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="83" Width="320" />
-        <Button x:Name="Gem" Content="Gem" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding CreateCommand}"  >
+        <Button x:Name="Rediger" Content="Rediger" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
-
-        <TextBlock x:Name="KundeID" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="OrdreNr" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="OrdreNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="Dato" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="Dato" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-        <TextBox x:Name="KundeIDTextbox" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="OrdreNrTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" />
-        <DatePicker Grid.Column="4" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center"  Grid.ColumnSpan="2" Date="{Binding OrderDate, Mode=TwoWay}"  />
-        <DatePicker Grid.Column="4" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" Date="{Binding DeliveryDate, Mode=TwoWay}" Grid.ColumnSpan="2"  />
-        <TextBlock x:Name="Dato_Copy" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="leveringsdato" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="3" Width="97"/>
+        <Button x:Name="Tilbage" Content="Tilbage" HorizontalAlignment="Center" Height="85" Width="320" Grid.Row="1"  >
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddOrder"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </Button>
+        <ListView x:Name="ListviewOrdre" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White">
+            <StackPanel Height="70" Width="300" />
+        </ListView>
+        <Button x:Name="Delete" Content="Fjern" Grid.Column="4" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="KundeID" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeID" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="63.067,18.024,62.933,17.976"/>
+        <TextBlock x:Name="OrdreNr" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="OrdreNr" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="64.074,17.524,63.926,17.476" />
+        <TextBlock x:Name="Dato" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Dato" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="75.489,18.024,74.511,17.976" />
+        <TextBox x:Name="KundeIDTextbox" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding Order.CustomerId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12" />
+        <TextBox x:Name="OrdreNrTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Order.OrderId, Mode=TwoWay}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5" />
+        <DatePicker Grid.Column="2" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center"  Grid.ColumnSpan="2" Date="{Binding OrderDate, Mode=TwoWay}"  Margin="0,12"  />
+        <DatePicker Grid.Column="2" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" Date="{Binding DeliveryDate, Mode=TwoWay}" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="Leveringsdatoblock" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="leveringsdato" VerticalAlignment="Center" HorizontalAlignment="Center" Width="97" Margin="43,17.524,43,17.476"/>
+        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center"/>
 
     </Grid>
 
