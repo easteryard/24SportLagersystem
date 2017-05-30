@@ -38,7 +38,6 @@ namespace _24SportLagersystem.Model
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
-            LoadOrderLinesAsync();
             LoadProductsAsync();
             LoadProductLinesAsync();
             LoadProductPartsAsync();
@@ -106,12 +105,19 @@ namespace _24SportLagersystem.Model
 
         #region AddMethodsWithoutObjectParameter
 
+        
+
+        public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
+        {
+            OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
+            OrderLines.Add(myOrderLine);
+        }
+
         public void AddCustomer(int customerId, string name, int phoneNo, string address, string email)
         {
             Customer myCustomer = new Customer(customerId, name, phoneNo, address, email);
             Customers.Add(myCustomer);
         }
-
         #endregion
 
         #region OrderCrudMethods
@@ -125,7 +131,7 @@ namespace _24SportLagersystem.Model
 
         public async void LoadOrdersAsync()
         {
-            var orders = await OrderPersistencyService.LoadOrderFromJsonAsync();
+            var orders = await PersistencyService.LoadOrderFromJsonAsync();
             if (orders != null)
                 foreach (var ev in orders)
                 {
@@ -142,40 +148,6 @@ namespace _24SportLagersystem.Model
         {
             Orders.Remove(order);
             OrderPersistencyService.DeleteOrdersAsAsync(order);
-        }
-
-        #endregion
-
-        #region OrderLineCrudMethods
-
-        public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
-        {
-            OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
-            OrderLines.Add(myOrderLine);
-            OrderLinePersistencyService.CreateOrderLineAsAsync(myOrderLine);
-        }
-
-        public async void LoadOrderLinesAsync()
-        {
-            var orderLines = await OrderLinePersistencyService.LoadOrderLineFromJsonAsync();
-            if (orderLines != null)
-            {
-                foreach (var orderLine in orderLines)
-                {
-                    OrderLines.Add(orderLine);
-                }
-            }
-        }
-
-        public void EditOrderLine(OrderLine orderLine)
-        {
-            OrderLinePersistencyService.EditOrderLinesAsJsonAsync(orderLine);
-        }
-
-        public void DeleteOrderLine(OrderLine orderLine)
-        {
-            OrderLines.Remove(orderLine);
-            OrderLinePersistencyService.DeleteOrderLinesAsAsync(orderLine);
         }
 
         #endregion

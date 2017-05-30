@@ -48,7 +48,7 @@
                 </interactivity:Interaction.Behaviors>
             </Button>
             <PasswordBox x:Name="passwordBox" Grid.Column="2"  Grid.Row="7" VerticalAlignment="Top" MaxLength="16" PasswordChar="*"    />
-            <Button x:Name="toOrderTestView" Content="To OrderTest" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="132" Margin="2,0,0,0" d:LayoutOverrides="TopMargin, BottomMargin">
+            <Button x:Name="toOrderTestView" Content="To OrderTest" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="132">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.OrderTestView"/>
@@ -69,10 +69,10 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="toCustomerTestView" Content="To CustomerTest" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="132" Margin="1,1,0,0" d:LayoutOverrides="TopMargin, BottomMargin">
+            <Button x:Name="toProductLineTestView" Content="To ProductLineTest" Grid.Column="0" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="132" Margin="39,1,0,0">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
-                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.CostumerTestView"/>
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.ProductLineTestView"/>
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
