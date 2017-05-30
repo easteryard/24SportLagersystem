@@ -123,6 +123,12 @@
     <Compile Include="TestView\OrderEditTestView.xaml.cs">
       <DependentUpon>OrderEditTestView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestView\OrderLineEditTestView.xaml.cs">
+      <DependentUpon>OrderLineEditTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestView\OrderLineTestView.xaml.cs">
+      <DependentUpon>OrderLineTestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TestView\OrderTestView.xaml.cs">
       <DependentUpon>OrderTestView.xaml</DependentUpon>
     </Compile>
@@ -207,6 +213,14 @@
     <Page Include="TestView\OrderEditTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestView\OrderLineEditTestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestView\OrderLineTestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="TestView\OrderTestView.xaml">
       <SubType>Designer</SubType>

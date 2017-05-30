@@ -16,7 +16,7 @@ namespace _24SportLagersystem.Model
 
         //denne get metode tjekker om der er oprettet et singleton objekt og er der ikke dette, laver den et og kun et objekt.
         public static Singleton24Sport Instance
-        {   
+        {
             get { return _instance ?? (_instance = new Singleton24Sport()); }
         }
 
@@ -38,39 +38,12 @@ namespace _24SportLagersystem.Model
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
             LoadOrdersAsync();
+            LoadOrderLinesAsync();
             LoadProductsAsync();
             LoadProductLinesAsync();
             LoadProductPartsAsync();
-            LoadCustomersAsync();
         }
 
-        public void AddCustomers(int customerId, String name, int phoneNo, String address, String email)
-        {
-            Customer myCustomer = new Customer(customerId, name, phoneNo, address, email);
-            Customers.Add(myCustomer);
-            CustomerPersistencyService.SaveCustomersAsJsonAsync(myCustomer);
-        }
-
-        public async void LoadCustomersAsync()
-        {
-            var customers = await CustomerPersistencyService.LoadCustomersFromJsonAsync();
-            if (customers != null)
-                foreach (var ev in customers)
-                {
-                    Customers.Add(ev);
-                }
-        }
-
-        public void EditCustomers(Customer customer)
-        {
-            CustomerPersistencyService.EditCustomersAsJsonAsync(customer);
-        }
-
-        public void DeleteCustomer(Customer customer)
-        {
-            Customers.Remove(customer);
-            CustomerPersistencyService.DeleteCustomersAsAsync(customer);
-        }
         #region AddMethodsWithObjectParameter
         public void AddProduct(Product newProduct)
         {
@@ -105,19 +78,12 @@ namespace _24SportLagersystem.Model
 
         #region AddMethodsWithoutObjectParameter
 
-        
-
-        public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
-        {
-            OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
-            OrderLines.Add(myOrderLine);
-        }
-
         public void AddCustomer(int customerId, string name, int phoneNo, string address, string email)
         {
             Customer myCustomer = new Customer(customerId, name, phoneNo, address, email);
             Customers.Add(myCustomer);
         }
+
         #endregion
 
         #region OrderCrudMethods
@@ -131,7 +97,7 @@ namespace _24SportLagersystem.Model
 
         public async void LoadOrdersAsync()
         {
-            var orders = await PersistencyService.LoadOrderFromJsonAsync();
+            var orders = await OrderPersistencyService.LoadOrderFromJsonAsync();
             if (orders != null)
                 foreach (var ev in orders)
                 {
@@ -148,6 +114,40 @@ namespace _24SportLagersystem.Model
         {
             Orders.Remove(order);
             OrderPersistencyService.DeleteOrdersAsAsync(order);
+        }
+
+        #endregion
+
+        #region OrderLineCrudMethods
+
+        public void AddOrderLine(int orderLineId, int orderId, int productId, int amount)
+        {
+            OrderLine myOrderLine = new OrderLine(orderLineId, orderId, productId, amount);
+            OrderLines.Add(myOrderLine);
+            OrderLinePersistencyService.CreateOrderLineAsAsync(myOrderLine);
+        }
+
+        public async void LoadOrderLinesAsync()
+        {
+            var orderLines = await OrderLinePersistencyService.LoadOrderLineFromJsonAsync();
+            if (orderLines != null)
+            {
+                foreach (var orderLine in orderLines)
+                {
+                    OrderLines.Add(orderLine);
+                }
+            }
+        }
+
+        public void EditOrderLine(OrderLine orderLine)
+        {
+            OrderLinePersistencyService.EditOrderLinesAsJsonAsync(orderLine);
+        }
+
+        public void DeleteOrderLine(OrderLine orderLine)
+        {
+            OrderLines.Remove(orderLine);
+            OrderLinePersistencyService.DeleteOrderLinesAsAsync(orderLine);
         }
 
         #endregion

@@ -69,7 +69,15 @@
                     </core:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>
             </Button>
-            <Button x:Name="toOrderTestView_Copy" Content="To OrderLineTest" Grid.Column="0" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="132" Margin="39,0,0,0">
+            <Button x:Name="toOrderLineTestView_Copy" Content="To OrderLineTest" Grid.Column="0" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="132" Margin="39,0,0,0">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Click">
+                        <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.OrderLineTestView"/>
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </Button>
+
+            <Button x:Name="toProductLineTestView_Copy" Content="To ProductLineTest" Grid.Column="0" HorizontalAlignment="Left" Grid.Row="10" VerticalAlignment="Top" Width="132" Margin="39,0,0,0">
                 <interactivity:Interaction.Behaviors>
                     <core:EventTriggerBehavior EventName="Click">
                         <core:NavigateToPageAction TargetPage="_24SportLagersystem.TestView.ProductLineTestView"/>
