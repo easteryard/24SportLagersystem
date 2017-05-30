@@ -21,10 +21,10 @@ namespace _24SportLagersystem.ViewModel
         public Handler.Handler24Sport Handler24Sport { get; set; }
 
         public OrderHandler OrderHandler { get; set; }
+        public OrderLineHandler OrderLineHandler { get; set; }
         public ProductHandler ProductHandler { get; set; }
         public ProductLineHandler ProductLineHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
-        public CustomerHandler CustomerHandler { get; set; }
 
         private ICommand _createProductPartCommand;
         private ICommand _deleteProductPartCommand;
@@ -37,27 +37,6 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _deleteOrderCommand;
 
 
-        public static Customer SelectedCustomer { get; set; }
-
-        public ICommand CreateCustomerCommand
-        {
-            get { return _createCustomerCommand ?? (_createCustomerCommand = new RelayCommand(CustomerHandler.CreateCustomer)); }
-            set { _createCustomerCommand = value; }
-        }
-
-        public ICommand EditCustomerCommand
-        {
-            get { return _editCustomerCommand ?? (_editCustomerCommand = new RelayCommand(CustomerHandler.EditCustomer)); }
-            set { _editCustomerCommand = value; }
-        }
-
-        public ICommand DeleteCustomerCommand
-        {
-            get { return _deleteCustomerCommand ?? (_deleteCustomerCommand = new RelayCommand(CustomerHandler.DeleteCustomer)); }
-            set { _deleteCustomerCommand = value; }
-        }
-
-        
         #region OrderRelayCommands
 
         public ICommand CreateOrderCommand
@@ -76,6 +55,40 @@ namespace _24SportLagersystem.ViewModel
         {
             get { return _deleteOrderCommand ?? (_deleteOrderCommand = new RelayCommand(OrderHandler.DeleteOrder)); }
             set { _deleteOrderCommand = value; }
+        }
+
+        #endregion
+
+        #region OrderLineCommands
+
+        public ICommand CreateOrderLineCommand
+        {
+            get
+            {
+                return _createOrderLineCommand ??
+                       (_createOrderLineCommand = new RelayCommand(OrderLineHandler.CreateOrderLine));
+            }
+            set { _createOrderLineCommand = value; }
+        }
+
+        public ICommand EditOrderLineCommand
+        {
+            get
+            {
+                return _editOrderLineCommand ??
+                       (_editOrderLineCommand = new RelayCommand(OrderLineHandler.EditOrderLine));
+            }
+            set { _editOrderLineCommand = value; }
+        }
+
+        public ICommand DeleteOrderLineCommand
+        {
+            get
+            {
+                return _deleteOrderLineCommand ??
+                       (_deleteOrderLineCommand = new RelayCommand(OrderLineHandler.DeleteOrderLine));
+            }
+            set { _deleteOrderLineCommand = value; }
         }
 
         #endregion
@@ -121,8 +134,8 @@ namespace _24SportLagersystem.ViewModel
             get
             {
                 return
-                    _createProductLineCommand ?? (_createProductLineCommand =
-                        new RelayCommand(ProductLineHandler.CreateProductLine));
+                    _createProductLineCommand ??
+                    (_createProductLineCommand = new RelayCommand(ProductLineHandler.CreateProductLine));
             }
             set { _createProductLineCommand = value; }
         }
@@ -142,7 +155,7 @@ namespace _24SportLagersystem.ViewModel
             get
             {
                 return _deleteProductLineCommand ??
-                       (_deleteProductLineCommand = new RelayCommand(ProductLineHandler.EditProductLine));
+                       (_deleteProductLineCommand = new RelayCommand(ProductLineHandler.DeleteProductLine));
             }
             set { _deleteProductLineCommand = value; }
         }
@@ -222,11 +235,13 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _createProductLineCommand;
         private ICommand _editProductLineCommand;
         private ICommand _deleteProductLineCommand;
+        private ICommand _createOrderLineCommand;
+        private ICommand _editOrderLineCommand;
+        private ICommand _deleteOrderLineCommand;
 
         public static Customer Customer { get; set; }
-        private ICommand _deleteCustomerCommand;
-        private ICommand _editCustomerCommand;
-        private ICommand _createCustomerCommand;
+
+
         public int CustomerId
         {
             get { return _customerId; }
@@ -308,9 +323,11 @@ namespace _24SportLagersystem.ViewModel
 
         public int OrderLineId { get; set; }
         public int Amount { get; set; }
-        
+
+        public static OrderLine SelectedOrderLine { get; set; }
+
         public static OrderLine OrderLine { get; set; }
-        
+
         #endregion
 
         #region ProductProperties
@@ -351,7 +368,7 @@ namespace _24SportLagersystem.ViewModel
         public double PriceTotalEur { get; set; }
 
         public static ProductPart SelectedProductPart { get; set; }
-        
+
         public static ProductPart ProductPart { get; set; }
 
         #endregion
@@ -360,9 +377,10 @@ namespace _24SportLagersystem.ViewModel
         {
             Handler24Sport = new Handler.Handler24Sport(this);
             OrderHandler = new OrderHandler(this);
+            OrderLineHandler = new OrderLineHandler(this);
             ProductHandler = new ProductHandler(this);
+            ProductLineHandler = new ProductLineHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
-            CustomerHandler = new CustomerHandler(this);
 
             Singleton24Sport = Singleton24Sport.Instance;
 
@@ -379,7 +397,7 @@ namespace _24SportLagersystem.ViewModel
         }
 
 
-    
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
