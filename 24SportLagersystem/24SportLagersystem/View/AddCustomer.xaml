@@ -9,6 +9,17 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:viewModel="using:_24SportLagersystem.ViewModel"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="CustomerTemplate">
+            <StackPanel Height="121" Width="345">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding CustomerId}"/>
+                <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="{Binding Name}"/>
+                <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="{Binding PhoneNo}"/>
+                <TextBlock x:Name="textBlock3" TextWrapping="Wrap" Text="{Binding Address}"/>
+                <TextBlock x:Name="textBlock4" TextWrapping="Wrap" Text="{Binding Email}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="#FF918989">
         <Grid.ColumnDefinitions>
@@ -59,25 +70,35 @@
             </interactivity:Interaction.Behaviors>
         </Button>
         <Button x:Name="TilføjProdukt" Content="Tilføj Kunder" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="83" Width="320" />
-        <Button x:Name="Gem" Content="Gem" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
+        <Button x:Name="Rediger" Content="Rediger" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Width="320" Height="85"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.Search"/>
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditCustomer"/>
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
-
-        <TextBlock x:Name="KundeNrInfo" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="KundeNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="NavnInfo" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="TelefonInfo" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="AddresseInfo" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="Addresse" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="EmailInfo" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-        <TextBox x:Name="KundeNrTextbox" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="NavnTextbox" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" />
-        <TextBox x:Name="TelefonTextbox" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="AddresseTextbox" Grid.Column="4" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBox x:Name="EmailTextbox" Grid.Column="4" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
+        <Button x:Name="Tilbage" Content="Tilbage" Height="85" Width="320" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"  >
+            <interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="Click">
+                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddCustomer"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>
+        </Button>
+        <ListView x:Name="ListviewOrdre" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White" ItemsSource="{Binding Singleton24Sport.Customers}" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource CustomerTemplate}">
+            <StackPanel Height="70" Width="300" />
+        </ListView>
+        <Button x:Name="Delete" Content="Fjern" Grid.Column="4" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding DeleteCustomerCommand}"/>
+        <TextBlock x:Name="KundeNrInfoRediger" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeNr" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="62.104,18.024,61.896,17.976"/>
+        <TextBlock x:Name="NavnInfoRediger" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="74.237,17.524,73.763,17.476" />
+        <TextBlock x:Name="TelefonInfoRediger" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="67.656,18.024,67.344,17.976"/>
+        <TextBlock x:Name="AddresseInfoRediger" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Addresse" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="61.013,17.524,60.987,17.476" />
+        <TextBlock x:Name="EmailInfoRediger" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="73.797,18.024,73.203,17.976" />
+        <TextBox x:Name="KundeNrTextboxRediger" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,12" />
+        <TextBox x:Name="NavnTextboxRediger" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="0,11.5"  />
+        <TextBox x:Name="TelefonTextboxRediger" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,12" />
+        <TextBox x:Name="AddresseTextboxRediger" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,11.5" />
+        <TextBox x:Name="EmailTextboxRediger" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,12" />
+        <Button x:Name="Opret" Content="Opret" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateCustomerCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
     </Grid>
 
