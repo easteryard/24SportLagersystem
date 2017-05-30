@@ -36,6 +36,12 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _editOrderCommand;
         private ICommand _deleteOrderCommand;
 
+        private ICommand _createProductLineCommand;
+        private ICommand _editProductLineCommand;
+        private ICommand _deleteProductLineCommand;
+        private ICommand _createOrderLineCommand;
+        private ICommand _editOrderLineCommand;
+        private ICommand _deleteOrderLineCommand;
 
         #region OrderRelayCommands
 
@@ -227,50 +233,16 @@ namespace _24SportLagersystem.ViewModel
 
         #region CustomerProperties
 
-        private int _customerId;
-        private string _name;
-        private int _phoneNo;
-        private string _address;
-        private string _email;
-        private ICommand _createProductLineCommand;
-        private ICommand _editProductLineCommand;
-        private ICommand _deleteProductLineCommand;
-        private ICommand _createOrderLineCommand;
-        private ICommand _editOrderLineCommand;
-        private ICommand _deleteOrderLineCommand;
+        public int CustomerId { get; set; }
+        public string Name { get; set; }
+        public int PhoneNo { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+
+        public Customer SelectedCustomer { get; set; }
 
         public static Customer Customer { get; set; }
-
-
-        public int CustomerId
-        {
-            get { return _customerId; }
-            set { _customerId = value; }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-        public int PhoneNo
-        {
-            get { return _phoneNo; }
-            set { _phoneNo = value; }
-        }
-
-        public string Address
-        {
-            get { return _address; }
-            set { _address = value; }
-        }
-
-        public string Email
-        {
-            get { return _email; }
-            set { _email = value; }
-        }
+        
         #endregion
 
         #region OrderProperties
