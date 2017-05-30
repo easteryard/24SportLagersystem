@@ -31,12 +31,14 @@ namespace _24SportLagersystem.Model
         // Dette er vores singleton konstruktør som kun kan tilgås via vores Instance metode. I vores konstruktør bliver observablecollection initialiseret, og der der bliver også kaldt en load metode af vores products
         private Singleton24Sport()
         {
-            Products = new ObservableCollection<Product>();
             Customers = new ObservableCollection<Customer>();
             Orders = new ObservableCollection<Order>();
             OrderLines = new ObservableCollection<OrderLine>();
+            Products = new ObservableCollection<Product>();
             ProductLines = new ObservableCollection<ProductLine>();
             ProductParts = new ObservableCollection<ProductPart>();
+
+            LoadCustomersAsync();
             LoadOrdersAsync();
             LoadOrderLinesAsync();
             LoadProductsAsync();
