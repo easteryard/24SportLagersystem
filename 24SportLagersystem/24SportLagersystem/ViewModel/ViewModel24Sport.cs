@@ -20,6 +20,7 @@ namespace _24SportLagersystem.ViewModel
 
         public Handler.Handler24Sport Handler24Sport { get; set; }
 
+        public CustomerHandler CustomerHandler { get; set; }
         public OrderHandler OrderHandler { get; set; }
         public OrderLineHandler OrderLineHandler { get; set; }
         public ProductHandler ProductHandler { get; set; }
@@ -348,6 +349,7 @@ namespace _24SportLagersystem.ViewModel
         public ViewModel24Sport()
         {
             Handler24Sport = new Handler.Handler24Sport(this);
+            CustomerHandler = new CustomerHandler(this);
             OrderHandler = new OrderHandler(this);
             OrderLineHandler = new OrderLineHandler(this);
             ProductHandler = new ProductHandler(this);
