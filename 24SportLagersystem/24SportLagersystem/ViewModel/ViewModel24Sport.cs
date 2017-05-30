@@ -240,7 +240,7 @@ namespace _24SportLagersystem.ViewModel
         public string Address { get; set; }
         public string Email { get; set; }
 
-        public Customer SelectedCustomer { get; set; }
+        public static Customer SelectedCustomer { get; set; }
 
         public static Customer Customer { get; set; }
         
