@@ -42,6 +42,7 @@ namespace _24SportLagersystem.Model
             LoadProductsAsync();
             LoadProductLinesAsync();
             LoadProductPartsAsync();
+            LoadCustomerAsync();
         }
 
         #region AddMethodsWithObjectParameter
