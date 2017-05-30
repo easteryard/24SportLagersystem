@@ -25,6 +25,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
+                    // Run the Post controller associated with ProductPart in the webservice
                     var response = client.PostAsJsonAsync("api/ProductParts", productParts).Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -54,7 +55,7 @@ namespace _24SportLagersystem.Persistency
                 //
                 try
                 {
-                    // Run the controller associated with ProductPart in the webservice
+                    // Run the Get controller associated with ProductPart in the webservice
                     var response = client.GetAsync("api/ProductParts").Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -85,6 +86,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
+                    // Run the Put controller associated with ProductPart in the webservice
                     var response = client.PutAsJsonAsync("api/ProductParts/" + productParts.ProductPartId, productParts).Result;
                 }
                 catch (Exception)
@@ -108,6 +110,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
+                    // Run the Delete controller associated with ProductPart in the webservice
                     await client.DeleteAsync("api/ProductParts/" + productParts.ProductPartId);
                 }
                 catch (Exception)

@@ -23,16 +23,19 @@ namespace _24SportLagersystem.Persistency
                 client.BaseAddress = new Uri(serverURL);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Run lines of code and if errors occur catch them in the catch part
                 try
                 {
+                    // Run the Post controller associated with OrderLine in the webservice
                     var response = client.PostAsJsonAsync("api/Customers", customers).Result;
                     if (response.IsSuccessStatusCode)
                     {
                         var returnCustomer = response.Content.ReadAsAsync<Customer>();
                         customers.CustomerId = returnCustomer.Result.CustomerId;
                     }
-
                 }
+                // Catch errors occurring in the try part and give it an error message or save it in a log file
                 catch (Exception ex)
                 {
                     new MessageDialog(ex.Message).ShowAsync();
@@ -53,8 +56,10 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                try// i try delen er her vi forventer der kan ske en fejl. 
+                // Run lines of code and if errors occur catch them in the catch part
+                try
                 {
+                    // Run the Get controller associated with OrderLine in the webservice
                     var response = client.GetAsync("api/Customers").Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -63,9 +68,9 @@ namespace _24SportLagersystem.Persistency
                     }
                     return null;
                 }
-                catch (Exception)// i catch er her vi fanger den opstået fejl og giver en evt fejl meddelse/gemmer fejlen i en logfil
+                // Catch errors occurring in the try part and give it an error message or save it in a log file
+                catch (Exception)
                 {
-
                     throw;
                 }
             }
@@ -83,10 +88,13 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+                // Run lines of code and if errors occur catch them in the catch part
                 try
                 {
+                    // Run the Put controller associated with OrderLine in the webservice
                     await client.PutAsJsonAsync("api/Customers/" + customers.CustomerId, customers);
                 }
+                // Catch errors occurring in the try part and give it an error message or save it in a log file
                 catch (Exception ex)
                 {
                     new MessageDialog(ex.Message).ShowAsync();
@@ -104,10 +112,14 @@ namespace _24SportLagersystem.Persistency
                 client.BaseAddress = new Uri(serverURL);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                
+                // Run lines of code and if errors occur catch them in the catch part
                 try
                 {
+                    // Run the Delete controller associated with OrderLine in the webservice
                     await client.DeleteAsync("api/Customers/" + customers.CustomerId);
                 }
+                // Catch errors occurring in the try part and give it an error message or save it in a log file
                 catch (Exception ex)
                 {
                     new MessageDialog(ex.Message).ShowAsync();

@@ -24,6 +24,7 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
+                    // Run the Post controller associated with Order in the webservice
                     var response = client.PostAsJsonAsync("api/Orders", orders).Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -54,6 +55,7 @@ namespace _24SportLagersystem.Persistency
 
                 try// i try delen er her vi forventer der kan ske en fejl. 
                 {
+                    // Run the Get controller associated with Order in the webservice
                     var response = client.GetAsync("api/Orders").Result;
                     if (response.IsSuccessStatusCode)
                     {
@@ -84,6 +86,7 @@ namespace _24SportLagersystem.Persistency
 
                 try
                 {
+                    // Run the Put controller associated with Order in the webservice
                     await client.PutAsJsonAsync("api/Orders/" + orders.OrderId, orders);
                 }
                 catch (Exception ex)
@@ -105,6 +108,7 @@ namespace _24SportLagersystem.Persistency
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
                 {
+                    // Run the Delete controller associated with Order in the webservice
                     await client.DeleteAsync("api/Orders/" + orders.OrderId);
                 }
                 catch (Exception ex)
