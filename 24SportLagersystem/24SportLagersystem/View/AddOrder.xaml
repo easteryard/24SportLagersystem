@@ -61,13 +61,6 @@
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
-        <Button x:Name="RedigerOrdre" Content="Rediger Ordre" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="Click">
-                    <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.EditOrder"/>
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
-        </Button>
         <Button x:Name="TilføjProdukt" Content="Tilføj Ordre" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="83" Width="320" />
         <Button x:Name="Rediger" Content="Rediger" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>
