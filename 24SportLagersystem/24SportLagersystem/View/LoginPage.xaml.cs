@@ -34,9 +34,9 @@ namespace _24SportLagersystem.View
         private async  void button_Click(object sender, RoutedEventArgs e)
         {
         
-            if (Brugerlogin1.Text=="Admin" || passwordBox.Password=="123")
+            if (Brugerlogin1.Text=="Admin" || passwordBox.Password=="password")
             {
-                await new MessageDialog("Du er nu logget ind.").ShowAsync();
+                await new MessageDialog("Du er nu logget ind. Vent et øjeblik.").ShowAsync();
                 this.Frame.Navigate(typeof(Search), null);
             }
 
