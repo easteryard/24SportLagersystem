@@ -98,11 +98,10 @@
     <Compile Include="Common\RelayArgCommand.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
     <Compile Include="Handler\Handler24Sport.cs" />
     <Compile Include="Handler\OrderHandler.cs" />
-    <Compile Include="Handler\OrderLineHandler.cs" />
     <Compile Include="Handler\ProductHandler.cs" />
-    <Compile Include="Handler\ProductLineHandler.cs" />
     <Compile Include="Handler\ProductPartHandler.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Order.cs" />
@@ -111,30 +110,17 @@
     <Compile Include="Model\ProductLine.cs" />
     <Compile Include="Model\ProductPart.cs" />
     <Compile Include="Model\Singleton24Sport.cs" />
-    <Compile Include="Persistency\OrderLinePersistencyService.cs" />
+    <Compile Include="Persistency\CustomerPersistencyService.cs" />
     <Compile Include="Persistency\OrderPersistencyService.cs" />
     <Compile Include="Persistency\PersistencyService.cs" />
-    <Compile Include="Persistency\ProductLinePersistencyService.cs" />
     <Compile Include="Persistency\ProductPartPersistencyService.cs" />
     <Compile Include="Persistency\ProductPersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="TestView\OrderEditTestView.xaml.cs">
       <DependentUpon>OrderEditTestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestView\OrderLineEditTestView.xaml.cs">
-      <DependentUpon>OrderLineEditTestView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TestView\OrderLineTestView.xaml.cs">
-      <DependentUpon>OrderLineTestView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TestView\OrderTestView.xaml.cs">
       <DependentUpon>OrderTestView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TestView\ProductLineEditTestView.xaml.cs">
-      <DependentUpon>ProductLineEditTestView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TestView\ProductLineTestView.xaml.cs">
-      <DependentUpon>ProductLineTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ViewModel24Sport.cs" />
     <Compile Include="View\AddOrder.xaml.cs">
@@ -143,11 +129,11 @@
     <Compile Include="View\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddCustomer.xaml.cs">
-      <DependentUpon>AddCustomer.xaml</DependentUpon>
+    <Compile Include="View\CostumerTestView.xaml.cs">
+      <DependentUpon>CostumerTestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditCustomer.xaml.cs">
-      <DependentUpon>EditCustomer.xaml</DependentUpon>
+    <Compile Include="View\CustomerTestView2.xaml.cs">
+      <DependentUpon>CustomerTestView2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditOrderView.xaml.cs">
       <DependentUpon>EditOrderView.xaml</DependentUpon>
@@ -212,23 +198,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestView\OrderLineEditTestView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestView\OrderLineTestView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="TestView\OrderTestView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestView\ProductLineEditTestView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestView\ProductLineTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,13 +210,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddCustomer.xaml">
+    <Page Include="View\CostumerTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditCustomer.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\CustomerTestView2.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EditOrderView.xaml">
       <Generator>MSBuild:Compile</Generator>

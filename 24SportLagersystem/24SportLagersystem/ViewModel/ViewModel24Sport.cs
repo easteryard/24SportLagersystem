@@ -25,6 +25,7 @@ namespace _24SportLagersystem.ViewModel
         public ProductHandler ProductHandler { get; set; }
         public ProductLineHandler ProductLineHandler { get; set; }
         public ProductPartHandler ProductPartHandler { get; set; }
+        public CustomerHandler CustomerHandler { get; set; }
 
         private ICommand _createProductPartCommand;
         private ICommand _deleteProductPartCommand;
@@ -36,6 +37,30 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _editOrderCommand;
         private ICommand _deleteOrderCommand;
 
+
+        public static Customer SelectedCustomer { get; set; }
+
+        #region CustomerCommands
+        public ICommand CreateCustomerCommand
+        {
+            get { return _createCustomerCommand ?? (_createCustomerCommand = new RelayCommand(CustomerHandler.CreateCustomer)); }
+            set { _createCustomerCommand = value; }
+        }
+
+        public ICommand EditCustomerCommand
+        {
+            get { return _editCustomerCommand ?? (_editCustomerCommand = new RelayCommand(CustomerHandler.EditCustomer)); }
+            set { _editCustomerCommand = value; }
+        }
+
+        public ICommand DeleteCustomerCommand
+        {
+            get { return _deleteCustomerCommand ?? (_deleteCustomerCommand = new RelayCommand(CustomerHandler.DeleteCustomer)); }
+            set { _deleteCustomerCommand = value; }
+        }
+
+
+        #endregion
 
         #region OrderRelayCommands
 
@@ -240,8 +265,9 @@ namespace _24SportLagersystem.ViewModel
         private ICommand _deleteOrderLineCommand;
 
         public static Customer Customer { get; set; }
-
-
+        private ICommand _deleteCustomerCommand;
+        private ICommand _editCustomerCommand;
+        private ICommand _createCustomerCommand;
         public int CustomerId
         {
             get { return _customerId; }
@@ -381,6 +407,7 @@ namespace _24SportLagersystem.ViewModel
             ProductHandler = new ProductHandler(this);
             ProductLineHandler = new ProductLineHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
+            CustomerHandler = new CustomerHandler(this);
 
             Singleton24Sport = Singleton24Sport.Instance;
 
@@ -390,10 +417,6 @@ namespace _24SportLagersystem.ViewModel
             OrderDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             DeliveryDateDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, new TimeSpan());
             DeliveryDateTime = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-
-            //OrderDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            //DeliveryDate = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
-            //_timeSpan = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
         }
 
 

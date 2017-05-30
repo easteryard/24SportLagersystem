@@ -42,7 +42,40 @@ namespace _24SportLagersystem.Model
             LoadProductsAsync();
             LoadProductLinesAsync();
             LoadProductPartsAsync();
+            LoadCustomersAsync();
         }
+
+        #region CustomerCRUD
+        public void AddCustomers(int customerId, String name, int phoneNo, String address, String email)
+        {
+            Customer myCustomer = new Customer(customerId, name, phoneNo, address, email);
+            Customers.Add(myCustomer);
+            CustomerPersistencyService.SaveCustomersAsJsonAsync(myCustomer);
+        }
+
+        public async void LoadCustomersAsync()
+        {
+            var customers = await CustomerPersistencyService.LoadCustomersFromJsonAsync();
+            if (customers != null)
+                foreach (var ev in customers)
+                {
+                    Customers.Add(ev);
+                }
+        }
+
+        public void EditCustomers(Customer customer)
+        {
+            CustomerPersistencyService.EditCustomersAsJsonAsync(customer);
+        }
+
+        public void DeleteCustomer(Customer customer)
+        {
+            Customers.Remove(customer);
+            CustomerPersistencyService.DeleteCustomersAsAsync(customer);
+        }
+
+
+        #endregion
 
         #region AddMethodsWithObjectParameter
         public void AddProduct(Product newProduct)
