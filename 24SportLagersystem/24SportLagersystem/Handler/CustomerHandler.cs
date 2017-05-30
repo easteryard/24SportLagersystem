@@ -70,7 +70,5 @@ namespace _24SportLagersystem.Handler
         {
             ViewModel24Sport.Singleton24Sport.DeleteCustomer(ViewModel24Sport.SelectedCustomer);
         }
-
-
-//    }
-//}
+    }
+}
