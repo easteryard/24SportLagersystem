@@ -53,7 +53,7 @@
         </Button>
 
         <Button x:Name="RedigerSide" Content="Rediger Ordre" IsEnabled="False" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320" />
-        <Button x:Name="Gem" Content="Gem" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding EditOrderCommand}"  >
+        <Button x:Name="Gem" Content="Gem" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding EditOrderCommand}" Click="Gem_Click"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
                     <core:NavigateToPageAction TargetPage="_24SportLagersystem.View.AddOrder"/>

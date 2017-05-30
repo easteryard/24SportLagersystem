@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,12 @@ namespace _24SportLagersystem.View
         public EditOrderView()
         {
             this.InitializeComponent();
+        }
+
+        private async void Gem_Click(object sender, RoutedEventArgs e)
+        {
+            await new MessageDialog("Gemt.").ShowAsync();
+
         }
     }
 }

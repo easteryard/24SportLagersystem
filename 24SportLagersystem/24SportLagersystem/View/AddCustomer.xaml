@@ -82,7 +82,7 @@
         <ListView x:Name="ListviewOrdre" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White" ItemsSource="{Binding Singleton24Sport.Customers}" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource CustomerTemplate}">
             <StackPanel Height="70" Width="300" />
         </ListView>
-        <Button x:Name="Delete" Content="Fjern" Grid.Column="4" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding DeleteCustomerCommand}"/>
+        <Button x:Name="Delete" Content="Fjern" Grid.Column="4" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding DeleteCustomerCommand}" Click="Delete_Click"/>
         <TextBlock x:Name="KundeNrInfoRediger" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="KundeNr" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="62.104,18.024,61.896,17.976"/>
         <TextBlock x:Name="NavnInfoRediger" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="74.237,17.524,73.763,17.476" />
         <TextBlock x:Name="TelefonInfoRediger" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="67.656,18.024,67.344,17.976"/>
@@ -93,7 +93,7 @@
         <TextBox x:Name="TelefonTextboxRediger" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,12" />
         <TextBox x:Name="AddresseTextboxRediger" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,11.5" />
         <TextBox x:Name="EmailTextboxRediger" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,12" />
-        <Button x:Name="Opret" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateCustomerCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="Opret" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateCustomerCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Click="Opret_Click"/>
 
     </Grid>
 

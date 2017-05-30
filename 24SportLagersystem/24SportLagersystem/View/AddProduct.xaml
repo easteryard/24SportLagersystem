@@ -65,7 +65,7 @@
             </interactivity:Interaction.Behaviors>
         </Button>
         <Button x:Name="TilføjProdukt" Content="Tilføj Produkt" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="83" Width="320" />
-        <Button x:Name="Fjern" Content="Fjern" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
+        <Button x:Name="Fjern" Content="Fjern" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Click="Fjern_Click"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
                     <core:NavigateToPageAction TargetPage="_24SportLagersystem.View"/>
@@ -94,7 +94,7 @@
         <ListView x:Name="ListviewProduct" Grid.Column="4" Grid.Row="3" Grid.RowSpan="6" Grid.ColumnSpan="2" BorderThickness="2" BorderBrush="White" ItemsSource="{Binding Singleton24Sport.Products}" SelectedItem="{Binding SelectedProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemTemplate="{StaticResource ProductDatatemplate}">
             <StackPanel Height="70" Width="300" />
         </ListView>
-        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateProductCommand}"/>
+        <Button x:Name="Gem" Content="Gem" Grid.Column="2" Grid.Row="11" Width="320" Height="85" HorizontalAlignment="Center" Command="{Binding CreateProductCommand}" Click="Gem_Click"/>
         <Button x:Name="Tilbage_Copy" Content="Tilbage" HorizontalAlignment="Center" Height="85" Width="320" Grid.Row="1"  >
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
