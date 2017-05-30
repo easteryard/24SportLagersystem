@@ -42,7 +42,7 @@ namespace _24SportLagersystem.View
 
             else
             {
-               await new MessageDialog("Koden eller brugernavn er forkert, prøv igen.").ShowAsync();
+               await new MessageDialog("Brugernavn eller adgangskode er forkert, prøv igen.").ShowAsync();
          
             }
             
