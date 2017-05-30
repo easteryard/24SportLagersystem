@@ -16,7 +16,7 @@
             <ViewModel:ViewModel24Sport/>
         </Grid.DataContext>
 
-        <TextBox x:Name="customerId" HorizontalAlignment="Left" Margin="97,397,0,0" TextWrapping="Wrap" Text="{Binding SelectedOrder.CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
+        <TextBox x:Name="customerId" HorizontalAlignment="Left" Margin="100,400,0,0" TextWrapping="Wrap" Text="{Binding SelectedOrder.CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="48" Width="95"/>
         <AppBarButton x:Name="editProduct" HorizontalAlignment="Left" Icon="Accept" Label="Accept" Margin="509,503,0,0" VerticalAlignment="Top" Command="{Binding EditOrderCommand}"/>
         <AppBarButton x:Name="toProductTestView" HorizontalAlignment="Left" Icon="Back" Label="Back" Margin="648,503,0,0" VerticalAlignment="Top">
             <interactivity:Interaction.Behaviors>

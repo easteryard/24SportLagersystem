@@ -44,7 +44,7 @@
             <viewModel:ViewModel24Sport/>
         </Grid.DataContext>
 
-        
+
         <Button x:Name="Search" Content="Søg" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Height="85" Width="320">
             <interactivity:Interaction.Behaviors>
                 <core:EventTriggerBehavior EventName="Click">
@@ -67,6 +67,12 @@
                 </core:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </Button>
+
+
+
+
+
+
 
         <TextBlock x:Name="KundeNrInfo" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="KundeNr" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock x:Name="NavnInfo" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Center" HorizontalAlignment="Center"/>
