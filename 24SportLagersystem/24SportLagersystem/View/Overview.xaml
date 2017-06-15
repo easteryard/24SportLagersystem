@@ -11,43 +11,43 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="VareNrTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblVareNr" TextWrapping="Wrap" Text="{Binding ProductPartNo}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblVareNr" TextWrapping="Wrap" Text="{Binding ProductPartNo}" Height="65"/>
             </StackPanel>
         </DataTemplate>
         
         <DataTemplate x:Key="BeskrivelseTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblBeskrivelse" TextWrapping="Wrap" Text="{Binding Description}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblBeskrivelse" TextWrapping="Wrap" Text="{Binding Description}" Height="65"/>
             </StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="AntalTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblAntal" TextWrapping="Wrap" Text="{Binding Amount}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblAntal" TextWrapping="Wrap" Text="{Binding Amount}" Height="65"/>
             </StackPanel>
         </DataTemplate>
         
         <DataTemplate x:Key="StkPrisDKKTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblStkPrisDKK" TextWrapping="Wrap" Text="{Binding PricePerPieceDkk}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblStkPrisDKK" TextWrapping="Wrap" Text="{Binding PricePerPieceDkk}" Height="65"/>
             </StackPanel>
         </DataTemplate>
         
         <DataTemplate x:Key="StkPrisEURTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblStkPrisEUR" TextWrapping="Wrap" Text="{Binding PricePerPieceEur}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblStkPrisEUR" TextWrapping="Wrap" Text="{Binding PricePerPieceEur}" Height="65"/>
             </StackPanel>
         </DataTemplate>
         
         <DataTemplate x:Key="TotalDKKTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblTotalDKK" TextWrapping="Wrap" Text="{Binding PriceTotalDkk}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblTotalDKK" TextWrapping="Wrap" Text="{Binding PriceTotalDkk}" Height="65"/>
             </StackPanel>
         </DataTemplate>
         
         <DataTemplate x:Key="TotalEURTemplate">
-            <StackPanel Height="30" Width="84">
-                <TextBlock x:Name="TblTotalEUR" TextWrapping="Wrap" Text="{Binding PriceTotalEur}"/>
+            <StackPanel Height="68" Width="84">
+                <TextBlock x:Name="TblTotalEUR" TextWrapping="Wrap" Text="{Binding PriceTotalEur}" Height="65"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>

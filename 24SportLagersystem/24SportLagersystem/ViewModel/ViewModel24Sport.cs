@@ -347,14 +347,14 @@ namespace _24SportLagersystem.ViewModel
 
         public ViewModel24Sport()
         {
-            Handler24Sport = new Handler.Handler24Sport(this);
+            Handler24Sport = new Handler24Sport(this);
             CustomerHandler = new CustomerHandler(this);
             OrderHandler = new OrderHandler(this);
             OrderLineHandler = new OrderLineHandler(this);
             ProductHandler = new ProductHandler(this);
             ProductLineHandler = new ProductLineHandler(this);
             ProductPartHandler = new ProductPartHandler(this);
-
+            
             Singleton24Sport = Singleton24Sport.Instance;
 
             DateTime dt = System.DateTime.Now;

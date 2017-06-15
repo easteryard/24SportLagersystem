@@ -69,11 +69,11 @@
         <TextBlock x:Name="Pris" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" Text="Pris" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="79.693,17.524,79.307,17.476"/>
         <TextBlock x:Name="Højde" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="Højde" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="61.148,18.024,60.852,17.976"/>
 
-        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding ProductPartNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
-        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
-        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
-        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
-        <TextBox x:Name="HøjdeTextBox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12" />
+        <TextBox x:Name="VarenrTextbox" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Text="{Binding SelectedProduct.ProductId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="VarenavnTextbox" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="{Binding SelectedProduct.ProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="AntalTextbox" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="{Binding SelectedProduct.AmountMade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12"/>
+        <TextBox x:Name="PrisTextbox" Grid.Column="2" Grid.Row="6" TextWrapping="Wrap" Text="{Binding SelectedProduct.Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,11.5"/>
+        <TextBox x:Name="HøjdeTextBox" Grid.Column="2" Grid.Row="7" TextWrapping="Wrap" Text="{Binding SelectedProduct.Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" TextAlignment="Center" Margin="0,12" />
 
 
 
