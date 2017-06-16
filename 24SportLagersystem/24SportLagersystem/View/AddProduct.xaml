@@ -64,7 +64,7 @@
             </interactivity:Interaction.Behaviors>
         </Button>
         <Button x:Name="TilføjProdukt" Content="Tilføj Produkt" IsEnabled="False" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" Height="83" Width="320" />
-        <Button x:Name="Fjern" Content="Fjern" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding DeleteProductCommand}"/>
+        <Button x:Name="Fjern" Content="Fjern" Grid.Column="4" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320" Command="{Binding DeleteProductCommand}" Click="Fjern_Click_1"/>
 
         <Button x:Name="Tilbage" Content="Rediger" Grid.Column="5" Grid.Row="11" HorizontalAlignment="Center" Height="85" Width="320"  >
             <interactivity:Interaction.Behaviors>

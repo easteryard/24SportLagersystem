@@ -36,7 +36,12 @@ namespace _24SportLagersystem.View
 
         private async void Fjern_Click(object sender, RoutedEventArgs e)
         {
-            await new MessageDialog("Fil Fjernet.").ShowAsync();
+            await new MessageDialog("Produkt Fjernet.").ShowAsync();
+
+        }
+
+        private void Fjern_Click_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }

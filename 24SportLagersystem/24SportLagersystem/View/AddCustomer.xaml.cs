@@ -36,7 +36,7 @@ namespace _24SportLagersystem.View
 
         private async void Delete_Click(object sender, RoutedEventArgs e)
         {
-            await new MessageDialog("Fil Fjernet.").ShowAsync();
+            await new MessageDialog("Kunde Slettet.").ShowAsync();
 
         }
     }
