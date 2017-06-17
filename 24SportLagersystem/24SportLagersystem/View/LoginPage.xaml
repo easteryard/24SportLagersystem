@@ -36,7 +36,7 @@
                 <RowDefinition Height="*" />
 
             </Grid.RowDefinitions>
-            <TextBlock x:Name="Titel" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="24 Sport Lagersystem" FontSize="72" Grid.ColumnSpan="3" Grid.RowSpan="4" />
+            <TextBlock x:Name="Titel" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Text="24Sport Lagersystem" FontSize="72" Grid.ColumnSpan="3" Grid.RowSpan="4" />
             <TextBlock x:Name="BrugerLogin" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Bottom" Grid.Row="4" TextWrapping="Wrap" Text="Brugernavn"/>
             <TextBox x:Name="Brugerlogin1" Grid.Column="2"  VerticalAlignment="Top" Grid.Row="5" TextWrapping="Wrap" Text=""/>
             <TextBlock x:Name="Password" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Bottom" Grid.Row="6" TextWrapping="Wrap" Text="Adgangskode"/>
