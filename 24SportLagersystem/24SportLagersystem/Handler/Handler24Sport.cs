@@ -18,7 +18,6 @@ namespace _24SportLagersystem.Handler
         {
             ViewModel24Sport = viewModel24Sport;
         }
-/
         public void SetSelectedOrder(Order order)
         {
             ViewModel24Sport.SelectedOrder = order;
